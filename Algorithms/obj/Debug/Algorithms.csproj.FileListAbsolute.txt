@@ -4,3 +4,9 @@ C:\Users\thema\source\repos\Algorithms\Algorithms\obj\Debug\Algorithms.csprojRes
 C:\Users\thema\source\repos\Algorithms\Algorithms\obj\Debug\Algorithms.csproj.CoreCompileInputs.cache
 C:\Users\thema\source\repos\Algorithms\Algorithms\obj\Debug\Algorithms.dll
 C:\Users\thema\source\repos\Algorithms\Algorithms\obj\Debug\Algorithms.pdb
+C:\Users\thema\Desktop\Algorithms\Algorithms\bin\Debug\Algorithms.dll
+C:\Users\thema\Desktop\Algorithms\Algorithms\bin\Debug\Algorithms.pdb
+C:\Users\thema\Desktop\Algorithms\Algorithms\obj\Debug\Algorithms.csprojResolveAssemblyReference.cache
+C:\Users\thema\Desktop\Algorithms\Algorithms\obj\Debug\Algorithms.csproj.CoreCompileInputs.cache
+C:\Users\thema\Desktop\Algorithms\Algorithms\obj\Debug\Algorithms.dll
+C:\Users\thema\Desktop\Algorithms\Algorithms\obj\Debug\Algorithms.pdb

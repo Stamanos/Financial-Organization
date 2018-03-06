@@ -35,8 +35,14 @@ namespace Algorithms
             days[6] = "Friday";
         }
 
-        public static string Day(int dayNumber, int monthNumber, int yearNumber)
+        public static string Day(string date)
         {
+
+            string [] numbers = date.Split('/');
+            int dayNumber = Int32.Parse(numbers[0]);
+            int monthNumber = Int32.Parse(numbers[1]);
+            int yearNumber = Int32.Parse(numbers[2]);
+
             StartingValues();
 
             if(((monthNumber == 1)||(monthNumber == 2))&&((yearNumber % 4) == 0))
@@ -45,7 +51,7 @@ namespace Algorithms
             }
             else
             {
-                return days[YearCode(yearNumber) + months[monthNumber] + dayNumber];
+                return days[(YearCode(yearNumber) + months[monthNumber] + dayNumber) % 7];
             }
         }
 

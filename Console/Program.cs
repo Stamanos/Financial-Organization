@@ -10,7 +10,9 @@ namespace screen
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(Algorithms.Date.Day(3, 3, 2018));
+            Console.WriteLine("Εισάγεται ημερομηνία (μέρα/μήνα/χρόνο)");
+            string date = Console.ReadLine();
+            Console.WriteLine(Algorithms.Date.Day(date));
             Console.WriteLine("Press any key to exit.");
             Console.ReadKey();
         }
