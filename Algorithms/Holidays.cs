@@ -8,7 +8,7 @@ namespace Algorithms
 {
     public class Holidays
     {
-        public int Easter(int year)
+        public static int Easter(int year)
         {
             int temp = ((year - 2) % 19) % 30;
             if (temp <= 23)
@@ -19,6 +19,11 @@ namespace Algorithms
             {
                 return 57 - temp;
             }
+        }
+
+        public static string Xmas(int year)
+        {
+            return "25/12/" + year.ToString();
         }
     }
 }
