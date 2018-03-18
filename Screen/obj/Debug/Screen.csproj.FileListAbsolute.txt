@@ -1,0 +1,10 @@
+C:\Users\thema\Desktop\Algorithms\Screen\bin\Debug\Screen.exe.config
+C:\Users\thema\Desktop\Algorithms\Screen\bin\Debug\Screen.exe
+C:\Users\thema\Desktop\Algorithms\Screen\bin\Debug\Screen.pdb
+C:\Users\thema\Desktop\Algorithms\Screen\obj\Debug\Screen.csprojResolveAssemblyReference.cache
+C:\Users\thema\Desktop\Algorithms\Screen\obj\Debug\Screen.Form1.resources
+C:\Users\thema\Desktop\Algorithms\Screen\obj\Debug\Screen.Properties.Resources.resources
+C:\Users\thema\Desktop\Algorithms\Screen\obj\Debug\Screen.csproj.GenerateResource.Cache
+C:\Users\thema\Desktop\Algorithms\Screen\obj\Debug\Screen.csproj.CoreCompileInputs.cache
+C:\Users\thema\Desktop\Algorithms\Screen\obj\Debug\Screen.exe
+C:\Users\thema\Desktop\Algorithms\Screen\obj\Debug\Screen.pdb
