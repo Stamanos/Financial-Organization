@@ -19,14 +19,15 @@ namespace Screen
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            lbl_DatePicker.Hide();
+            dateTimePicker.Hide();
         }
 
         private void ButonPressed(Button button)
         {
             pl_indicator.Height = button.Height;
             pl_indicator.Top = button.Top;
-
+            btn_done.Hide();
         }
 
         private void ButtonPressed(Button button)
@@ -73,24 +74,32 @@ namespace Screen
         private void btn_month_Click(object sender, EventArgs e)
         {
             ButtonPressed(btn_month);
-            pb_graph.Image = Image.FromFile("C:/Users/thema/Desktop/Algorithms/graphs/3.png");
+            pb_graph.Image = Image.FromFile("C:/Users/thema/Desktop/projects/C#/Algorithms/graphs/3.png");
         }
 
         private void btn_day_Click(object sender, EventArgs e)
         {
             ButtonPressed(btn_day);
+            lbl_DatePicker.Show();
+            dateTimePicker.Show();
+            btn_done.Show();
         }
 
         private void btn_region_Click(object sender, EventArgs e)
         {
             ButtonPressed(btn_region);
-            pb_graph.Image = Image.FromFile("C:/Users/thema/Desktop/Algorithms/graphs/2.png");
+            pb_graph.Image = Image.FromFile("C:/Users/thema/Desktop/projects/C#/Algorithms/graphs/2.png");
         }
 
         private void btn_type_Click(object sender, EventArgs e)
         {
             ButtonPressed(btn_type);
-            pb_graph.Image = Image.FromFile("C:/Users/thema/Desktop/Algorithms/graphs/1.png");
+            pb_graph.Image = Image.FromFile("C:/Users/thema/Desktop/projects/C#/Algorithms/graphs/1.png");
+        }
+
+        private void pb_graph_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

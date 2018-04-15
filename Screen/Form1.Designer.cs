@@ -37,6 +37,8 @@
             this.pl_left_up = new System.Windows.Forms.Panel();
             this.lbl_logo = new System.Windows.Forms.Label();
             this.pl_bottom = new System.Windows.Forms.Panel();
+            this.btn_region = new System.Windows.Forms.Button();
+            this.btn_type = new System.Windows.Forms.Button();
             this.lbl_expenses = new System.Windows.Forms.Label();
             this.pb_graph = new System.Windows.Forms.PictureBox();
             this.btn_day = new System.Windows.Forms.Button();
@@ -44,8 +46,9 @@
             this.btn_month = new System.Windows.Forms.Button();
             this.btn_Year = new System.Windows.Forms.Button();
             this.pl_indicator = new System.Windows.Forms.Panel();
-            this.btn_type = new System.Windows.Forms.Button();
-            this.btn_region = new System.Windows.Forms.Button();
+            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.lbl_DatePicker = new System.Windows.Forms.Label();
+            this.btn_done = new System.Windows.Forms.Button();
             this.pl_left.SuspendLayout();
             this.pl_left_up.SuspendLayout();
             this.pl_bottom.SuspendLayout();
@@ -147,11 +150,11 @@
             // 
             this.lbl_logo.AutoSize = true;
             this.lbl_logo.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.lbl_logo.Location = new System.Drawing.Point(-4, 22);
+            this.lbl_logo.Location = new System.Drawing.Point(28, 31);
             this.lbl_logo.Name = "lbl_logo";
-            this.lbl_logo.Size = new System.Drawing.Size(180, 56);
+            this.lbl_logo.Size = new System.Drawing.Size(98, 56);
             this.lbl_logo.TabIndex = 0;
-            this.lbl_logo.Text = "TaxWiz";
+            this.lbl_logo.Text = "jeo";
             // 
             // pl_bottom
             // 
@@ -163,6 +166,30 @@
             this.pl_bottom.Name = "pl_bottom";
             this.pl_bottom.Size = new System.Drawing.Size(802, 104);
             this.pl_bottom.TabIndex = 0;
+            // 
+            // btn_region
+            // 
+            this.btn_region.FlatAppearance.BorderSize = 0;
+            this.btn_region.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_region.Location = new System.Drawing.Point(6, 6);
+            this.btn_region.Name = "btn_region";
+            this.btn_region.Size = new System.Drawing.Size(75, 39);
+            this.btn_region.TabIndex = 9;
+            this.btn_region.Text = "Region";
+            this.btn_region.UseVisualStyleBackColor = true;
+            this.btn_region.Click += new System.EventHandler(this.btn_region_Click);
+            // 
+            // btn_type
+            // 
+            this.btn_type.FlatAppearance.BorderSize = 0;
+            this.btn_type.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_type.Location = new System.Drawing.Point(6, 51);
+            this.btn_type.Name = "btn_type";
+            this.btn_type.Size = new System.Drawing.Size(75, 39);
+            this.btn_type.TabIndex = 8;
+            this.btn_type.Text = "Type";
+            this.btn_type.UseVisualStyleBackColor = true;
+            this.btn_type.Click += new System.EventHandler(this.btn_type_Click);
             // 
             // lbl_expenses
             // 
@@ -181,6 +208,7 @@
             this.pb_graph.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_graph.TabIndex = 2;
             this.pb_graph.TabStop = false;
+            this.pb_graph.Click += new System.EventHandler(this.pb_graph_Click);
             // 
             // btn_day
             // 
@@ -237,35 +265,40 @@
             this.pl_indicator.Size = new System.Drawing.Size(7, 95);
             this.pl_indicator.TabIndex = 7;
             // 
-            // btn_type
+            // dateTimePicker
             // 
-            this.btn_type.FlatAppearance.BorderSize = 0;
-            this.btn_type.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_type.Location = new System.Drawing.Point(6, 51);
-            this.btn_type.Name = "btn_type";
-            this.btn_type.Size = new System.Drawing.Size(75, 39);
-            this.btn_type.TabIndex = 8;
-            this.btn_type.Text = "Type";
-            this.btn_type.UseVisualStyleBackColor = true;
-            this.btn_type.Click += new System.EventHandler(this.btn_type_Click);
+            this.dateTimePicker.Location = new System.Drawing.Point(333, 84);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.Size = new System.Drawing.Size(515, 27);
+            this.dateTimePicker.TabIndex = 8;
             // 
-            // btn_region
+            // lbl_DatePicker
             // 
-            this.btn_region.FlatAppearance.BorderSize = 0;
-            this.btn_region.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_region.Location = new System.Drawing.Point(6, 6);
-            this.btn_region.Name = "btn_region";
-            this.btn_region.Size = new System.Drawing.Size(75, 39);
-            this.btn_region.TabIndex = 9;
-            this.btn_region.Text = "Region";
-            this.btn_region.UseVisualStyleBackColor = true;
-            this.btn_region.Click += new System.EventHandler(this.btn_region_Click);
+            this.lbl_DatePicker.AutoSize = true;
+            this.lbl_DatePicker.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.lbl_DatePicker.Location = new System.Drawing.Point(221, 84);
+            this.lbl_DatePicker.Name = "lbl_DatePicker";
+            this.lbl_DatePicker.Size = new System.Drawing.Size(106, 22);
+            this.lbl_DatePicker.TabIndex = 9;
+            this.lbl_DatePicker.Text = "Pick a day";
+            // 
+            // btn_done
+            // 
+            this.btn_done.Location = new System.Drawing.Point(854, 83);
+            this.btn_done.Name = "btn_done";
+            this.btn_done.Size = new System.Drawing.Size(82, 28);
+            this.btn_done.TabIndex = 10;
+            this.btn_done.Text = "Done";
+            this.btn_done.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(974, 538);
+            this.Controls.Add(this.btn_done);
+            this.Controls.Add(this.lbl_DatePicker);
+            this.Controls.Add(this.dateTimePicker);
             this.Controls.Add(this.pl_indicator);
             this.Controls.Add(this.btn_Year);
             this.Controls.Add(this.btn_month);
@@ -310,6 +343,9 @@
         private System.Windows.Forms.Panel pl_indicator;
         private System.Windows.Forms.Button btn_type;
         private System.Windows.Forms.Button btn_region;
+        private System.Windows.Forms.DateTimePicker dateTimePicker;
+        private System.Windows.Forms.Label lbl_DatePicker;
+        private System.Windows.Forms.Button btn_done;
     }
 }
 
