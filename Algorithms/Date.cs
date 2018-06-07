@@ -39,20 +39,21 @@ namespace Algorithms
         {
 
             string [] numbers = date.Split('/');
+            int dayNumber, monthNumber, yearNumber;
             //if date is writen by Europe
             if (true)
             {
-                int dayNumber = Int32.Parse(numbers[0]);
-                int monthNumber = Int32.Parse(numbers[1]);
-                int yearNumber = Int32.Parse(numbers[2]);
+                dayNumber = Int32.Parse(numbers[0]);
+                monthNumber = Int32.Parse(numbers[1]);
+                yearNumber = Int32.Parse(numbers[2]);
             }
 
             //if date is writen by America
             if (false)
             {
-                int dayNumber = Int32.Parse(numbers[1]);
-                int monthNumber = Int32.Parse(numbers[0]);
-                int yearNumber = Int32.Parse(numbers[2]);
+                dayNumber = Int32.Parse(numbers[1]);
+                monthNumber = Int32.Parse(numbers[0]);
+                yearNumber = Int32.Parse(numbers[2]);
             }
 
             StartingValues();
