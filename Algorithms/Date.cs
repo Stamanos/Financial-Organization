@@ -39,9 +39,10 @@ namespace Algorithms
         {
 
             string [] numbers = date.Split('/');
+            bool IsAmericanDate = false;
             int dayNumber, monthNumber, yearNumber;
             //if date is writen by Europe
-            if (true)
+            if (IsAmericanDate)
             {
                 dayNumber = Int32.Parse(numbers[0]);
                 monthNumber = Int32.Parse(numbers[1]);
@@ -49,7 +50,7 @@ namespace Algorithms
             }
 
             //if date is writen by America
-            if (false)
+            if (IsAmericanDate)
             {
                 dayNumber = Int32.Parse(numbers[1]);
                 monthNumber = Int32.Parse(numbers[0]);
