@@ -41,19 +41,17 @@ namespace Algorithms
             string [] numbers = date.Split('/');
             bool IsAmericanDate = false;
             int dayNumber, monthNumber, yearNumber;
-            //if date is writen by Europe
-            if (IsAmericanDate)
-            {
-                dayNumber = Int32.Parse(numbers[0]);
-                monthNumber = Int32.Parse(numbers[1]);
-                yearNumber = Int32.Parse(numbers[2]);
-            }
 
-            //if date is writen by America
-            if (IsAmericanDate)
+            if (IsAmericanDate)//if date is writen by America
             {
                 dayNumber = Int32.Parse(numbers[1]);
                 monthNumber = Int32.Parse(numbers[0]);
+                yearNumber = Int32.Parse(numbers[2]);
+            }
+            else (IsAmericanDate)//if date is writen by Europe
+            {
+                dayNumber = Int32.Parse(numbers[0]);
+                monthNumber = Int32.Parse(numbers[1]);
                 yearNumber = Int32.Parse(numbers[2]);
             }
 
