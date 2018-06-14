@@ -46,14 +46,13 @@ namespace Algorithms
             {
                 dayNumber = Int32.Parse(numbers[1]);
                 monthNumber = Int32.Parse(numbers[0]);
-                yearNumber = Int32.Parse(numbers[2]);
             }
-            else (IsAmericanDate)//if date is writen by Europe
+            else (IsAmericanDate) //if date is writen by Europe
             {
                 dayNumber = Int32.Parse(numbers[0]);
                 monthNumber = Int32.Parse(numbers[1]);
-                yearNumber = Int32.Parse(numbers[2]);
             }
+            yearNumber = Int32.Parse(numbers[2]);
 
             StartingValues();
 
