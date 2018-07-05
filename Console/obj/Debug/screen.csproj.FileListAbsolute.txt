@@ -1,9 +1,0 @@
-C:\Users\thema\Desktop\Algorithms\Console\bin\Debug\Console.exe.config
-C:\Users\thema\Desktop\Algorithms\Console\bin\Debug\Console.exe
-C:\Users\thema\Desktop\Algorithms\Console\bin\Debug\Console.pdb
-C:\Users\thema\Desktop\Algorithms\Console\bin\Debug\Algorithms.dll
-C:\Users\thema\Desktop\Algorithms\Console\bin\Debug\Algorithms.pdb
-C:\Users\thema\Desktop\Algorithms\Console\obj\Debug\screen.csprojResolveAssemblyReference.cache
-C:\Users\thema\Desktop\Algorithms\Console\obj\Debug\screen.csproj.CoreCompileInputs.cache
-C:\Users\thema\Desktop\Algorithms\Console\obj\Debug\Console.exe
-C:\Users\thema\Desktop\Algorithms\Console\obj\Debug\Console.pdb
