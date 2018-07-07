@@ -8,7 +8,7 @@ function showChart() {
       },
       data: [//array of dataSeries              
         { //dataSeries object
-          
+          //ToDo:: put the dates as labels
          type: styleFilters(),
          dataPoints : contentFilters()
          }
