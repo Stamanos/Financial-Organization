@@ -42,6 +42,7 @@ function contentFilters(){
   });
 
   console.log(result);
+
   return result;
 }
 
