@@ -1,5 +1,5 @@
 let spendingItems;
-
+//
 function showChart() {
     var chartamount = new CanvasJS.Chart("chartContainer", {
 

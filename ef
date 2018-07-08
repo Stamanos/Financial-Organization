@@ -1,0 +1,257 @@
+[33mcommit 4ac35cc783dcc83ec488012067c925b4d393dfb7[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Emmanouil Stamatakis <TheMagicSport@gmail.com>
+Date:   Sat Jul 7 14:08:18 2018 +0300
+
+    ubdate database
+
+[33mcommit e5eb9f509d160ea3b575b52d70b1d4f01d7bd23e[m
+Author: Emmanouil Stamatakis <TheMagicSport@gmail.com>
+Date:   Sat Jul 7 13:35:32 2018 +0300
+
+    Dj turn it up
+
+[33mcommit 6a3908e2f0ac82d677c0fcf1b369193f4b8a042c[m
+Author: Emmanouil Stamatakis <TheMagicSport@gmail.com>
+Date:   Sat Jul 7 13:23:28 2018 +0300
+
+    update database
+
+[33mcommit 33a3cb8381a339d28da2571f52fd169831add8ae[m
+Author: Emmanouil Stamatakis <TheMagicSport@gmail.com>
+Date:   Thu Jul 5 22:24:25 2018 +0300
+
+    fuck yeah indeed, I found my template
+
+[33mcommit 9431216a9f2b44c6eaaab5898ded99d303c7928a[m
+Author: Emmanouil Stamatakis <TheMagicSport@gmail.com>
+Date:   Thu Jul 5 21:53:55 2018 +0300
+
+    fuck yeah
+
+[33mcommit abd9515d95d2954a18966f19e7f71d4af1d1c7e2[m
+Author: Emmanouil Stamatakis <TheMagicSport@gmail.com>
+Date:   Thu Jul 5 21:52:03 2018 +0300
+
+    delete useless json file
+
+[33mcommit c203cfa57d61d91d8865fc7cf6a20a1d2bce0f0c[m
+Author: Emmanouil Stamatakis <TheMagicSport@gmail.com>
+Date:   Thu Jul 5 21:51:22 2018 +0300
+
+    erased pyramid style
+
+[33mcommit bdd571df7c9cb7003126e7cc1cde66f632e84b1f[m
+Author: Emmanouil Stamatakis <TheMagicSport@gmail.com>
+Date:   Thu Jul 5 21:45:23 2018 +0300
+
+    adopt costs.xlsx to html values
+
+[33mcommit b91f3b1f1440243463e0b3ca35c24127e9850dc8[m
+Author: Emmanouil Stamatakis <TheMagicSport@gmail.com>
+Date:   Thu Jul 5 20:35:33 2018 +0300
+
+    added an excel retriving system that convert excel files into json
+
+[33mcommit 95aa6c4c76be9ad755be4ab58b24adcf2993df4d[m
+Author: Emmanouil Stamatakis <TheMagicSport@gmail.com>
+Date:   Thu Jul 5 20:33:42 2018 +0300
+
+    Work peace of shit
+
+[33mcommit 18fd46ecf91f0069d589ae78eb12d6d24eae12c5[m
+Author: DOMAIN\eas <e.stamatakis@dataverse.gr>
+Date:   Tue Jul 3 18:37:22 2018 +0300
+
+    creating web form
+
+[33mcommit 0d843eadcf6a4a3413481f163fda7a3eb989310a[m
+Author: Emmanouil Stamatakis <TheMagicSport@gmail.com>
+Date:   Mon Jul 2 21:38:01 2018 +0300
+
+    update database
+
+[33mcommit 8d8912ea47438647ab7f22dd1064d2bbeb3e6c03[m
+Author: Emmanouil Stamatakis <TheMagicSport@gmail.com>
+Date:   Sun Jul 1 17:10:13 2018 +0300
+
+    update database
+
+[33mcommit e48b592e8e3285ab3093bdadc04c7a454ee921ce[m
+Author: Emmanouil Stamatakis <TheMagicSport@gmail.com>
+Date:   Mon Jun 18 23:08:36 2018 +0300
+
+    added some new columns in database
+
+[33mcommit 14985835332f99d83d9bf9009f0c33a943979fbb[m
+Author: Emmanouil Stamatakis <TheMagicSport@gmail.com>
+Date:   Sun Jun 17 22:33:43 2018 +0300
+
+    fuck yeah'
+
+[33mcommit 4600590a714be8c10e72e393e471389322992a96[m
+Author: Emmanouil Stamatakis <TheMagicSport@gmail.com>
+Date:   Fri Jun 15 22:59:01 2018 +0300
+
+    update database cost
+
+[33mcommit d5ca1fd45157947af16bffd44b0394d4af93e136[m
+Author: Emmanouil Stamatakis <TheMagicSport@gmail.com>
+Date:   Thu Jun 14 21:53:36 2018 +0300
+
+    cleaner code with same functionality
+
+[33mcommit ea5d3393f9cc007220db4dfb685d559a914f0b22[m
+Author: Emmanouil Stamatakis <TheMagicSport@gmail.com>
+Date:   Wed Jun 13 23:36:00 2018 +0300
+
+    delete unecessary column from database
+
+[33mcommit 242460d17a0c05193c575eb6e206d12101e40c93[m
+Author: Emmanouil Stamatakis <TheMagicSport@gmail.com>
+Date:   Wed Jun 13 23:34:17 2018 +0300
+
+    added data to the database
+
+[33mcommit f3e42c8da780fbf4020cd265d8739ad7c63d29b2[m
+Author: Emmanouil Stamatakis <TheMagicSport@gmail.com>
+Date:   Tue Jun 12 08:08:17 2018 +0300
+
+    update database
+
+[33mcommit ec288b661394d8580fc5fbcaef5f4d590d5b5d0a[m
+Author: Emmanouil Stamatakis <TheMagicSport@gmail.com>
+Date:   Thu Jun 7 22:19:35 2018 +0300
+
+    create more generic code globalized the variables
+
+[33mcommit 94fe84098861453a3fa7d35aabea443e68d5f0b4[m
+Author: Emmanouil Stamatakis <TheMagicSport@gmail.com>
+Date:   Thu Jun 7 22:18:25 2018 +0300
+
+    fixxed unrechable code error
+
+[33mcommit 49a6569c0df0099f90ad0d6da4ec45ba0e720999[m
+Author: Emmanouil Stamatakis <TheMagicSport@gmail.com>
+Date:   Thu Jun 7 22:16:36 2018 +0300
+
+    fixxed some errors, generic code
+
+[33mcommit b7e08288e3b190710aab19708e82f77433b6a0e1[m
+Author: Emmanouil Stamatakis <TheMagicSport@gmail.com>
+Date:   Wed Jun 6 20:59:13 2018 +0300
+
+    update data
+
+[33mcommit 3098bcc95ba7c3b903738c9287e75492ce185d77[m
+Author: Emmanouil Stamatakis <TheMagicSport@gmail.com>
+Date:   Tue Jun 5 22:56:09 2018 +0300
+
+    update cost, fuck my life
+
+[33mcommit d3f9d2d2d7dc26c9344d9425cce00386206e8424[m
+Author: Emmanouil Stamatakis <TheMagicSport@gmail.com>
+Date:   Sat Jun 2 22:42:32 2018 +0300
+
+    parameter for American Users
+
+[33mcommit ed7d4a19e9f91c6766bbca6d802b2e26e12781cf[m
+Author: Emmanouil Stamatakis <TheMagicSport@gmail.com>
+Date:   Fri Jun 1 23:18:23 2018 +0300
+
+    update todays spends
+
+[33mcommit 36450d8e1b34abacb5b83a0fcb9cb537f1da4e2a[m
+Author: Emmanouil Stamatakis <TheMagicSport@gmail.com>
+Date:   Thu May 31 23:51:23 2018 +0300
+
+    upate
+
+[33mcommit c3ddf25ccf987214e0661f9b9f6c7b9ad16b7d97[m
+Author: Emmanouil Stamatakis <TheMagicSport@gmail.com>
+Date:   Mon May 28 20:57:39 2018 +0300
+
+    update database:
+
+[33mcommit 2ec35644ad71be1b99de0ee61159b2351638682d[m
+Author: Emmanouil Stamatakis <TheMagicSport@gmail.com>
+Date:   Sun May 27 21:52:08 2018 +0300
+
+    update database
+
+[33mcommit 94b14291f4ac75b9fee8cb385590260a1354c411[m
+Author: Emmanouil Stamatakis <TheMagicSport@gmail.com>
+Date:   Sat May 26 19:46:32 2018 +0300
+
+    update costs agaaaaaain
+
+[33mcommit da1657515c6321785a92f6e36d5f0da6a7d2d44a[m
+Author: Emmanouil Stamatakis <TheMagicSport@gmail.com>
+Date:   Mon May 21 22:17:45 2018 +0300
+
+    fuck I spend too much these days
+
+[33mcommit 35a481962ec375bb53b5531f63a0a4bed4be2bcb[m
+Author: Emmanouil Stamatakis <TheMagicSport@gmail.com>
+Date:   Sat May 19 19:47:30 2018 +0300
+
+    update costs.xlsx
+
+[33mcommit df4a06f4553edc8e679e785a94ad778b21ce5ad3[m
+Author: Emmanouil Stamatakis <TheMagicSport@gmail.com>
+Date:   Fri May 18 23:38:10 2018 +0300
+
+    update cost.xlsx
+
+[33mcommit 1445e0d9a612bc3a3eff640f721f731baabb6209[m
+Author: Emmanouil Stamatakis <TheMagicSport@gmail.com>
+Date:   Sun Apr 15 11:49:49 2018 +0300
+
+    I did lot of changes in UI
+
+[33mcommit 74ed21c593ca7088319dce3ffe4fbe41a2f1ca73[m
+Author: Emmanouil Stamatakis <TheMagicSport@gmail.com>
+Date:   Sun Mar 18 18:54:38 2018 +0200
+
+    I created the platform and I wrote some data in my database
+
+[33mcommit aaadf5cc9ccd4b3dbec3c8d0977623716928e385[m
+Author: Emmanouil Stamatakis <TheMagicSport@gmail.com>
+Date:   Sun Mar 18 18:53:18 2018 +0200
+
+    I created the platform and the excel with all the data
+
+[33mcommit c3a071b3251a338dc0c3508e343bb5b71b277578[m
+Author: Emmanouil Stamatakis <TheMagicSport@gmail.com>
+Date:   Wed Mar 7 23:27:51 2018 +0200
+
+    Xmas algorithm
+
+[33mcommit 101cff4f71aa22141940ff438de43acf1c595e23[m
+Author: Emmanouil Stamatakis <TheMagicSport@gmail.com>
+Date:   Wed Mar 7 23:25:57 2018 +0200
+
+    xmas algorithm
+
+[33mcommit 05a3c652b50286d65cff3440b7529ac825bacc94[m
+Author: Emmanouil Stamatakis <TheMagicSport@gmail.com>
+Date:   Tue Mar 6 23:13:00 2018 +0200
+
+    easter algorithm
+
+[33mcommit 4be361e1dccd6e8a9c8ea7bd5e67bb46e2bd35a7[m
+Author: Emmanouil Stamatakis <TheMagicSport@gmail.com>
+Date:   Tue Mar 6 13:02:24 2018 +0200
+
+    finished the date algorith for the days
+
+[33mcommit a270022dd6632110ce730bdf37f2b786d8b77859[m
+Author: Emmanouil Stamatakis <TheMagicSport@gmail.com>
+Date:   Tue Mar 6 13:00:28 2018 +0200
+
+    finished the date algorithm
+
+[33mcommit 4ae204a2bc8220b9ff27d086bfeda0f641826f9a[m
+Author: Emmanouil Stamatakis <TheMagicSport@gmail.com>
+Date:   Tue Mar 6 12:38:41 2018 +0200
+
+    First commit
