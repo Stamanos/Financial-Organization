@@ -1,5 +1,5 @@
 let spendingItems;
-//
+//Gus cala is my bitch
 function showChart() {
     var chartamount = new CanvasJS.Chart("chartContainer", {
 
