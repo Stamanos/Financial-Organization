@@ -9,7 +9,7 @@
 </head>
 <body><h2>Cost review form</h2>
 
-    <button onclick="document.getElementById('cost').style.display='block'" style="width:auto;">Add cost</button>
+    <button onclick="document.getElementById('cost').style.display='block'" class="addcostbtn" >Add cost</button>
     
     <div id="cost" class="modal">
       <span onclick="document.getElementById('cost').style.display='none'" class="close" title="Close Modal">&times;</span>
@@ -20,23 +20,24 @@
           <div class="firstContainer">
             <hr>
             <!--_______________________________________AMMOUNT OF COST____________________________________________-->
-            <label for="cost"><b>Cost</b></label>
+            <label for="cost"><b>Cost</b></label></br>
             <input type="number" placeholder="Enter ammount of cost" name="cost" min="0" step="1" required> €
+            <hr>
 
             <!--_______________________________________DATE OF COST____________________________________________-->
             </p>
-            <label for="date"><b>Date</b></label>
-            <input type="date" placeholder="date time of cost" name="date-of-cost" required>
+            <label for="date"><b>Date</b></label></br>
+            <input type="date" placeholder="date time of cost" name="date-of-cost" required><hr>
             </p>
       
             <!--_______________________________________DESCRIPTION OF COST____________________________________________-->
             <div id="costDescription">
-              <label for="description"><b>Description</b></label>
-              <input type="text" placeholder="Enter Description" name="description" required></br>
+              <label for="description"><b>Description</b></label></br>
+              <input type="text" placeholder="Enter Description" name="description" required><hr>
             </div>
       
             <!--_______________________________________TYPE OF COST____________________________________________-->
-            <label for="type"><b>Type of cost</b></label>
+            <label for="type"><b>Type of cost</b></label></br>
             <select id="typeSelection" required>
               <option value="" selected disabled hidden>Please select type of cost</option>
               <option value="education">Education</option>
@@ -51,20 +52,20 @@
               <option value="household-utilities">Household & utilities</option>
               <option value="media-electonics">Media & Electronics</option>
               <option value="tax-fines">Tax & Fines</option>
-            </select></br>
+            </select><hr>
 
             <!--_______________________________________USER STATUS____________________________________________-->
-            <label for="type"><b>User Status</b></label>
+            <label for="status"><b>User Status</b></label></br>
             <select id="userStatusSelection" required>
               <option value="" selected disabled hidden>Please select user status</option>
               <option value="free">Free</option>
               <option value="inRelationship">In Relationship</option>
               <option value="dating">Dating</option>
               <option value="inLove">In Love</option>
-            </select></br>
+            </select><hr>
 
             <!--_______________________________________MOOD LEVEL____________________________________________-->
-            <label for="type"><b>Mood Level</b></label>
+            <label for="mood"><b>Mood Level</b></label></br>
             <select id="moodLevelSelection" required>
               <option value="" selected disabled hidden>Please select mood level</option>
               <option value="1">1</option>
@@ -72,11 +73,11 @@
               <option value="3">3</option>
               <option value="4">4</option>
               <option value="5">5</option>
-            </select></br>
-          </div></br>
+            </select><hr>
+          </div>
 
           <!--_______________________________________LOCATION OF COST____________________________________________-->
-          <label for="location"><b>Location</b></label>
+          <label for="location"><b>Location</b></label></br>
           <input type="text" id="searchLocInput" onkeyup="searchingLocation()" placeholder="Search for locations already added.." title="Type in a location"
           required>
               <ul id="myLocations">
@@ -123,10 +124,10 @@
                 <li><a href="#">Tripoli</a></li>
                 <li><a href="#">Tzitzifies</a></li>
               </ul>
-          <div id="map"></div></br>
+          <div id="map"></div><hr>
           
           
-          <p>By creating a cost review you agree to our <a href="#" onclick="alert('Fuck Yeah!!!')" style="color:dodgerblue">Terms & Privacy</a>.</p>
+          <p>By creating a cost review you agree to our <a href="#" onclick="alert('Fuck Yeah!!!')" style="color:rgb(229, 255, 0);">Terms & Privacy</a>.</p>
     
           <div class="clearfix">
             <button type="button" onclick="document.getElementById('cost').style.display='none'" class="cancelbtn">Cancel</button>
