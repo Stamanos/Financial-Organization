@@ -1,3 +1,6 @@
+#typeSelection {
+    width: 50%;
+}
 
 #map {
     width:50%;
@@ -20,8 +23,8 @@
 
 #myLocations {
     /* Remove default list styling */
-    overflow: scroll;
-    height: 300px;
+    overflow: auto;
+    max-height: 300px;
     width: 50%;
     list-style-type: none;
     padding: 0;
