@@ -13,20 +13,67 @@
     
     <div id="cost" class="modal">
       <span onclick="document.getElementById('cost').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <form class="modal-content" action="/action_page.php">
-        <v class="container">
+      <form class="modal-content" action="/action_page.php"><!--ToDo: Change the Action-->
+        <div class="container">
           <h1>Add Cost</h1>
-          <p>Please fill in this form to add a cost in the database.</p>
-          <hr>
-          <!--_______________________________________AMMOUNT OF COST____________________________________________-->
-          <label for="cost"><b>Cost</b></label>
-          <input type="number" placeholder="Enter ammount of cost" name="cost" min="0" step="1" required> €
+          <h4>Please fill in this form to add a cost in the database.</h4>
+          <div class="firstContainer">
+            <hr>
+            <!--_______________________________________AMMOUNT OF COST____________________________________________-->
+            <label for="cost"><b>Cost</b></label>
+            <input type="number" placeholder="Enter ammount of cost" name="cost" min="0" step="1" required> €
 
-          <!--_______________________________________DATE OF COST____________________________________________-->
-          </p>
-          <label for="date"><b>Date</b></label>
-          <input type="date" placeholder="date time of cost" name="date-of-cost" required>
-          </p>
+            <!--_______________________________________DATE OF COST____________________________________________-->
+            </p>
+            <label for="date"><b>Date</b></label>
+            <input type="date" placeholder="date time of cost" name="date-of-cost" required>
+            </p>
+      
+            <!--_______________________________________DESCRIPTION OF COST____________________________________________-->
+            <div id="costDescription">
+              <label for="description"><b>Description</b></label>
+              <input type="text" placeholder="Enter Description" name="description" required></br>
+            </div>
+      
+            <!--_______________________________________TYPE OF COST____________________________________________-->
+            <label for="type"><b>Type of cost</b></label>
+            <select id="typeSelection" required>
+              <option value="" selected disabled hidden>Please select type of cost</option>
+              <option value="education">Education</option>
+              <option value="entertainment">Entertainment</option>
+              <option value="family-friends">Family & friends</option>
+              <option value="health-care">Health care</option>
+              <option value="transport">Transport</option>
+              <option value="beauty">Beauty</option>
+              <option value="shopping">Shopping</option>
+              <option value="food-drink">Food & drink</option>
+              <option value="travel-holidays">Travel & holidays</option>
+              <option value="household-utilities">Household & utilities</option>
+              <option value="media-electonics">Media & Electronics</option>
+              <option value="tax-fines">Tax & Fines</option>
+            </select></br>
+
+            <!--_______________________________________USER STATUS____________________________________________-->
+            <label for="type"><b>User Status</b></label>
+            <select id="userStatusSelection" required>
+              <option value="" selected disabled hidden>Please select user status</option>
+              <option value="free">Free</option>
+              <option value="inRelationship">In Relationship</option>
+              <option value="dating">Dating</option>
+              <option value="inLove">In Love</option>
+            </select></br>
+
+            <!--_______________________________________MOOD LEVEL____________________________________________-->
+            <label for="type"><b>Mood Level</b></label>
+            <select id="moodLevelSelection" required>
+              <option value="" selected disabled hidden>Please select mood level</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select></br>
+          </div></br>
 
           <!--_______________________________________LOCATION OF COST____________________________________________-->
           <label for="location"><b>Location</b></label>
@@ -77,49 +124,6 @@
                 <li><a href="#">Tzitzifies</a></li>
               </ul>
           <div id="map"></div></br>
-    
-          <!--_______________________________________DESCRIPTION OF COST____________________________________________-->
-          <label for="description"><b>Description</b></label>
-          <input type="text" placeholder="Enter Description" name="description" required></br>
-    
-          <!--_______________________________________TYPE OF COST____________________________________________-->
-          <label for="type"><b>Type of cost</b></label>
-          <select id="typeSelection" required>
-            <option value="" selected disabled hidden>Please select type of cost</option>
-            <option value="education">Education</option>
-            <option value="entertainment">Entertainment</option>
-            <option value="family-friends">Family & friends</option>
-            <option value="health-care">Health care</option>
-            <option value="transport">Transport</option>
-            <option value="beauty">Beauty</option>
-            <option value="shopping">Shopping</option>
-            <option value="food-drink">Food & drink</option>
-            <option value="travel-holidays">Travel & holidays</option>
-            <option value="household-utilities">Household & utilities</option>
-            <option value="media-electonics">Media & Electronics</option>
-            <option value="tax-fines">Tax & Fines</option>
-          </select></br>
-
-          <!--_______________________________________USER STATUS____________________________________________-->
-          <label for="type"><b>User Status</b></label>
-          <select id="userStatusSelection" required>
-            <option value="" selected disabled hidden>Please select user status</option>
-            <option value="free">Free</option>
-            <option value="inRelationship">In Relationship</option>
-            <option value="dating">Dating</option>
-            <option value="inLove">In Love</option>
-          </select></br>
-
-          <!--_______________________________________MOOD LEVEL____________________________________________-->
-          <label for="type"><b>Mood Level</b></label>
-          <select id="moodLevelSelection" required>
-            <option value="" selected disabled hidden>Please select mood level</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
           
           
           <p>By creating a cost review you agree to our <a href="#" onclick="alert('Fuck Yeah!!!')" style="color:dodgerblue">Terms & Privacy</a>.</p>
