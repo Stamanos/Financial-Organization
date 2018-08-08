@@ -27,9 +27,8 @@
           </p>
 
           <label for="location"><b>Location</b></label>
-          <input type="text" placeholder="Enter Location" name="location" required>
-          <div id="map" style="width:250px;height:250px;background:yellow">
-              <input type="text" id="searchLocInput" onkeyup="searchingLocation()" placeholder="Search for locations.." title="Type in a location">
+          <input type="text" id="searchLocInput" onkeyup="searchingLocation()" placeholder="Search for locations already added.." title="Type in a location"
+          required>
               <ul id="myLocations">
                 <li><a href="#">Ag.Kosmas</a></li>
                 <li><a href="#">Aigaleo</a></li>
@@ -74,7 +73,7 @@
                 <li><a href="#">Tripoli</a></li>
                 <li><a href="#">Tzitzifies</a></li>
               </ul>
-          </div>
+          <div id="map"></div></br>
     
           <label for="description"><b>Description</b></label>
           <input type="text" placeholder="Enter Description" name="description" required>
