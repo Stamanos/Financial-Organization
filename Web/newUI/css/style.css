@@ -1,4 +1,4 @@
-#typeSelection {
+#typeSelection, #userStatusSelection, #moodLevelSelection {
     width: 50%;
 }
 
@@ -24,7 +24,7 @@
 #myLocations {
     /* Remove default list styling */
     overflow: auto;
-    max-height: 300px;
+    height: 300px;
     width: 50%;
     list-style-type: none;
     padding: 0;

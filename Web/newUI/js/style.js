@@ -1,6 +1,6 @@
 
     // Get the modal
-    var modal = document.getElementById('id01');
+    var modal = document.getElementById('cost');
     
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
@@ -9,6 +9,7 @@
         }
     }
 
+// open the map function
 function myMap() {
     var mapOptions = {
         center: new google.maps.LatLng(51.5, -0.12),
@@ -26,6 +27,7 @@ function myMap() {
         });
     }
 }
+
 
 function searchingLocation() {
     var input, filter, ul, li, a, i;
