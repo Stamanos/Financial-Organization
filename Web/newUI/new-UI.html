@@ -21,24 +21,24 @@
             <hr>
             <!--_______________________________________AMMOUNT OF COST____________________________________________-->
             <label for="cost"><b>Cost</b></label></br>
-            <input type="number" placeholder="Enter ammount of cost" name="cost" min="0" step="1" required> €
+            <input id="newAmmount" type="number" placeholder="Enter ammount of cost" name="cost" min="0" step="1" required> €
             <hr>
 
             <!--_______________________________________DATE OF COST____________________________________________-->
             </p>
             <label for="date"><b>Date</b></label></br>
-            <input type="date" placeholder="date time of cost" name="date-of-cost" required><hr>
+            <input id="newDate" type="date" placeholder="date time of cost" name="date-of-cost" required><hr>
             </p>
       
             <!--_______________________________________DESCRIPTION OF COST____________________________________________-->
             <div id="costDescription">
               <label for="description"><b>Description</b></label></br>
-              <input type="text" placeholder="Enter Description" name="description" required><hr>
+              <input id="newDescription" type="text" placeholder="Enter Description" name="description" required><hr>
             </div>
       
             <!--_______________________________________TYPE OF COST____________________________________________-->
             <label for="type"><b>Type of cost</b></label></br>
-            <select id="typeSelection" required>
+            <select id="newTypeSelection" required>
               <option value="" selected disabled hidden>Please select type of cost</option>
               <option value="education">Education</option>
               <option value="entertainment">Entertainment</option>
@@ -56,7 +56,7 @@
 
             <!--_______________________________________USER STATUS____________________________________________-->
             <label for="status"><b>User Status</b></label></br>
-            <select id="userStatusSelection" required>
+            <select id="newUserStatusSelection" required>
               <option value="" selected disabled hidden>Please select user status</option>
               <option value="free">Free</option>
               <option value="inRelationship">In Relationship</option>
@@ -66,7 +66,7 @@
 
             <!--_______________________________________MOOD LEVEL____________________________________________-->
             <label for="mood"><b>Mood Level</b></label></br>
-            <select id="moodLevelSelection" required>
+            <select id="newMoodLevelSelection" required>
               <option value="" selected disabled hidden>Please select mood level</option>
               <option value="1">1</option>
               <option value="2">2</option>
@@ -78,7 +78,7 @@
 
           <!--_______________________________________LOCATION OF COST____________________________________________-->
           <label for="location"><b>Location</b></label></br>
-          <input type="text" id="searchLocInput" onkeyup="searchingLocation()" placeholder="Search for locations already added.." title="Type in a location"
+          <input type="text" id="newSearchLocInput" onkeyup="searchingLocation()" placeholder="Search for locations already added.." title="Type in a location"
           required>
               <ul id="myLocations">
                 <li><a href="#">Ag.Kosmas</a></li>

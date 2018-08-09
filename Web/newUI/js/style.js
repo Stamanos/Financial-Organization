@@ -31,7 +31,7 @@ function myMap() {
 
 function searchingLocation() {
     var input, filter, ul, li, a, i;
-    input = document.getElementById("searchLocInput");
+    input = document.getElementById("newSearchLocInput");
     filter = input.value.toUpperCase();
     ul = document.getElementById("myLocations");
     li = ul.getElementsByTagName("li");
@@ -47,7 +47,29 @@ function searchingLocation() {
     }
 }
 
-//________________________________EXCEL EDITOR_____________________________________________
+//_______________________Make Json Object from Users Input______________________________
+function makeNewOutlay(){
+    var newAmmount = getElementById("newAmmount").value;
+    var newDate = getElementById("newDate").value;
+    var newDescription = getElementById("newDescription").value;
+    var newType = getElementById("newTypeSelection").value;
+    var newUserStatus = getElementById("newUserStatusSelection").value;
+    var newMoodLevel = getElementById("newMoodLevelSelection").value;
+    var newLocation = getElementById("newSearchLocInput").value;
+    
+    var JsonObj = {
+        ammount: newAmmount,
+        date: newDate,
+        description: newDescription,
+        type: newType,
+        userStatus: newUserStatus,
+        moodLevel: newMoodLevel,
+        location: newLocation
+    }
+    console.log(JsonObj);
+}
+
+//________________________________EXCEL EDITOR(not checked)_____________________________________________
 xlsx = require('node-xlsx').default;
 
 const data = [[1, 2, 3], [true, false, null, 'sheetjs'], ['foo', 'bar', new Date(2018-08-09), '0.3'], ['baz', null, 'qux']];
