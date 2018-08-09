@@ -46,3 +46,12 @@ function searchingLocation() {
         }
     }
 }
+
+//________________________________EXCEL EDITOR_____________________________________________
+xlsx = require('node-xlsx').default;
+
+const data = [[1, 2, 3], [true, false, null, 'sheetjs'], ['foo', 'bar', new Date(2018-08-09), '0.3'], ['baz', null, 'qux']];
+const range = {s: {c:0, r:0}, e: {c:0, r:3}}; //A1:A4
+const option = {'!merges': [ range ]};
+
+var buffer = xlsx.build([{name: "cost", data: data}], option); // Returns a buffer

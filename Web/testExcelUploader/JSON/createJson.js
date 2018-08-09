@@ -5,7 +5,7 @@ var tempCost = {
     ammount: 3.5,
     type: "food-drink",
     date: "8/8/2018",
-    description: "Ντάκος",
+    description: "Ντάκος αντρικός βαρβάτος",
     userStatus: "inRelationship"
 };
 var dictsrting = JSON.stringify(tempCost);
