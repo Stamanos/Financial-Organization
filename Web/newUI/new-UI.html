@@ -13,7 +13,7 @@
     
     <div id="cost" class="modal">
       <span onclick="document.getElementById('cost').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <form class="modal-content" action="/action_page.php"><!--ToDo: Change the Action-->
+      <form class="modal-content">
         <div class="container">
           <h1>Add Cost</h1>
           <h4>Please fill in this form to add a cost in the database.</h4>
@@ -131,7 +131,7 @@
     
           <div class="clearfix">
             <button type="button" onclick="document.getElementById('cost').style.display='none'" class="cancelbtn">Cancel</button>
-            <button type="submit" class="signupbtn">Save cost</button>
+            <button onclick="makeNewOutlay()" class="signupbtn">Save cost</button>
           </div>
         </div>
       </form>

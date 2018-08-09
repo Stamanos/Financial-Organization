@@ -48,6 +48,7 @@ function searchingLocation() {
 }
 
 //_______________________Make Json Object from Users Input______________________________
+
 function makeNewOutlay(){
     var newAmmount = getElementById("newAmmount").value;
     var newDate = getElementById("newDate").value;
@@ -66,6 +67,7 @@ function makeNewOutlay(){
         moodLevel: newMoodLevel,
         location: newLocation
     }
+    console.log("peo");
     console.log(JsonObj);
 }
 
