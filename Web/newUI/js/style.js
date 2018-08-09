@@ -50,13 +50,13 @@ function searchingLocation() {
 //_______________________Make Json Object from Users Input______________________________
 
 function makeNewOutlay(){
-    var newAmmount = getElementById("newAmmount").value;
-    var newDate = getElementById("newDate").value;
-    var newDescription = getElementById("newDescription").value;
-    var newType = getElementById("newTypeSelection").value;
-    var newUserStatus = getElementById("newUserStatusSelection").value;
-    var newMoodLevel = getElementById("newMoodLevelSelection").value;
-    var newLocation = getElementById("newSearchLocInput").value;
+    //var newAmmount = getElementById("newAmmount").value;
+    var newDate = document.getElementById("newDate").value;
+    var newDescription = document.getElementById("newDescription").value;
+    var newType = document.getElementById("newTypeSelection").value;
+    var newUserStatus = document.getElementById("newUserStatusSelection").value;
+    var newMoodLevel = document.getElementById("newMoodLevelSelection").value;
+    var newLocation = document.getElementById("newSearchLocInput").value;
     
     var JsonObj = {
         ammount: newAmmount,
@@ -67,15 +67,5 @@ function makeNewOutlay(){
         moodLevel: newMoodLevel,
         location: newLocation
     }
-    console.log("peo");
     console.log(JsonObj);
 }
-
-//________________________________EXCEL EDITOR(not checked)_____________________________________________
-xlsx = require('node-xlsx').default;
-
-const data = [[1, 2, 3], [true, false, null, 'sheetjs'], ['foo', 'bar', new Date(2018-08-09), '0.3'], ['baz', null, 'qux']];
-const range = {s: {c:0, r:0}, e: {c:0, r:3}}; //A1:A4
-const option = {'!merges': [ range ]};
-
-var buffer = xlsx.build([{name: "cost", data: data}], option); // Returns a buffer
