@@ -13,7 +13,7 @@
   <div id="chartContainer" style="height: 500px; width: 100%;"></div>
   <div id="filtersContainer" style="position: relative;">
 
-    <h2>Type</h2>
+    <label>Type</label>
     <select id="typeSelection">
       <option value="null"></option>
       <option value="education">Education</option>
@@ -28,18 +28,18 @@
       <option value="household-utilities">Household & utilities</option>Media & Electronics
       <option value="media-electonics">Media & Electronics</option>
       <option value="tax-fines">Tax & Fines</option>
-    </select>
+    </select></br>
 
-    <h2>User Status</h2>
+    <label>User Status</label>
     <select id="userStatusSelection">
       <option value="null"></option>
       <option value="free">Free</option>
       <option value="inRelationship">In Relationship</option>
       <option value="dating">Dating</option>
       <option value="inLove">In Love</option>
-    </select>
+    </select></br>
 
-    <h2>Mood Level</h2>
+    <label>Mood Level</label>
     <select id="moodLevelSelection">
       <option value="null"></option>
       <option value="1">1</option>
@@ -47,9 +47,9 @@
       <option value="3">3</option>
       <option value="4">4</option>
       <option value="5">5</option>
-    </select>
+    </select></br>
 
-    <h2>location</h2>
+    <label>location</label>
     <select id="locationSelection">
       <option value="null"></option>
       <option value="Ag.Kosmas">Ag.Kosmas</option>
@@ -83,9 +83,9 @@
       <option value="Thessaloniki">Thessaloniki</option>
       <option value="Tripoli">Tropoli</option>
       <option value="Tzitzifies">Tzitzifies</option>
-    </select>
+    </select></br>
 
-    <h2>Type Of Chart</h2>
+    <label>Type Of Chart</label>
     <select id="typeOfChartSelection">
       <option value="column">Column</option>
       <option value="spline">Spline</option>
@@ -99,13 +99,16 @@
       <option value="line">Line</option>
       <option value="pie">Pie</option>
       <option value="pyramid">Pyramid</option>
-    </select>
+    </select></br>
 
-    <button onclick="Refresh()">OK</button>
-    <button onclick="window.location.href='newUI/new-UI.html'">Go to new UI</button>
+    <label for="description">description</label>
+          <input type="text" id="searchDescriptionInput" placeholder="Search based on description.." title="Type in description">
+
+    <button onclick="Refresh()">OK</button></br>
+    <button onclick="window.location.href='newUI/new-UI.html'">Go to new UI</button></br>
   </div>
     <div id='my_file_output'>
-      <input type="file" id="my_file_input" />
+      <input type="file" id="my_file_input"/>
     </div>
 </body>
 </html>

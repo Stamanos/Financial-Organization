@@ -24,7 +24,7 @@ function contentFilters(){
   var amountFilter = "null";
   var typeFilter = document.getElementById("typeSelection").value;
   var dateFilter = "null";
-  var descriptionFilter = "null";
+  var descriptionFilter = document.getElementById("searchDescriptionInput").value;
   var userStatusFilter = document.getElementById("userStatusSelection").value;
   var moodLevelFilter = document.getElementById("moodLevelSelection").value;
   var locationFilter = document.getElementById("locationSelection").value;
@@ -32,6 +32,10 @@ function contentFilters(){
   const result =  spendingItems.
   filter(function(s){if(amountFilter !== "null") {return s.amount == amountFilter;} else {return true;}}).
   filter(function(s){if(typeFilter !== "null") {return s.type == typeFilter;} else {return true;}}).
+  filter(function(s){{
+    var stringDescription = String(s.description);
+    return stringDescription.includes(descriptionFilter);
+  }}). //there is a problem
   filter(function(s){if(dateFilter !== "null") {return s.date == dateFilter;} else {return true;}}).
   filter(function(s){if(descriptionFilter !== "null") {return s.description == descriptionFilter;} else {return true;}}).
   filter(function(s){if(userStatusFilter !== "null") {return s.userStatus == userStatusFilter;} else {return true;}}).
@@ -42,6 +46,7 @@ function contentFilters(){
   });
 
   console.log(result);
+  console.log(descriptionFilter);
 
   return result;
 }
