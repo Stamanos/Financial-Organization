@@ -69,3 +69,15 @@ function makeNewOutlay(){
     }
     console.log(JsonObj);
 }
+
+//_________________________SELECT LOCATION__________________________
+function getEventTarget(e) {
+    e = e || window.event;
+    return e.target || e.srcElement; 
+}
+
+var ul = document.getElementById('myLocations');
+function selectLocation(event) {
+    var target = getEventTarget(event);
+    document.getElementById("newSearchLocInput").value = target.innerHTML;
+};
