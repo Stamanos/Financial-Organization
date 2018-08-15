@@ -24,7 +24,7 @@ function contentFilters(){
   var amountFilter = "null";
   var typeFilter = document.getElementById("typeSelection").value;
   var dateFilter = "null";
-  var descriptionFilter = "null";//document.getElementById("searchDescriptionInput").value;
+  var descriptionFilter = document.getElementById("searchDescriptionInput").value;
   var userStatusFilter = document.getElementById("userStatusSelection").value;
   var moodLevelFilter = document.getElementById("moodLevelSelection").value;
   var locationFilter = document.getElementById("locationSelection").value;
@@ -33,7 +33,10 @@ function contentFilters(){
   filter(function(s){if(amountFilter !== "null") {return s.amount == amountFilter;} else {return true;}}).
   filter(function(s){if(typeFilter !== "null") {return s.type == typeFilter;} else {return true;}}).
   filter(function(s){if(dateFilter !== "null") {return s.date == dateFilter;} else {return true;}}).
-  filter(function(s){if(descriptionFilter !== "null") {return s.description == descriptionFilter;} else {return true;}}).
+  filter(function(s){
+    var stringDescription = String(s.description);
+    return stringDescription.includes(descriptionFilter);
+  }).
   filter(function(s){if(userStatusFilter !== "null") {return s.userStatus == userStatusFilter;} else {return true;}}).
   filter(function(s){if(moodLevelFilter !== "null") {return s.moodLevel == moodLevelFilter;} else {return true;}}).
   filter(function(s){if(locationFilter !== "null") {return s.location == locationFilter;} else {return true;}}).
@@ -42,7 +45,9 @@ function contentFilters(){
   });
 
   console.log(result);
-  console.log(descriptionFilter);
+  //console.log(descriptionFilter);
+  var stringDescription = String(result.description);
+  console.log(stringDescription.toUpperCase().indexOf(descriptionFilter));
 
   return result;
 }
@@ -88,7 +93,7 @@ function filePicked(oEvent) {
 }
 
 //____________________To Do______________
-// filter(function(s){{
+// filter(function(s){
 //   var stringDescription = String(s.description);
 //   return stringDescription.includes(descriptionFilter);
-// }}). //there is a problem
+// }). //there is a problem
