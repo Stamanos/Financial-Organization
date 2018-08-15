@@ -9,7 +9,7 @@ function showChart() {
       data: [//array of dataSeries              
         { //dataSeries object
           //ToDo:: put the dates as labels
-         type: styleFilters(),
+         type: chartFilters(),
          dataPoints : contentFilters()
          }
        ]
@@ -29,11 +29,12 @@ function contentFilters(){
   var moodLevelFilter = document.getElementById("moodLevelSelection").value;
   var locationFilter = document.getElementById("locationSelection").value;
 
+  //Filtering
   const result =  spendingItems.
   filter(function(s){if(amountFilter !== "null") {return s.amount == amountFilter;} else {return true;}}).
   filter(function(s){if(typeFilter !== "null") {return s.type == typeFilter;} else {return true;}}).
   filter(function(s){if(dateFilter !== "null") {return s.date == dateFilter;} else {return true;}}).
-  filter(function(s){
+  filter(function(s){//ToDo: Maybe could be in one line
     var stringDescription = String(s.description);
     return stringDescription.includes(descriptionFilter);
   }).
@@ -45,14 +46,10 @@ function contentFilters(){
   });
 
   console.log(result);
-  //console.log(descriptionFilter);
-  var stringDescription = String(result.description);
-  console.log(stringDescription.toUpperCase().indexOf(descriptionFilter));
-
   return result;
 }
 
-function styleFilters(){ //ToDo:: rename it later to chart filters
+function chartFilters(){ //ToDo:: rename it later to chart filters
   return document.getElementById("typeOfChartSelection").value;
 }
 
@@ -91,9 +88,3 @@ function filePicked(oEvent) {
   // Tell JS To Start Reading The File.. You could delay this if desired
   reader.readAsBinaryString(oFile);
 }
-
-//____________________To Do______________
-// filter(function(s){
-//   var stringDescription = String(s.description);
-//   return stringDescription.includes(descriptionFilter);
-// }). //there is a problem
