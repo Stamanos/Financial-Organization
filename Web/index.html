@@ -8,10 +8,22 @@
   <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script>
   <script type="text/javascript" src="Charts.js"></script> <!--ORIGINAL-->
+  <!--for Calendar-->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 </head>
 <body>
   <div id="chartContainer" style="height: 500px; width: 100%;"></div>
   <div id="filtersContainer" style="position: relative;">
+    
+    <div id="reportrange" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
+      <label for="date">Date</label>
+      <i class="fa fa-calendar"></i>&nbsp;
+          <span></span> <i class="fa fa-caret-down"></i>
+      </div>
+      <input type="checkbox" id="dateCheckbox" name="date"> Enable<br></br>
 
     <label>Amount</label>
     <input type="number" id="searchAmountInput" title="Type in amount" placeholder="Enter amount of cost" name="cost" min="0" step="1">
@@ -33,8 +45,6 @@
       <option value="tax-fines">Tax & Fines</option>
     </select>
 
-    <label for="date">Date</label>
-    <input id="dateSelection" type="date" placeholder="date time of cost" name="date-of-cost">
 
     <label>  User Status</label>
     <select id="userStatusSelection">

@@ -1,4 +1,4 @@
-let spendingItems;
+let spendingItems, startDate, endDate;
 
 function showChart() {
     var chartamount = new CanvasJS.Chart("chartContainer", {
@@ -23,7 +23,7 @@ function contentFilters(){
   //declare values
   var amountFilter = document.getElementById("searchAmountInput").value;
   var typeFilter = document.getElementById("typeSelection").value;
-  var dateFilter = document.getElementById("dateSelection").value;
+  var dateFilter = document.getElementById("dateCheckbox").checked;
   var descriptionFilter = document.getElementById("searchDescriptionInput").value;
   var userStatusFilter = document.getElementById("userStatusSelection").value;
   var moodLevelFilter = document.getElementById("moodLevelSelection").value;
@@ -34,15 +34,20 @@ function contentFilters(){
   filter(function(s){if(amountFilter !== "") {return parseFloat(s[" amount "]) == String(amountFilter);} else {return true;}}).
   filter(function(s){if(typeFilter !== "null") {return s.type == typeFilter;} else {return true;}}).
   filter(function(s){
-    if(dateFilter !== "") {
+    if(dateFilter) {
       //creating the cost date as date time
       var costDate_array = String(s.date).split('/');
       var costDate = new Date("20" + costDate_array[2], costDate_array[0] - 1, costDate_array[1]);
-      //creating the filter date as date time
-      var filterDate_array = String(dateFilter).split('-');
-      var filterDate = new Date(filterDate_array[0], filterDate_array[1] - 1, filterDate_array[2]);
 
-      return (costDate.getTime() === filterDate.getTime());
+      //creating the filter date as date time (Start Date)
+      var filterStartDate_array = startDate.format('YYYY-MM-DD').split('-');
+      var filterStartDate = new Date(filterStartDate_array[0], filterStartDate_array[1] - 1, filterStartDate_array[2]);
+
+      //creating the filter date as date time (End Date)
+      var filterEndDate_array = endDate.format('YYYY-MM-DD').split('-');
+      var filterEndDate = new Date(filterEndDate_array[0], filterEndDate_array[1] - 1, filterEndDate_array[2]);
+
+      return ((+filterStartDate.getTime() <= +costDate.getTime()) && (+costDate.getTime() <= +filterEndDate.getTime()));
     }
     else {
       return true;
@@ -98,3 +103,33 @@ function filePicked(oEvent) {
   // Tell JS To Start Reading The File.. You could delay this if desired
   reader.readAsBinaryString(oFile);
 }
+
+//_____For the calendar_______
+$(function() {
+
+  var start = moment().subtract(29, 'days');
+  var end = moment();
+
+  function cb(start, end) {
+      $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+      console.log("A new date selection was made: " + start + ' to ' + end); 
+      startDate = start;
+      endDate = end;
+
+  }
+
+  $('#reportrange').daterangepicker({
+      startDate: start,
+      endDate: end,
+      ranges: {
+         'Today': [moment(), moment()],
+         'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+         'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+         'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+         'This Month': [moment().startOf('month'), moment().endOf('month')],
+         'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+      }
+  }, cb);
+
+  cb(start, end);
+});
