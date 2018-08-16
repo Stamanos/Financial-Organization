@@ -21,7 +21,7 @@ function showChart() {
 // functions that modify the spendingItems by the given filters
 function contentFilters(){
   //declare values
-  var amountFilter = "null";
+  var amountFilter = document.getElementById("searchAmountInput").value;
   var typeFilter = document.getElementById("typeSelection").value;
   var dateFilter = document.getElementById("dateSelection").value;
   var descriptionFilter = document.getElementById("searchDescriptionInput").value;
@@ -31,7 +31,7 @@ function contentFilters(){
 
   //Filtering
   const result =  spendingItems.
-  filter(function(s){if(amountFilter !== "null") {return s.amount == amountFilter;} else {return true;}}).
+  filter(function(s){if(amountFilter !== "") {return parseFloat(s[" amount "]) == String(amountFilter);} else {return true;}}).
   filter(function(s){if(typeFilter !== "null") {return s.type == typeFilter;} else {return true;}}).
   filter(function(s){
     if(dateFilter !== "") {
@@ -47,10 +47,7 @@ function contentFilters(){
     else {
       return true;
     }}).
-  filter(function(s){//ToDo: Maybe could be in one line
-    var stringDescription = String(s.description);
-    return stringDescription.includes(descriptionFilter);
-  }).
+  filter(function(s){return String(s.description).includes(descriptionFilter);}).
   filter(function(s){if(userStatusFilter !== "null") {return s.userStatus == userStatusFilter;} else {return true;}}).
   filter(function(s){if(moodLevelFilter !== "null") {return s.moodLevel == moodLevelFilter;} else {return true;}}).
   filter(function(s){if(locationFilter !== "null") {return s.location == locationFilter;} else {return true;}}).

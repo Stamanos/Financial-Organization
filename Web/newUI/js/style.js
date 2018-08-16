@@ -50,7 +50,7 @@ function searchingLocation() {
 //_______________________Make Json Object from Users Input______________________________
 
 function makeNewOutlay(){
-    var newAmmount = document.getElementById("newAmmount").value;
+    var newamount = document.getElementById("newamount").value;
     var newDate = document.getElementById("newDate").value;
     var newDescription = document.getElementById("newDescription").value;
     var newType = document.getElementById("newTypeSelection").value;
@@ -59,7 +59,7 @@ function makeNewOutlay(){
     var newLocation = document.getElementById("newSearchLocInput").value;
     
     var JsonObj = {
-        ammount: newAmmount,
+        amount: newamount,
         date: newDate,
         description: newDescription,
         type: newType,
