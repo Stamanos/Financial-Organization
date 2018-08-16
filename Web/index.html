@@ -13,7 +13,7 @@
   <div id="chartContainer" style="height: 500px; width: 100%;"></div>
   <div id="filtersContainer" style="position: relative;">
 
-    <label>Type</label>
+    <label>  Type</label>
     <select id="typeSelection">
       <option value="null"></option>
       <option value="education">Education</option>
@@ -28,9 +28,12 @@
       <option value="household-utilities">Household & utilities</option>Media & Electronics
       <option value="media-electonics">Media & Electronics</option>
       <option value="tax-fines">Tax & Fines</option>
-    </select></br>
+    </select>
 
-    <label>User Status</label>
+    <label for="date">Date</label>
+    <input id="dateSelection" type="date" placeholder="date time of cost" name="date-of-cost">
+
+    <label>  User Status</label>
     <select id="userStatusSelection">
       <option value="null"></option>
       <option value="free">Free</option>
@@ -39,7 +42,7 @@
       <option value="inLove">In Love</option>
     </select></br>
 
-    <label>Mood Level</label>
+    <label>  Mood Level</label>
     <select id="moodLevelSelection">
       <option value="null"></option>
       <option value="1">1</option>
@@ -47,9 +50,9 @@
       <option value="3">3</option>
       <option value="4">4</option>
       <option value="5">5</option>
-    </select></br>
+    </select>
 
-    <label>Location</label>
+    <label>  Location</label>
     <select id="locationSelection">
       <option value="null"></option>
       <option value="Ag.Kosmas">Ag.Kosmas</option>
@@ -83,9 +86,9 @@
       <option value="Thessaloniki">Thessaloniki</option>
       <option value="Tripoli">Tropoli</option>
       <option value="Tzitzifies">Tzitzifies</option>
-    </select></br>
+    </select>
 
-    <label>Type Of Chart</label>
+    <label>  Type Of Chart</label>
     <select id="typeOfChartSelection">
       <option value="column">Column</option>
       <option value="spline">Spline</option>
@@ -99,12 +102,12 @@
       <option value="line">Line</option>
       <option value="pie">Pie</option>
       <option value="pyramid">Pyramid</option>
-    </select></br>
+    </select>
 
-    <label for="description">description</label>
-          <input type="text" id="searchDescriptionInput" placeholder="Search based on description.." title="Type in description">
+    <label for="description">  Description</label>
+    <input type="text" id="searchDescriptionInput" placeholder="Search based on description.." title="Type in description">
 
-    <button onclick="Refresh()">OK</button></br>
+    <button onclick="Refresh()">OK</button>
     <button onclick="window.location.href='newUI/new-UI.html'">Go to new UI</button></br>
   </div>
     <div id='my_file_output'>

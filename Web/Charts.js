@@ -23,7 +23,7 @@ function contentFilters(){
   //declare values
   var amountFilter = "null";
   var typeFilter = document.getElementById("typeSelection").value;
-  var dateFilter = "null";
+  var dateFilter = document.getElementById("dateSelection").value;
   var descriptionFilter = document.getElementById("searchDescriptionInput").value;
   var userStatusFilter = document.getElementById("userStatusSelection").value;
   var moodLevelFilter = document.getElementById("moodLevelSelection").value;
@@ -33,7 +33,20 @@ function contentFilters(){
   const result =  spendingItems.
   filter(function(s){if(amountFilter !== "null") {return s.amount == amountFilter;} else {return true;}}).
   filter(function(s){if(typeFilter !== "null") {return s.type == typeFilter;} else {return true;}}).
-  filter(function(s){if(dateFilter !== "null") {return s.date == dateFilter;} else {return true;}}).
+  filter(function(s){
+    if(dateFilter !== "") {
+      //creating the cost date as date time
+      var costDate_array = String(s.date).split('/');
+      var costDate = new Date("20" + costDate_array[2], costDate_array[0] - 1, costDate_array[1]);
+      //creating the filter date as date time
+      var filterDate_array = String(dateFilter).split('-');
+      var filterDate = new Date(filterDate_array[0], filterDate_array[1] - 1, filterDate_array[2]);
+
+      return (costDate.getTime() === filterDate.getTime());
+    }
+    else {
+      return true;
+    }}).
   filter(function(s){//ToDo: Maybe could be in one line
     var stringDescription = String(s.description);
     return stringDescription.includes(descriptionFilter);
