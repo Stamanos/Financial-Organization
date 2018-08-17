@@ -1,4 +1,4 @@
-let spendingItems, startDate, endDate;
+let spendingItems, startDate, endDate, startAmount, endAmount;
 
 function showChart() {
     var chartamount = new CanvasJS.Chart("chartContainer", {
@@ -21,7 +21,7 @@ function showChart() {
 // functions that modify the spendingItems by the given filters
 function contentFilters(){
   //declare values
-  var amountFilter = document.getElementById("searchAmountInput").value;
+  var amountFilter = "null"; //not in Use yet!
   var typeFilter = document.getElementById("typeSelection").value;
   var dateFilter = document.getElementById("dateCheckbox").checked;
   var descriptionFilter = document.getElementById("searchDescriptionInput").value;
@@ -31,7 +31,9 @@ function contentFilters(){
 
   //Filtering
   const result =  spendingItems.
-  filter(function(s){if(amountFilter !== "") {return parseFloat(s[" amount "]) == String(amountFilter);} else {return true;}}).
+  filter(function(s){if(amountFilter !== "null") {
+    return ((startAmount <= parseFloat(s[" amount "])) && (parseFloat(s[" amount "] <= endAmount)));
+  } else {return true;}}).
   filter(function(s){if(typeFilter !== "null") {return s.type == typeFilter;} else {return true;}}).
   filter(function(s){
     if(dateFilter) {
@@ -60,6 +62,8 @@ function contentFilters(){
     return {label: i.description, y: parseFloat(i[" amount "])};
   });
 
+  console.log(String(startAmount));
+  console.log(endAmount);
   console.log(result);
   return result;
 }
@@ -111,8 +115,7 @@ $(function() {
   function cb(start, end) {
       $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
       startDate = start;
-      endDate = end
-
+      endDate = end;
   }
 
   $('#reportrange').daterangepicker({
@@ -129,6 +132,22 @@ $(function() {
   }, cb);
 
   cb(start, end);
+
 });
 
-var slider = new Slider('#ex2', {});
+//__________For The Slider____________
+$( function() {
+  $( "#slider-range" ).slider({
+    range: true,
+    min: 0,
+    max: 500,
+    values: [ 75, 300 ],
+    slide: function( event, ui ) {
+      $( "#amountRange" ).val( "€" + ui.values[ 0 ] + " - €" + ui.values[ 1 ] );
+      startAmount = ui.values[ 0 ];
+      endAmount = ui.values[ 1 ];
+    }
+  });
+  $( "#amountRange" ).val( "€" + $( "#slider-range" ).slider( "values", 0 ) +
+    " - €" + $( "#slider-range" ).slider( "values", 1 ) );
+});
