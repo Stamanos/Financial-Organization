@@ -82,8 +82,6 @@ $(function() {
 });
 
 
-
-
 function filePicked(oEvent) {
   // Get The File From The Input
   var oFile = oEvent.target.files[0];
@@ -112,9 +110,8 @@ $(function() {
 
   function cb(start, end) {
       $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-      console.log("A new date selection was made: " + start + ' to ' + end); 
       startDate = start;
-      endDate = end;
+      endDate = end
 
   }
 
@@ -133,3 +130,5 @@ $(function() {
 
   cb(start, end);
 });
+
+var slider = new Slider('#ex2', {});
