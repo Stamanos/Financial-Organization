@@ -21,19 +21,23 @@ function showChart() {
 // functions that modify the spendingItems by the given filters
 function contentFilters(){
   //declare values
-  var amountFilter = "null"; //not in Use yet!
+  startAmount = $( "#slider-range" ).slider( "values", 0 );
+  endAmount = $( "#slider-range" ).slider( "values", 1 );
+  
   var typeFilter = document.getElementById("typeSelection").value;
   var dateFilter = document.getElementById("dateCheckbox").checked;
   var descriptionFilter = document.getElementById("searchDescriptionInput").value;
   var userStatusFilter = document.getElementById("userStatusSelection").value;
   var moodLevelFilter = document.getElementById("moodLevelSelection").value;
   var locationFilter = document.getElementById("locationSelection").value;
+  
 
   //Filtering
   const result =  spendingItems.
-  filter(function(s){if(amountFilter !== "null") {
-    return ((startAmount <= parseFloat(s[" amount "])) && (parseFloat(s[" amount "] <= endAmount)));
-  } else {return true;}}).
+  filter(function(s){//Cost Amount filter
+    var cost = parseFloat(s[" amount "]);
+    return (parseFloat(startAmount) <= cost && cost <= parseFloat(endAmount));
+  }).
   filter(function(s){if(typeFilter !== "null") {return s.type == typeFilter;} else {return true;}}).
   filter(function(s){
     if(dateFilter) {
@@ -62,8 +66,6 @@ function contentFilters(){
     return {label: i.description, y: parseFloat(i[" amount "])};
   });
 
-  console.log(String(startAmount));
-  console.log(endAmount);
   console.log(result);
   return result;
 }
@@ -144,8 +146,6 @@ $( function() {
     values: [ 75, 300 ],
     slide: function( event, ui ) {
       $( "#amountRange" ).val( "€" + ui.values[ 0 ] + " - €" + ui.values[ 1 ] );
-      startAmount = ui.values[ 0 ];
-      endAmount = ui.values[ 1 ];
     }
   });
   $( "#amountRange" ).val( "€" + $( "#slider-range" ).slider( "values", 0 ) +
