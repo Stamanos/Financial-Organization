@@ -28,8 +28,31 @@ namespace SQLite
                     connection.Open();
 
                     //If I want to add values
-                    cmd.CommandText = insertToTable;
-                    cmd.ExecuteNonQuery();
+                    //cmd.CommandText = insertToTable;
+                    //cmd.ExecuteNonQuery();
+
+                    //__________TKE INPUTS FROM THE USER______________
+                    //var amount = Console.ReadLine();
+                    //var type = Console.ReadLine();
+                    //var date = Console.ReadLine();
+                    //var description = Console.ReadLine();
+                    //var userStatus = Console.ReadLine();
+                    //var moodLevel = Console.ReadLine();
+                    //var location = Console.ReadLine();
+                    //
+                    //string results = "Amount : " + amount.ToString() + ", " +
+                    //                  "Type : " + type.ToString() + ", " +
+                    //                  "Date : " + date.ToString() + ", " +
+                    //                  "Description : " + description.ToString() + ", " +
+                    //                  "User Status : " + userStatus.ToString() + ", " +
+                    //                  "Mood Level : " + moodLevel.ToString() + ", " +
+                    //                  "Weather : NULL" + ", " +
+                    //                  "Location : " + location.ToString();
+                    //
+                    //Console.WriteLine(results);
+
+
+
 
                     cmd.CommandText = "SELECT* from costs ";
                     using(SQLiteDataReader reader = cmd.ExecuteReader())
