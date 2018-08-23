@@ -26,7 +26,7 @@ namespace SQLite
                     connection.Open();
 
 
-                    //__________TKE INPUTS FROM THE USER______________
+                    //__________ThE INPUTS FROM THE USER______________
                     Console.WriteLine("Please incert amount of cost!");
                     var amount = Console.ReadLine();
                     Console.WriteLine("Please incert type of cost!");
@@ -64,23 +64,23 @@ namespace SQLite
                         "', '" + location + 
                         "')";
                     
-                    //cmd.CommandText = insertToTable;
-                    //cmd.ExecuteNonQuery();
+                    cmd.CommandText = insertToTable;
+                    cmd.ExecuteNonQuery();
 
                     Console.WriteLine(results);
 
 
 
 
-                    //cmd.CommandText = "SELECT* from costs ";
-                    //using(SQLiteDataReader reader = cmd.ExecuteReader())
-                    //{
-                    //    while (reader.Read())
-                    //    {
-                    //        Console.WriteLine(reader["amount"].ToString() + " : " + reader["type"] + " : " + reader["description"]);
-                    //    }
-                    //    connection.Close();
-                    //}
+                    cmd.CommandText = "SELECT* from costs ";
+                    using(SQLiteDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Console.WriteLine(reader["amount"].ToString() + " : " + reader["type"] + " : " + reader["description"]);
+                        }
+                        connection.Close();
+                    }
 
                 }
             }
