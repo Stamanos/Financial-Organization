@@ -73,8 +73,7 @@ db.close((err) => {
 });
 //#endregion
 
-//_____________________________SERVER_______________________________
-var http = require('http'),
+//#region SERVER
     fs = require('fs'),
     request = require('request');
 
@@ -123,3 +122,5 @@ var server = http.createServer(function (request, response) {
 });
 
 server.listen(8000, function() {console.log("server listening on port 8000...")});
+
+//#endregion
