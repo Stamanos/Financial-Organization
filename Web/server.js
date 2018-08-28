@@ -74,26 +74,9 @@ db.close((err) => {
 //#endregion
 
 //#region SERVER
+var http = require('http'),
     fs = require('fs'),
     request = require('request');
-
-fs.readFile('./index.html', function (err, html) {
-    if (err) {
-        throw err; 
-    }       
-    http.createServer(function (request, response) {
-      switch (request.url) {
-        case "./public/js/Charts.js" :
-          response.writeHeader(200, {"Content-Type" : "text/javascript"});
-          response.write(css);
-          break;
-        default :
-          response.writeHeader(200, {"Content-Type": "text/html"});  
-          response.write(html);
-      }
-      response.end();  
-  })
-});
 
 var server = http.createServer(function (request, response) {
   fs.readFile('./' + request.url, function(err, data) {
