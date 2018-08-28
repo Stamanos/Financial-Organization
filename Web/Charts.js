@@ -19,6 +19,7 @@ function showChart() {
   }
 
 // functions that modify the spendingItems by the given filters
+//#region Filtering
 function contentFilters(){
   //declare values
   startAmount = $( "#slider-range" ).slider( "values", 0 );
@@ -32,7 +33,6 @@ function contentFilters(){
   var locationFilter = document.getElementById("locationSelection").value;
   
 
-  //Filtering
   const result =  spendingItems.
   filter(function(s){//Cost Amount filter
     var cost = parseFloat(s[" amount "]);
@@ -69,8 +69,9 @@ function contentFilters(){
   console.log(result);
   return result;
 }
+//#endregion
 
-function chartFilters(){ //ToDo:: rename it later to chart filters
+function chartFilters(){
   return document.getElementById("typeOfChartSelection").value;
 }
 
@@ -78,7 +79,7 @@ function Refresh(){
   showChart();
 }
 
-
+//#region ExcelToJson
 $(function() {
   var oFileIn;
   oFileIn = document.getElementById('my_file_input');
@@ -107,8 +108,9 @@ function filePicked(oEvent) {
   // Tell JS To Start Reading The File.. You could delay this if desired
   reader.readAsBinaryString(oFile);
 }
+//#endregion
 
-//_____For the calendar_______
+//#region Calendar
 $(function() {
 
   var start = moment().subtract(29, 'days');
@@ -137,7 +139,9 @@ $(function() {
 
 });
 
-//__________For The Slider____________
+//#endregion
+
+//#region Slider
 $( function() {
   $( "#slider-range" ).slider({
     range: true,
@@ -151,3 +155,4 @@ $( function() {
   $( "#amountRange" ).val( "€" + $( "#slider-range" ).slider( "values", 0 ) +
     " - €" + $( "#slider-range" ).slider( "values", 1 ) );
 });
+//#endregion
