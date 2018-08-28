@@ -1,20 +1,5 @@
-var http = require('http'),
-    fs = require('fs');
 
-
-fs.readFile('./index.html', function (err, html) {
-    if (err) {
-        throw err; 
-    }       
-    http.createServer(function(request, response) {  
-        response.writeHeader(200, {"Content-Type": "text/html"});  
-        response.write(html);  
-        response.end();  
-    }).listen(8000);
-});
-
-
-//________________________________DATABASE________________________________
+//#region DATABASE
 //sqlite3.OPEN_READONLY: open the database for read-only.
 //sqlite3.OPEN_READWRITE : open the database for reading and writting.
 //sqlite3.OPEN_CREATE: open the database, if the database does not exist, create a new database.
@@ -62,7 +47,7 @@ db.each(insertToTable, (err, row) => {
 const sqlite3 = require('sqlite3').verbose();
  
 // open database in memory
-let db = new sqlite3.Database('./costs.sqlite', sqlite3.OPEN_READWRITE, (err) => {
+let db = new sqlite3.Database('./Database/costs.sqlite', sqlite3.OPEN_READWRITE, (err) => {
   if (err) {
     return console.error(err.message);
   }
@@ -86,3 +71,55 @@ db.close((err) => {
   }
   console.log('Close the database connection.');
 });
+//#endregion
+
+//_____________________________SERVER_______________________________
+var http = require('http'),
+    fs = require('fs'),
+    request = require('request');
+
+fs.readFile('./index.html', function (err, html) {
+    if (err) {
+        throw err; 
+    }       
+    http.createServer(function (request, response) {
+      switch (request.url) {
+        case "./public/js/Charts.js" :
+          response.writeHeader(200, {"Content-Type" : "text/javascript"});
+          response.write(css);
+          break;
+        default :
+          response.writeHeader(200, {"Content-Type": "text/html"});  
+          response.write(html);
+      }
+      response.end();  
+  })
+});
+
+var server = http.createServer(function (request, response) {
+  fs.readFile('./' + request.url, function(err, data) {
+      if (!err) {
+          var dotoffset = request.url.lastIndexOf('.');
+          var mimetype = dotoffset == -1
+                          ? 'text/plain'
+                          : {
+                              '.html' : 'text/html',
+                              '.ico' : 'image/x-icon',
+                              '.jpg' : 'image/jpeg',
+                              '.png' : 'image/png',
+                              '.gif' : 'image/gif',
+                              '.css' : 'text/css',
+                              '.js' : 'text/javascript'
+                              }[ request.url.substr(dotoffset) ];
+          response.setHeader('Content-type' , mimetype);
+          response.end(data);
+          console.log( request.url, mimetype );
+      } else {
+          console.log ('file not found: ' + request.url);
+          response.writeHead(404, "Not Found");
+          response.end();
+      }
+  });
+});
+
+server.listen(8000, function() {console.log("server listening on port 8000...")});
