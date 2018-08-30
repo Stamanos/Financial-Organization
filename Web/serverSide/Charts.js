@@ -1,7 +1,5 @@
 //#region DATABASE
-//sqlite3.OPEN_READONLY: open the database for read-only.
-//sqlite3.OPEN_READWRITE : open the database for reading and writting.
-//sqlite3.OPEN_CREATE: open the database, if the database does not exist, create a new database.
+const sqlite3 = require('sqlite3').verbose();
 
 //Insert To Database
 function makeNewOutlay(){
@@ -24,7 +22,69 @@ function makeNewOutlay(){
                             "', '" + location + 
                             "')";
 
-    /* // That what you insert into db.serialize
+
+    // open database
+    let db = new sqlite3.Database('./Database/costs.sqlite', sqlite3.OPEN_READWRITE, (err) => {
+        if (err) {
+            return console.error(err.message);
+        }
+        console.log('Connected to the costs SQlite database.');
+    });
+        
+    db.serialize(() => {
+        db.each(insertToTable, (err, row) => {
+            if (err) {
+                console.error(err.message);
+            }
+        });
+        });
+    
+    // close the database connection
+    db.close((err) => {
+        if (err) {
+            return console.error(err.message);
+        }
+        console.log('Close the database connection.');
+    });
+}
+
+function showDataBy(orderColumn){
+
+    // open database
+    let db = new sqlite3.Database('./Database/costs.sqlite', sqlite3.OPEN_READONLY, (err) => {
+        if (err) {
+            return console.error(err.message);
+        }
+        console.log('Connected to the costs SQlite database.');
+    });
+        
+    db.serialize(() => {
+        db.each(`SELECT DISTINCT ` + orderColumn + ` FROM costs`, (err, row) => {
+            if (err) {
+                console.error(err.message);
+            }
+            console.log(row[orderColumn]);
+        });
+    });
+    
+    // close the database connection
+    db.close((err) => {
+        if (err) {
+            return console.error(err.message);
+        }
+        console.log('Close the database connection.');
+    });
+
+    return columnList;
+}
+
+
+//sqlite3.OPEN_READONLY: open the database for read-only.
+//sqlite3.OPEN_READWRITE : open the database for reading and writting.
+//sqlite3.OPEN_CREATE: open the database, if the database does not exist, create a new database.
+
+// That what you insert into db.serialize
+/* 
         db.each(`SELECT amount, type, date, description, userStatus, moodLevel, weather, location
                 FROM costs`, (err, row) => {
         if (err) {
@@ -32,8 +92,7 @@ function makeNewOutlay(){
         }
         console.log(row.amount + "\t" + row.type + "\t" + row.date + "\t" + row.description + "\t" + row.userStatus + "\t" + row.moodLevel + "\t" + row.weather + "\t" + row.location);
         });
-    */
-    }
+*/
 
 //Distinct from Database
 /*
@@ -45,29 +104,5 @@ function makeNewOutlay(){
     });
 */
 
-const sqlite3 = require('sqlite3').verbose();
- 
-// open database
-let db = new sqlite3.Database('./Database/costs.sqlite', sqlite3.OPEN_READWRITE, (err) => {
-  if (err) {
-    return console.error(err.message);
-  }
-  console.log('Connected to the costs SQlite database.');
-});
- 
-db.serialize(() => {
-    db.each(insertToTable, (err, row) => {
-        if (err) {
-            console.error(err.message);
-        }
-    });
-  });
 
-// close the database connection
-db.close((err) => {
-  if (err) {
-    return console.error(err.message);
-  }
-  console.log('Close the database connection.');
-});
 //#endregion
