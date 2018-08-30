@@ -78,6 +78,13 @@ function showDataBy(){
     });
 }
 
+function applyFilters(amount, start, end){
+    var searchInTable = `SELECT `+ `amount` + ` FROM costs WHERE amount > ` + start +
+    ` WHERE amount < ` + end;
+     
+}
+
+
 
 //sqlite3.OPEN_READONLY: open the database for read-only.
 //sqlite3.OPEN_READWRITE : open the database for reading and writting.
@@ -93,17 +100,6 @@ function showDataBy(){
         console.log(row.amount + "\t" + row.type + "\t" + row.date + "\t" + row.description + "\t" + row.userStatus + "\t" + row.moodLevel + "\t" + row.weather + "\t" + row.location);
         });
 */
-
-//Distinct from Database
-/*
-    db.each(`SELECT DISTINCT type FROM costs`, (err, row) => {
-        if (err) {
-            console.error(err.message);
-        }
-        console.log(row.type);
-    });
-*/
-
 
 //#endregion
 
