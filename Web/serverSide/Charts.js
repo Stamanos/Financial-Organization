@@ -48,8 +48,9 @@ function makeNewOutlay(){
     });
 }
 
-function showDataBy(orderColumn){
+function showDataBy(){
 
+    orderColumn = "type";
     // open database
     let db = new sqlite3.Database('./Database/costs.sqlite', sqlite3.OPEN_READONLY, (err) => {
         if (err) {
@@ -64,6 +65,7 @@ function showDataBy(orderColumn){
                 console.error(err.message);
             }
             console.log(row[orderColumn]);
+            changeSelection("typeSelection", row[orderColumn]);
         });
     });
     
@@ -74,8 +76,6 @@ function showDataBy(orderColumn){
         }
         console.log('Close the database connection.');
     });
-
-    return columnList;
 }
 
 
@@ -106,3 +106,13 @@ function showDataBy(orderColumn){
 
 
 //#endregion
+
+
+function changeSelection(id, optionName){
+
+    var x = document.getElementById(id);
+    var c = document.createElement("option");
+    c.text = optionName;
+    //c.value = optionName;
+    x.options.add(c, 1);
+}
