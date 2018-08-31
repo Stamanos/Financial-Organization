@@ -11,6 +11,7 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script>
   <script type="text/javascript" src="./public/js/Charts.js"></script> <!--ORIGINAL-->
   <script type="text/javascript" src="./serverSide/Charts.js"></script> <!--ORIGINAL-->
+  <script type="text/javascript" src="./server.js"></script> <!--ORIGINAL-->
   <!--for Calendar-->
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
   <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
@@ -38,18 +39,6 @@
     <label>  Type</label>
     <select id="typeSelection">
       <option value="null"></option>
-      <option value="education">Education</option>
-      <option value="entertainment">Entertainment</option>
-      <option value="family-friends">Family & friends</option>
-      <option value="health-care">Health care</option>
-      <option value="transport">Transport</option>
-      <option value="beauty">Beauty</option>
-      <option value="shopping">Shopping</option>
-      <option value="food-drink">Food & drink</option>
-      <option value="travel-holidays">Travel & holidays</option>
-      <option value="household-utilities">Household & utilities</option>Media & Electronics
-      <option value="media-electonics">Media & Electronics</option>
-      <option value="tax-fines">Tax & Fines</option>
     </select></br> 
 
 
@@ -124,6 +113,13 @@
       <option value="pyramid">Pyramid</option>
     </select></br>
 
+    <select id="mySelect" size="4">
+      <option>Apple</option>
+      <option>Pear</option>
+      <option>Banana</option>
+      <option>Orange</option>
+    </select></br>
+
     <label for="description">  Description</label>
     <input type="text" id="searchDescriptionInput" placeholder="Search based on description.." title="Type in description"></br>
   </br>
@@ -132,7 +128,7 @@
 </br>
     <button onclick="window.location.href='public/newUI/new-UI.html'">Go to new UI</button></br>
   </div>
-  <button onclick="showDataBy()">Test</button></br>
+  <button onclick="changeSelection('typeSelection', 'PEOS')">Test</button></br>
 </br>
     <div id='my_file_output'>
       <input type="file" id="my_file_input"/>

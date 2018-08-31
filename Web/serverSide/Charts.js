@@ -1,8 +1,13 @@
 //#region DATABASE
 const sqlite3 = require('sqlite3').verbose();
+const jsdom = require("jsdom");
+const { JSDOM } = jsdom;
+
 
 //Insert To Database
 function makeNewOutlay(){
+    const sqlite3 = require('sqlite3').verbose();
+
     var amount = document.getElementById("newamount").value;
     var type = document.getElementById("newTypeSelection").value;
     var date = document.getElementById("newDate").value;
@@ -50,6 +55,8 @@ function makeNewOutlay(){
 
 function showDataBy(){
 
+    const sqlite3 = require('sqlite3').verbose();
+
     orderColumn = "type";
     // open database
     let db = new sqlite3.Database('./Database/costs.sqlite', sqlite3.OPEN_READONLY, (err) => {
@@ -65,7 +72,7 @@ function showDataBy(){
                 console.error(err.message);
             }
             console.log(row[orderColumn]);
-            changeSelection("typeSelection", row[orderColumn]);
+            changeSelection('typeSelection', row[orderColumn]);
         });
     });
     
@@ -101,13 +108,15 @@ function applyFilters(amount, start, end){
 */
 
 //#endregion
-
-
-function changeSelection(id, optionName){
-
-    var x = document.getElementById(id);
-    var c = document.createElement("option");
-    c.text = optionName;
-    c.value = optionName;
-    x.options.add(c, 1);
+module.exports = {
+    changeSelection: function (id, optionName){
+        JSDOM.fromFile("index.html").then(dom => {
+            var x = dom.window.document.getElementById(id);
+            var c = dom.window.document.createElement("option");
+            c.text = optionName;
+            c.value = optionName;
+            x.options.add(c, 1);
+            console.log(x);
+          });
+    }
 }
