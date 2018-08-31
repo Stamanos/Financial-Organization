@@ -109,6 +109,6 @@ function changeSelection(id, optionName){
     var x = document.getElementById(id);
     var c = document.createElement("option");
     c.text = optionName;
-    //c.value = optionName;
+    c.value = optionName;
     x.options.add(c, 1);
 }
