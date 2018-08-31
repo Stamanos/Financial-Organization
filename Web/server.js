@@ -1,31 +1,10 @@
 const sqlite3 = require('sqlite3').verbose();
-const charts = require('./serverSide/Charts');
-// import { changeSelection } from './serverSide/Charts';
-    orderColumn = "type";
-    // open database
-    let db = new sqlite3.Database('./Database/costs.sqlite', sqlite3.OPEN_READONLY, (err) => {
-        if (err) {
-            return console.error(err.message);
-        }
-        console.log('Connected to the costs SQlite database.');
-    });
-        
-    db.serialize(() => {
-        db.each(`SELECT DISTINCT ` + orderColumn + ` FROM costs`, (err, row) => {
-            if (err) {
-                console.error(err.message);
-            }
-            charts.changeSelection("typeSelection", row[orderColumn]);
-        });
-    });
-    
-    // close the database connection
-    db.close((err) => {
-        if (err) {
-            return console.error(err.message);
-        }
-        console.log('Close the database connection.');
-    });
+
+// const charts = require('./serverSide/Charts');
+// charts.showDataBy();
+
+const htmlToJson = require('./serverSide/Json/htmlFromJson');
+htmlToJson.foo();
 
 //#region SERVER
 var http = require('http'),
