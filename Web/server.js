@@ -4,8 +4,7 @@ htmlToJson.createJsonFiles();
 
 //#region SERVER
 var http = require('http'),
-    fs = require('fs'),
-    request = require('request');
+    fs = require('fs');
 
 var server = http.createServer(function (request, response) {
   fs.readFile('./' + request.url, function(err, data) {
