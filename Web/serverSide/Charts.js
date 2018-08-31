@@ -81,7 +81,6 @@ function showDataBy(){
 function applyFilters(amount, start, end){
     var searchInTable = `SELECT `+ `amount` + ` FROM costs WHERE amount > ` + start +
     ` WHERE amount < ` + end;
-     
 }
 
 
