@@ -10,7 +10,7 @@
   <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script>
   <script type="text/javascript" src="./public/js/Charts.js"></script> <!--ORIGINAL-->
-  <script type="text/javascript" src="./serverSide/Charts.js"></script> <!--ORIGINAL-->
+  <script type="text/javascript" src="./Charts.js"></script> <!--ORIGINAL-->
   <script type="text/javascript" src="./server.js"></script> <!--ORIGINAL-->
   <!--for Calendar-->
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
@@ -20,6 +20,12 @@
   <!--For Slider-->
   <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <!--for Calendar-->
+  <script src="columns.json"></script>
+  <script src="location.json"></script>
+  <script src="moodLevel.json"></script>
+  <script src="type.json"></script>
+  <script src="userStatus.json"></script>
 </head>
 <body>
   <div id="chartContainer" style="height: 500px; width: 100%;"></div>
@@ -39,74 +45,22 @@
     <label>  Type</label>
     <select id="typeSelection">
       <option value="null"></option>
-      <!-- <option value="education">Education</option>
-      <option value="entertainment">Entertainment</option>
-      <option value="family-friends">Family & friends</option>
-      <option value="health-care">Health care</option>
-      <option value="transport">Transport</option>
-      <option value="beauty">Beauty</option>
-      <option value="shopping">Shopping</option>
-      <option value="food-drink">Food & drink</option>
-      <option value="travel-holidays">Travel & holidays</option>
-      <option value="household-utilities">Household & utilities</option>Media & Electronics
-      <option value="media-electonics">Media & Electronics</option>
-      <option value="tax-fines">Tax & Fines</option> -->
     </select></br> 
 
 
     <label>  User Status</label>
     <select id="userStatusSelection">
       <option value="null"></option>
-      <option value="free">Free</option>
-      <option value="inRelationship">In Relationship</option>
-      <option value="dating">Dating</option>
-      <option value="inLove">In Love</option>
     </select></br>
 
     <label>  Mood Level</label>
     <select id="moodLevelSelection">
       <option value="null"></option>
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
     </select></br>
 
     <label>  Location</label>
     <select id="locationSelection">
       <option value="null"></option>
-      <option value="Ag.Kosmas">Ag.Kosmas</option>
-      <option value="Aigaleo">Aigaleo</option>
-      <option value="Airport">Airport</option>
-      <option value="Ampelokipi">Ampelokipi</option>
-      <option value="Chalandri">Chalandri</option>
-      <option value="Cyprus">Cyprus</option>
-      <option value="Galatsi">Galatsi</option>
-      <option value="Glyfada">Glyfada</option>
-      <option value="Irakleion">Irakleion</option>
-      <option value="Kalampaka">Kalampaka</option>
-      <option value="Karditsa">Karditsa</option>
-      <option value="Kato Patisia">Kato Patisia</option>
-      <option value="Kifisia">Kifisia</option>
-      <option value="Kifisos">Kifisos</option>
-      <option value="Kypseli">Kypseli</option>
-      <option value="Larisa">Larisa</option>
-      <option value="Marousi">Marousi</option>
-      <option value="Monastiraki">Monastiraki</option>
-      <option value="Nafplio">Nafplio</option>
-      <option value="New Irakleion">New Irakleion</option>
-      <option value="Nea Smyrni">Nea Smyrni</option>
-      <option value="Pagrati">Pagrati</option>
-      <option value="Panormou">Panormou</option>
-      <option value="Patra">Patra</option>
-      <option value="Peristeri">Peristeri</option>
-      <option value="Piraeus">Piraeus</option>
-      <option value="Rethymno">Rethymno</option>
-      <option value="Syntagma">Syntagma</option>
-      <option value="Thessaloniki">Thessaloniki</option>
-      <option value="Tripoli">Tropoli</option>
-      <option value="Tzitzifies">Tzitzifies</option>
     </select></br>
 
     <label>  Type Of Chart</label>

@@ -1,10 +1,6 @@
-const sqlite3 = require('sqlite3').verbose();
-
-// const charts = require('./serverSide/Charts');
-// charts.showDataBy();
 
 const htmlToJson = require('./serverSide/Json/htmlFromJson');
-htmlToJson.foo();
+htmlToJson.createJsonFiles();
 
 //#region SERVER
 var http = require('http'),

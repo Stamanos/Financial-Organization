@@ -2,7 +2,7 @@ const sqlite3 = require('sqlite3').verbose();
 
 module.exports = {
 
-    foo : function(){
+    createJsonFiles : function(){
         // open database
         let db = new sqlite3.Database('./Database/costs.sqlite', sqlite3.OPEN_READONLY, (err) => {
             if (err) {
@@ -17,8 +17,9 @@ module.exports = {
                 if (err) {
                     console.error(err.message);
                 }
-                console.log(row.name);
-                createDataBy(row.name);
+                createDataBy(row.name); //Create Json files with the name of column
+                list.push(row.name);
+                createFile(list, 'columns'); //Create Json file whicj stores the files
             });
         });
 
