@@ -7,7 +7,6 @@ const { JSDOM } = jsdom;
 //Insert To Database
 function makeNewOutlay(){
     const sqlite3 = require('sqlite3').verbose();
-
     var amount = document.getElementById("newamount").value;
     var type = document.getElementById("newTypeSelection").value;
     var date = document.getElementById("newDate").value;
@@ -42,7 +41,7 @@ function makeNewOutlay(){
                 console.error(err.message);
             }
         });
-        });
+    });
     
     // close the database connection
     db.close((err) => {
@@ -53,14 +52,10 @@ function makeNewOutlay(){
     });
 }
 
-
-
 function applyFilters(amount, start, end){
     var searchInTable = `SELECT `+ `amount` + ` FROM costs WHERE amount > ` + start +
     ` WHERE amount < ` + end;
 }
-
-
 
 //sqlite3.OPEN_READONLY: open the database for read-only.
 //sqlite3.OPEN_READWRITE : open the database for reading and writting.
