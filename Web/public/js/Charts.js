@@ -2,7 +2,6 @@ let spendingItems, startDate, endDate, startAmount, endAmount;
 
 function showChart() {
     var chartamount = new CanvasJS.Chart("chartContainer", {
-
       title:{
         text: "amount of money has been spend"              
       },
@@ -32,7 +31,6 @@ function contentFilters(){
   var moodLevelFilter = document.getElementById("moodLevelSelection").value;
   var locationFilter = document.getElementById("locationSelection").value;
   
-
   const result =  spendingItems.
   filter(function(s){//Cost Amount filter
     var cost = parseFloat(s[" amount "]);
@@ -87,7 +85,6 @@ $(function() {
       oFileIn.addEventListener('change', filePicked, false);
   }
 });
-
 
 function filePicked(oEvent) {
   // Get The File From The Input
@@ -156,4 +153,3 @@ $( function() {
     " - €" + $( "#slider-range" ).slider( "values", 1 ) );
 });
 //#endregion
-
