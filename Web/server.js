@@ -1,4 +1,3 @@
-
 const htmlToJson = require('./serverSide/Json/htmlFromJson');
 htmlToJson.createJsonFiles();
 
