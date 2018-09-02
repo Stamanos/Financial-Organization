@@ -3,7 +3,6 @@ const sqlite3 = require('sqlite3').verbose();
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 
-
 //Insert To Database
 function makeNewOutlay(){
     const sqlite3 = require('sqlite3').verbose();
@@ -25,7 +24,6 @@ function makeNewOutlay(){
                             "', '" + weather + 
                             "', '" + location + 
                             "')";
-
 
     // open database
     let db = new sqlite3.Database('./Database/costs.sqlite', sqlite3.OPEN_READWRITE, (err) => {
@@ -71,5 +69,4 @@ function applyFilters(amount, start, end){
         console.log(row.amount + "\t" + row.type + "\t" + row.date + "\t" + row.description + "\t" + row.userStatus + "\t" + row.moodLevel + "\t" + row.weather + "\t" + row.location);
         });
 */
-
 //#endregion
