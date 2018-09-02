@@ -133,7 +133,6 @@ $(function() {
   }, cb);
 
   cb(start, end);
-
 });
 
 //#endregion
