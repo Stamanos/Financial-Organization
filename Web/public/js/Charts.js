@@ -124,7 +124,6 @@ $(function() {
   }, cb);
   cb(start, end);
 });
-
 //#endregion
 
 //#region Slider
