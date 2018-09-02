@@ -16,7 +16,6 @@ function showChart() {
 
     chartamount.render();
   }
-
 // functions that modify the spendingItems by the given filters
 //#region Filtering
 function contentFilters(){
@@ -45,11 +44,9 @@ function contentFilters(){
       //creating the filter date as date time (Start Date)
       var filterStartDate_array = startDate.format('YYYY-MM-DD').split('-');
       var filterStartDate = new Date(filterStartDate_array[0], filterStartDate_array[1] - 1, filterStartDate_array[2]);
-
       //creating the filter date as date time (End Date)
       var filterEndDate_array = endDate.format('YYYY-MM-DD').split('-');
       var filterEndDate = new Date(filterEndDate_array[0], filterEndDate_array[1] - 1, filterEndDate_array[2]);
-
       return ((+filterStartDate.getTime() <= +costDate.getTime()) && (+costDate.getTime() <= +filterEndDate.getTime()));
     }
     else {
