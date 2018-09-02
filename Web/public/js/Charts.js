@@ -42,7 +42,6 @@ function contentFilters(){
       //creating the cost date as date time
       var costDate_array = String(s.date).split('/');
       var costDate = new Date("20" + costDate_array[2], costDate_array[0] - 1, costDate_array[1]);
-
       //creating the filter date as date time (Start Date)
       var filterStartDate_array = startDate.format('YYYY-MM-DD').split('-');
       var filterStartDate = new Date(filterStartDate_array[0], filterStartDate_array[1] - 1, filterStartDate_array[2]);
@@ -63,8 +62,6 @@ function contentFilters(){
   map(i => {
     return {label: i.description, y: parseFloat(i[" amount "])};
   });
-
-  console.log(result);
   return result;
 }
 //#endregion
@@ -101,7 +98,6 @@ function filePicked(oEvent) {
       console.log(spendingItems);
     });
   };
-
   // Tell JS To Start Reading The File.. You could delay this if desired
   reader.readAsBinaryString(oFile);
 }
