@@ -109,7 +109,6 @@ function filePicked(oEvent) {
 
 //#region Calendar
 $(function() {
-
   var start = moment().subtract(29, 'days');
   var end = moment();
 
@@ -118,7 +117,6 @@ $(function() {
       startDate = start;
       endDate = end;
   }
-
   $('#reportrange').daterangepicker({
       startDate: start,
       endDate: end,
@@ -131,7 +129,6 @@ $(function() {
          'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
       }
   }, cb);
-
   cb(start, end);
 });
 
