@@ -1,7 +1,6 @@
 const sqlite3 = require('sqlite3').verbose();
 
 module.exports = {
-
     createJsonFiles : function(){
         // open database
         let db = new sqlite3.Database('./Database/costs.sqlite', sqlite3.OPEN_READONLY, (err) => {
@@ -32,7 +31,6 @@ module.exports = {
         });
     }
 }
-
 
 function createDataBy(orderColumn){
     const sqlite3 = require('sqlite3').verbose();
@@ -65,11 +63,9 @@ function createDataBy(orderColumn){
 }
 
 function createFile(output, fileName){
-
     var path = "./" + fileName + ".json";
     const fs = require('fs');
     const content = JSON.stringify(output);
-
     fs.writeFile(path, content, 'utf8', function (err) {
         if (err) {
             return console.log(err);

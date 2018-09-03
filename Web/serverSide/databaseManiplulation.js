@@ -3,11 +3,9 @@ const sqlite3 = require('sqlite3').verbose();
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 
-
 //Insert To Database
 function makeNewOutlay(){
     const sqlite3 = require('sqlite3').verbose();
-
     var amount = document.getElementById("newamount").value;
     var type = document.getElementById("newTypeSelection").value;
     var date = document.getElementById("newDate").value;
@@ -27,7 +25,6 @@ function makeNewOutlay(){
                             "', '" + location + 
                             "')";
 
-
     // open database
     let db = new sqlite3.Database('./Database/costs.sqlite', sqlite3.OPEN_READWRITE, (err) => {
         if (err) {
@@ -42,7 +39,7 @@ function makeNewOutlay(){
                 console.error(err.message);
             }
         });
-        });
+    });
     
     // close the database connection
     db.close((err) => {
@@ -53,14 +50,10 @@ function makeNewOutlay(){
     });
 }
 
-
-
 function applyFilters(amount, start, end){
     var searchInTable = `SELECT `+ `amount` + ` FROM costs WHERE amount > ` + start +
     ` WHERE amount < ` + end;
 }
-
-
 
 //sqlite3.OPEN_READONLY: open the database for read-only.
 //sqlite3.OPEN_READWRITE : open the database for reading and writting.
@@ -76,5 +69,4 @@ function applyFilters(amount, start, end){
         console.log(row.amount + "\t" + row.type + "\t" + row.date + "\t" + row.description + "\t" + row.userStatus + "\t" + row.moodLevel + "\t" + row.weather + "\t" + row.location);
         });
 */
-
 //#endregion
