@@ -19,7 +19,8 @@ var server = http.createServer(function (request, response) {
                               '.png' : 'image/png',
                               '.gif' : 'image/gif',
                               '.css' : 'text/css',
-                              '.js' : 'text/javascript'
+                              '.js' : 'text/javascript',
+                              '.json' : 'text/json'
                               }[ request.url.substr(dotoffset) ];
           response.setHeader('Content-type' , mimetype);
           response.end(data);
