@@ -76,12 +76,6 @@ function getEventTarget(e) {
     return e.target || e.srcElement; 
 }
 
-var ul = document.getElementById('myLocations');
-function selectLocation(event) {
-    var target = getEventTarget(event);
-    document.getElementById("locationSelection").value = target.innerHTML;
-};
-
 //That is for making selections by the Json files
 // $.getJSON( "./../../../columns.json", function( columns ) {
 //     columns.forEach(col => {

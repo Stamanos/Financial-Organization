@@ -19,14 +19,11 @@
                 obj.forEach(element => {
                     var x = document.getElementById(id);
                     if(id == "locationSelection"){
-                        console.log(element);
-                        var ulId = "myLocations";
-                        var ul = document.getElementById(ulId);
-                        //create a new <li> element
-                        var li = document.createElement("li");
-                        li.appendChild(document.createTextNode("<li><a href=\"#\">" + element + "</a></li>"));
-                        ul.appendChild(li);
-                        console.log(li);
+                      
+                      
+                      var c = document.createElement("option");
+                      c.setAttribute("value", element);
+                      x.appendChild(c);
                     }
                     else if(x != null){
                         var c = document.createElement("option");
@@ -91,9 +88,10 @@
 
           <!--_______________________________________LOCATION OF COST____________________________________________-->
           <label for="location"><b>Location</b></label></br>
-          <input list="myLocation" name="myLocation" type="text" id="locationSelection" onkeyup="searchingLocation()" placeholder="Search for locations already added.." title="Type in a location"
-          required>
-              <datalist id="myLocations" onclick="selectLocation()"></datalist>
+          <input list="locationSelection" name="locationSelection" type="text" title="Type in a location" required>
+              <datalist id="locationSelection">
+                <option value="" selected disabled hidden>Search for locations already added..</option>
+              </datalist>
           <div id="map"></div><hr>
 
             <p>By creating a cost review you agree to our <a href="#" onclick="alert('Fuck Yeah!!!')" style="color:rgb(229, 255, 0);">Terms & Privacy</a>.</p>
