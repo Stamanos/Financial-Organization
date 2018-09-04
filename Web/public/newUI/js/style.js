@@ -1,13 +1,13 @@
 
-    // Get the modal
-    var modal = document.getElementById('cost');
-    
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
+// Get the modal
+var modal = document.getElementById('cost');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
     }
+}
 
 // open the map function
 function myMap() {
@@ -31,7 +31,7 @@ function myMap() {
 
 function searchingLocation() {
     var input, filter, ul, li, a, i;
-    input = document.getElementById("newSearchLocInput");
+    input = document.getElementById("locationSelection");
     filter = input.value.toUpperCase();
     ul = document.getElementById("myLocations");
     li = ul.getElementsByTagName("li");
@@ -50,16 +50,16 @@ function searchingLocation() {
 //_______________________Make Json Object from Users Input______________________________
 
 function makeNewOutlay(){
-    var newamount = document.getElementById("newamount").value;
+    var newAmount = document.getElementById("newAmount").value;
     var newDate = document.getElementById("newDate").value;
-    var newDescription = document.getElementById("newDescription").value;
-    var newType = document.getElementById("newTypeSelection").value;
-    var newUserStatus = document.getElementById("newUserStatusSelection").value;
-    var newMoodLevel = document.getElementById("newMoodLevelSelection").value;
-    var newLocation = document.getElementById("newSearchLocInput").value;
+    var newDescription = document.getElementById("description").value;
+    var newType = document.getElementById("typeSelection").value;
+    var newUserStatus = document.getElementById("userStatusSelection").value;
+    var newMoodLevel = document.getElementById("moodLevelSelection").value;
+    var newLocation = document.getElementById("locationSelection").value;
     
     var JsonObj = {
-        amount: newamount,
+        amount: newAmount,
         date: newDate,
         description: newDescription,
         type: newType,
@@ -79,5 +79,33 @@ function getEventTarget(e) {
 var ul = document.getElementById('myLocations');
 function selectLocation(event) {
     var target = getEventTarget(event);
-    document.getElementById("newSearchLocInput").value = target.innerHTML;
+    document.getElementById("locationSelection").value = target.innerHTML;
 };
+
+//That is for making selections by the Json files
+// $.getJSON( "./../../../columns.json", function( columns ) {
+//     columns.forEach(col => {
+//         var columnName = col;
+//         var path = "./../../../" + columnName + ".json";
+//         $.getJSON( path, function( obj ) {
+//             var id = columnName + "Selection";
+//             obj.forEach(element => {
+//                 var x = document.getElementById(id);
+//                 if(x != null){
+//                     var c = document.createElement("option");
+//                     c.text = element;
+//                     c.value = element;
+//                     x.options.add(c, 1);
+//                     console.log(element);
+//                 }
+//                 else if(x = "location"){
+//                     var c = document.createElement("li");
+//                     var a = c.createElement("a");
+//                     a.text = element;
+//                     x.options.add(a, 1);
+//                     console.log(element);
+//                 }
+//             });
+//         });
+//     });
+// });

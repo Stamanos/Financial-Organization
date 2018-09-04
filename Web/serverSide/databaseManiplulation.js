@@ -6,14 +6,14 @@ const { JSDOM } = jsdom;
 //Insert To Database
 function makeNewOutlay(){
     const sqlite3 = require('sqlite3').verbose();
-    var amount = document.getElementById("newamount").value;
+    var amount = document.getElementById("newAmount").value;
     var type = document.getElementById("newTypeSelection").value;
     var date = document.getElementById("newDate").value;
     var description = document.getElementById("newDescription").value;
     var userStatus = document.getElementById("newUserStatusSelection").value;
     var moodLevel = document.getElementById("newMoodLevelSelection").value;
     var weather = "NULL";
-    var location = document.getElementById("newSearchLocInput").value;
+    var location = document.getElementById("locationSelection").value;
     var insertToTable = "INSERT INTO costs(amount, type, date, description, userStatus, moodLevel, weather, location) values(" +
                             "'" + amount + 
                             "', '" + type +
