@@ -8,35 +8,6 @@
     <title>New UI</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="js/style.js" type="text/javascript"></script>
-    <script>
-        //That is for making selections by the Json files
-      $.getJSON( "./../../columns.json", function( columns ) {
-        columns.forEach(col => {
-            var columnName = col;
-            var path = "./../../" + columnName + ".json";
-            $.getJSON( path, function( obj ) {
-                var id = columnName + "Selection";
-                obj.forEach(element => {
-                    var x = document.getElementById(id);
-                    if(id == "locationSelection"){
-                      
-                      
-                      var c = document.createElement("option");
-                      c.setAttribute("value", element);
-                      x.appendChild(c);
-                    }
-                    else if(x != null){
-                        var c = document.createElement("option");
-                        c.text = element;
-                        c.value = element;
-                        x.options.add(c, 1);
-                        console.log(element);
-                    }
-                });
-            });
-        });
-      });
-    </script>
   </head>
 <body><h2>Cost review form</h2>
 
@@ -48,23 +19,23 @@
         <div class="container">
           <h1>Add Cost</h1>
           <h4>Please fill in this form to add a cost in the database.</h4>
-          <div class="firstContainer">s
+          <div class="firstContainer">
             <hr>
             <!--_______________________________________amount OF COST____________________________________________-->
             <label for="cost"><b>Cost</b></label></br>
-            <input id="newAmount" type="number" placeholder="Enter amount of cost" name="cost" min="0" step="1" required> €
+            <input id="amount" type="number" placeholder="Enter amount of cost" name="cost" min="0" step="1" required> €
             <hr>
 
             <!--_______________________________________DATE OF COST____________________________________________-->
             </p>
             <label for="date"><b>Date</b></label></br>
-            <input id="newDate" type="date" placeholder="date time of cost" name="date-of-cost" required><hr>
+            <input id="date" type="date" placeholder="date time of cost" name="date-of-cost" required><hr>
             </p>
       
             <!--_______________________________________DESCRIPTION OF COST____________________________________________-->
             <div id="costDescription">
               <label for="description"><b>Description</b></label></br>
-              <input id="newDescription" type="text" placeholder="Enter Description" name="description" required><hr>
+              <input id="description" type="text" placeholder="Enter Description" name="description" required><hr>
             </div>
       
             <!--_______________________________________TYPE OF COST____________________________________________-->

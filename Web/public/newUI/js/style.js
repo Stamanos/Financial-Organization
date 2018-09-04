@@ -49,25 +49,51 @@ function searchingLocation() {
 
 //_______________________Make Json Object from Users Input______________________________
 
+//Insert To Database
 function makeNewOutlay(){
-    var newAmount = document.getElementById("newAmount").value;
-    var newDate = document.getElementById("newDate").value;
-    var newDescription = document.getElementById("description").value;
-    var newType = document.getElementById("typeSelection").value;
-    var newUserStatus = document.getElementById("userStatusSelection").value;
-    var newMoodLevel = document.getElementById("moodLevelSelection").value;
-    var newLocation = document.getElementById("locationSelection").value;
+    const sqlite3 = require('sqlite3').verbose();
+    var amount = document.getElementById("amount").value;
+    var type = document.getElementById("typeSelection").value;
+    var date = document.getElementById("date").value;
+    var description = document.getElementById("description").value;
+    var userStatus = document.getElementById("userStatusSelection").value;
+    var moodLevel = document.getElementById("moodLevelSelection").value;
+    var weather = "NULL";
+    var location = document.getElementById("locationSelection").value;
+    var insertToTable = "INSERT INTO costs(amount, type, date, description, userStatus, moodLevel, weather, location) values(" +
+                            "'" + amount + 
+                            "', '" + type +
+                            "', '" + date + 
+                            "', '" + description + 
+                            "', '" + userStatus + 
+                            "', '" + moodLevel + 
+                            "', '" + weather + 
+                            "', '" + location + 
+                            "')";
+
+    // open database
+    let db = new sqlite3.Database('./Database/costs.sqlite', sqlite3.OPEN_READWRITE, (err) => {
+        if (err) {
+            return console.error(err.message);
+        }
+        console.log('Connected to the costs SQlite database.');
+    });
+        
+    db.serialize(() => {
+        db.each(insertToTable, (err, row) => {
+            if (err) {
+                console.error(err.message);
+            }
+        });
+    });
     
-    var JsonObj = {
-        amount: newAmount,
-        date: newDate,
-        description: newDescription,
-        type: newType,
-        userStatus: newUserStatus,
-        moodLevel: newMoodLevel,
-        location: newLocation
-    }
-    console.log(JsonObj);
+    // close the database connection
+    db.close((err) => {
+        if (err) {
+            return console.error(err.message);
+        }
+        console.log('Close the database connection.');
+    });
 }
 
 //_________________________SELECT LOCATION__________________________
@@ -77,29 +103,28 @@ function getEventTarget(e) {
 }
 
 //That is for making selections by the Json files
-// $.getJSON( "./../../../columns.json", function( columns ) {
-//     columns.forEach(col => {
-//         var columnName = col;
-//         var path = "./../../../" + columnName + ".json";
-//         $.getJSON( path, function( obj ) {
-//             var id = columnName + "Selection";
-//             obj.forEach(element => {
-//                 var x = document.getElementById(id);
-//                 if(x != null){
-//                     var c = document.createElement("option");
-//                     c.text = element;
-//                     c.value = element;
-//                     x.options.add(c, 1);
-//                     console.log(element);
-//                 }
-//                 else if(x = "location"){
-//                     var c = document.createElement("li");
-//                     var a = c.createElement("a");
-//                     a.text = element;
-//                     x.options.add(a, 1);
-//                     console.log(element);
-//                 }
-//             });
-//         });
-//     });
-// });
+$.getJSON( "./../../columns.json", function( columns ) {
+    columns.forEach(col => {
+        var columnName = col;
+        var path = "./../../" + columnName + ".json";
+        $.getJSON( path, function( obj ) {
+            var id = columnName + "Selection";
+            obj.forEach(element => {
+                var x = document.getElementById(id);
+                if(id == "locationSelection"){
+                    var c = document.createElement("option");
+                    c.setAttribute("value", element);
+                    x.appendChild(c);
+                    console.log(element);
+                }
+                else if(x != null){
+                    var c = document.createElement("option");
+                    c.text = element;
+                    c.value = element;
+                    x.options.add(c, 1);
+                    console.log(element);
+                }
+            });
+        });
+    });
+    });
