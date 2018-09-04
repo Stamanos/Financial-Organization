@@ -44,7 +44,7 @@ function createDataBy(orderColumn){
         
     db.serialize(() => {
         var list = [];
-        db.each(`SELECT DISTINCT ` + orderColumn + ` FROM costs`, (err, row) => {
+        db.each(`SELECT DISTINCT ` + orderColumn + ` FROM costs ORDER BY ` + orderColumn, (err, row) => {
             if (err) {
                 console.error(err.message);
             }
