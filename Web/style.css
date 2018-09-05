@@ -3,24 +3,33 @@
     display: none;
 }
 
-#chartContainer{
-    height: 500px;
-    width: 84%;
-    position: absolute;
-    right: 0;
-}
-
 #reportrange{
     background: rgba(0, 112, 240, 0.781);
     cursor: pointer;
     padding: 5px 10px;
     border: 1px solid #ccc;
-    width: 16%;
+    width: 18%;
 }
 
 #slider-range{
     border:0;
     color:#050300;
     font-weight:bold;
-    width: 16%;
+    width: 18%;
 }
+
+#chartContainer{
+    height: 80%;
+    width: 2000px; /*ToDo:: make this a parameter*/
+}
+
+#chartWrapper {
+    position: absolute;
+    right: 0;
+    width: 80%;
+    height: 90%;
+    border: 3px solid blue;
+    overflow-y: auto;
+
+}
+
