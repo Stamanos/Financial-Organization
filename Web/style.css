@@ -1,5 +1,6 @@
 #filtersContainer{
     position: relative;
+    display: none;
 }
 
 #chartContainer{

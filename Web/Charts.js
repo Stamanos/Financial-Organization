@@ -18,3 +18,12 @@ $.getJSON( "./serverSide/Json/columns.json", function( columns ) {
         });
     });
 });
+
+function filter_open() {
+    var view = document.getElementById("filtersContainer").style.display;
+    
+    if(view == "block")
+        document.getElementById("filtersContainer").style.display = "none";
+    else
+        document.getElementById("filtersContainer").style.display = "block";
+}

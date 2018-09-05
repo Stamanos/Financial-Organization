@@ -23,6 +23,7 @@
   <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <body>
   <div id="chartContainer"></div>
+  <button onclick="filter_open()">☰</button>
   <div id="filtersContainer">
     <div id="reportrange">
       <label for="date">Date</label>
@@ -62,11 +63,13 @@
     <button onclick="Refresh()">OK</button>
 </br>
 </br>
-    <button onclick="window.location.href='public/newUI/new-UI.html'">Go to new UI</button></br>
-  </div>
+    <button onclick="window.location.href='public/newUI/new-UI.html'">Go to new UI</button>
+  </br>
 </br>
     <div id='my_file_output'>
-      <input type="file" id="my_file_input"/>
-    </div>
+        <input type="file" id="my_file_input"/>
+      </div>
+  </div>
+</br>
 </body>
 </html>
