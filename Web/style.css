@@ -19,8 +19,8 @@
 }
 
 #chartContainer{
-    height: 80%;
-    width: 2000px; /*ToDo:: make this a parameter*/
+    height: 800px; /*ToDo:: make this a parameter*/
+    width: 1600px; /*ToDo:: make this a parameter*/
 }
 
 #chartWrapper {
