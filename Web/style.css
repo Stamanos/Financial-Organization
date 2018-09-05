@@ -1,0 +1,25 @@
+#filtersContainer{
+    position: relative;
+}
+
+#chartContainer{
+    height: 500px;
+    width: 75%;
+    position: absolute;
+    right: 0;
+}
+
+#reportrange{
+    background: rgba(0, 112, 240, 0.781);
+    cursor: pointer;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    width: 25%;
+}
+
+#slider-range{
+    border:0;
+    color:#050300;
+    font-weight:bold;
+    width: 25%;
+}

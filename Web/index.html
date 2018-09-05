@@ -12,6 +12,7 @@
   <script type="text/javascript" src="./public/js/Charts.js"></script> <!--ORIGINAL-->
   <script type="text/javascript" src="./Charts.js"></script> <!--ORIGINAL-->
   <script type="text/javascript" src="./server.js"></script> <!--ORIGINAL-->
+  <link rel="stylesheet" type="text/css" href="./style.css"/> <!--ORIGINAL-->
   <!--for Calendar-->
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
   <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
@@ -21,10 +22,10 @@
   <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <body>
-  <div id="chartContainer" style="height: 500px; width: 100%;"></div>
-  <div id="filtersContainer" style="position: relative;">
+  <div id="chartContainer"></div>
+  <div id="filtersContainer">
     
-    <div id="reportrange" style="background: rgba(0, 112, 240, 0.781); cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
+    <div id="reportrange">
       <label for="date">Date</label>
       <i class="fa fa-calendar"></i>&nbsp;
           <span></span> <i class="fa fa-caret-down"></i>
@@ -32,7 +33,7 @@
       <input type="checkbox" id="dateCheckbox" name="date"> Enable</br>
 
     <label>Price Range</label>
-    <input type="text" id="amountRange" readonly style="border:0; color:#050300; font-weight:bold;"></br>
+    <input type="text" id="amountRange" readonly></br>
     <div id="slider-range"></div></br>
 
     <label>  Type</label>
