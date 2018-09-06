@@ -25,41 +25,38 @@
   <div id="chartWrapper">
       <div id="chartContainer"></div>
   </div>
-  <button onclick="filter_open()">☰</button>
-  <div id="filtersContainer">
+  <div id="main">
+    <button id="filter_btn" onclick="filter_open()">☰</button>
+  </div>
+  <div class="sidebar" id="filtersContainer">
+    <a href="javascript:void(0)" class="closebtn" onclick="filter_close()">Filters ×</a>
     <div id="reportrange">
       <label for="date">Date</label>
       <i class="fa fa-calendar"></i>&nbsp;
           <span></span> <i class="fa fa-caret-down"></i>
     </div>
-      <input type="checkbox" id="dateCheckbox" name="date"> Enable</br>
+      <input type="checkbox" id="dateCheckbox" name="date"><a style="color:white;">Enable</a></br>
 
     <label>Price Range</label>
     <input type="text" id="amountRange" readonly></br>
-    <div id="slider-range"></div></br>
+    <div id="slider-range"></div>
 
-    <label>  Type</label>
-    <select id="typeSelection">
-    </select></br> 
+    <label>Type</label>
+    <select id="typeSelection"></select>
 
+    <label>User Status</label>
+    <select id="userStatusSelection"></select>
 
-    <label>  User Status</label>
-    <select id="userStatusSelection">
-    </select></br>
+    <label>Mood Level</label>
+    <select id="moodLevelSelection"></select>
 
-    <label>  Mood Level</label>
-    <select id="moodLevelSelection">
-    </select></br>
+    <label>Location</label>
+    <select id="locationSelection"></select>
 
-    <label>  Location</label>
-    <select id="locationSelection">
-    </select></br>
+    <label>Type Of Chart</label>
+    <select id="typeOfChartSelection"></select>
 
-    <label>  Type Of Chart</label>
-    <select id="typeOfChartSelection">
-    </select></br>
-
-    <label for="description">  Description</label>
+    <label for="description">Description</label>
     <input type="text" id="searchDescriptionInput" placeholder="Search based on description.." title="Type in description"></br>
   </br>
     <button onclick="Refresh()">OK</button>

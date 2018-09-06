@@ -20,9 +20,14 @@ $.getJSON( "./serverSide/Json/columns.json", function( columns ) {
 });
 
 function filter_open() {
-    var view = document.getElementById("filtersContainer").style.display;
-    if(view == "block")
-        document.getElementById("filtersContainer").style.display = "none";
-    else
-        document.getElementById("filtersContainer").style.display = "block";
+    document.getElementById("filtersContainer").style.width = "20%";
+    document.getElementById("main").style.marginLeft = "250px";
+    document.getElementById("chartWrapper").style.width = "80%";
 }
+
+function filter_close() {
+    document.getElementById("filtersContainer").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+    document.getElementById("chartWrapper").style.width = "96%";
+}
+

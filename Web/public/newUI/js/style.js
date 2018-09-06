@@ -47,7 +47,7 @@ function searchingLocation() {
     }
 }
 
-//_______________________Make Json Object from Users Input______________________________
+//_______________________Insert to Database from Users Input______________________________
 
 //Insert To Database
 function makeNewOutlay(){
@@ -127,4 +127,4 @@ $.getJSON( "./../../serverSide/Json/columns.json", function( columns ) {
             });
         });
     });
-    });
+});
