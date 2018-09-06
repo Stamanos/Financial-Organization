@@ -104,8 +104,6 @@ function makeNewOutlay(){
     console.log(insertToTable);
 }
 
-
-
 //_________________________SELECT LOCATION__________________________
 function getEventTarget(e) {
     e = e || window.event;
