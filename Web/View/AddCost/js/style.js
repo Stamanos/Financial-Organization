@@ -54,8 +54,6 @@ function searchingLocation() {
 }
 
 //_______________________Insert to Database from Users Input______________________________
-
-//Insert To Database
 const sqlite3 = require('sqlite3').verbose();
 console.log(sqlite3);
 
