@@ -96,6 +96,14 @@ function makeNewOutlay(){
     });
 }
 
+
+var button = document.getElementById("savecost");
+console.log(button);
+button.addEventListener("click",function(){
+    makeNewOutlay();
+});
+
+
 //_________________________SELECT LOCATION__________________________
 function getEventTarget(e) {
     e = e || window.event;
