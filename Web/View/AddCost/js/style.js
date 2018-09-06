@@ -1,6 +1,4 @@
 var modal = document.getElementById('cost');
-let btn = document.querySelector(".savecost");
-console.log(btn);
 
 btn.addEventListener("click", function(){
     makeNewOutlay();
