@@ -1,6 +1,4 @@
-// Get the modal
 var modal = document.getElementById('cost');
-
 let btn = document.querySelector(".savecost");
 console.log(btn);
 
