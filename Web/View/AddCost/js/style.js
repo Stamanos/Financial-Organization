@@ -2,6 +2,13 @@
 // Get the modal
 var modal = document.getElementById('cost');
 
+let btn = document.querySelector(".savecost");
+console.log(btn);
+
+btn.addEventListener("click", function(){
+    makeNewOutlay();
+});
+
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modal) {
@@ -50,8 +57,10 @@ function searchingLocation() {
 //_______________________Insert to Database from Users Input______________________________
 
 //Insert To Database
+const sqlite3 = require('sqlite3').verbose();
+console.log(sqlite3);
+
 function makeNewOutlay(){
-    const sqlite3 = require('sqlite3').verbose();
     var amount = document.getElementById("amount").value;
     var type = document.getElementById("typeSelection").value;
     var date = document.getElementById("date").value;
@@ -94,14 +103,10 @@ function makeNewOutlay(){
         }
         console.log('Close the database connection.');
     });
+
+    console.log(insertToTable);
 }
 
-
-var button = document.getElementById("savecost");
-console.log(button);
-button.addEventListener("click",function(){
-    makeNewOutlay();
-});
 
 
 //_________________________SELECT LOCATION__________________________
@@ -111,10 +116,10 @@ function getEventTarget(e) {
 }
 
 //That is for making selections by the Json files
-$.getJSON( "./../../serverSide/Json/columns.json", function( columns ) {
+$.getJSON( "./../../../View/Json/columns.json", function( columns ) {
     columns.forEach(col => {
         var columnName = col;
-        var path = "./../../serverSide/Json/" + columnName + ".json";
+        var path = "./../../../View/Json/" + columnName + ".json";
         $.getJSON( path, function( obj ) {
             var id = columnName + "Selection";
             obj.forEach(element => {

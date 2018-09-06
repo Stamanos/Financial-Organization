@@ -26,7 +26,7 @@ function makeNewOutlay(){
                             "')";
 
     // open database
-    let db = new sqlite3.Database('./Database/costs.sqlite', sqlite3.OPEN_READWRITE, (err) => {
+    let db = new sqlite3.Database('./../Model/Database/costs.sqlite', sqlite3.OPEN_READWRITE, (err) => {
         if (err) {
             return console.error(err.message);
         }
