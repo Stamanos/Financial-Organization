@@ -1,12 +1,11 @@
 //That is for making selections by the Json files
 $.getJSON( "./../Json/columns.json", function( columns ) {
-    columns.forEach(col => {
-        var columnName = col;
+    columns.forEach(columnName => {
         var path = "./../Json/" + columnName + ".json";
         $.getJSON( path, function( obj ) {
             var id = columnName + "Selection";
+            var x = document.getElementById(id);
             obj.forEach(element => {
-                var x = document.getElementById(id);
                 if(x != null){
                     var c = document.createElement("option");
                     c.text = element;
@@ -30,4 +29,3 @@ function filter_close() {
     document.getElementById("main").style.marginLeft= "0";
     document.getElementById("chartWrapper").style.width = "96%";
 }
-
