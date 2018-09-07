@@ -6,7 +6,7 @@ var http = require('http'),
     fs = require('fs');
 
 var server = http.createServer(function (request, response) {
-  fs.readFile('./../View/' + request.url, function(err, data) {
+  fs.readFile('./../View/StartingPage/' + request.url, function(err, data) {
       if (!err) {
           var dotoffset = request.url.lastIndexOf('.');
           var mimetype = dotoffset == -1

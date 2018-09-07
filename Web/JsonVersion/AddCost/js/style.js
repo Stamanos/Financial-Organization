@@ -1,9 +1,5 @@
 var modal = document.getElementById('cost');
 
-btn.addEventListener("click", function(){
-    makeNewOutlay();
-});
-
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modal) {
@@ -49,8 +45,6 @@ function searchingLocation() {
 }
 
 //_______________________Insert to Database from Users Input______________________________
-const sqlite3 = require('sqlite3').verbose();
-console.log(sqlite3);
 
 function makeNewOutlay(){
     var amount = document.getElementById("amount").value;
@@ -61,42 +55,6 @@ function makeNewOutlay(){
     var moodLevel = document.getElementById("moodLevelSelection").value;
     var weather = "NULL";
     var location = document.getElementById("locationSelection").value;
-    var insertToTable = "INSERT INTO costs(amount, type, date, description, userStatus, moodLevel, weather, location) values(" +
-                            "'" + amount + 
-                            "', '" + type +
-                            "', '" + date + 
-                            "', '" + description + 
-                            "', '" + userStatus + 
-                            "', '" + moodLevel + 
-                            "', '" + weather + 
-                            "', '" + location + 
-                            "')";
-
-    // open database
-    let db = new sqlite3.Database('./../../../Model/Database/costs.sqlite', sqlite3.OPEN_READWRITE, (err) => {
-        if (err) {
-            return console.error(err.message);
-        }
-        console.log('Connected to the costs SQlite database.');
-    });
-        
-    db.serialize(() => {
-        db.each(insertToTable, (err, row) => {
-            if (err) {
-                console.error(err.message);
-            }
-        });
-    });
-    
-    // close the database connection
-    db.close((err) => {
-        if (err) {
-            return console.error(err.message);
-        }
-        console.log('Close the database connection.');
-    });
-
-    console.log(insertToTable);
 }
 
 //_________________________SELECT LOCATION__________________________
@@ -106,10 +64,10 @@ function getEventTarget(e) {
 }
 
 //That is for making selections by the Json files
-$.getJSON( "./../../../Model/Json/columns.json", function( columns ) {
+$.getJSON( "/Json/columns.json", function( columns ) {
     columns.forEach(col => {
         var columnName = col;
-        var path = "./../../../Model/Json/" + columnName + ".json";
+        var path = "/Json/" + columnName + ".json";
         $.getJSON( path, function( obj ) {
             var id = columnName + "Selection";
             obj.forEach(element => {

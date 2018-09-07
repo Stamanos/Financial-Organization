@@ -16,9 +16,9 @@ module.exports = {
                 if (err) {
                     console.error(err.message);
                 }
-                createDataBy(row.name); //Create Json files with the name of column
+                createDataBy(row.name); //Create Json files with the name of columns.json
                 list.push(row.name);
-                createFile(list, 'columns'); //Create Json file whicj stores the files
+                createFile(list, 'columns'); //Create Json file which stores the files
             });
         });
 
@@ -63,7 +63,7 @@ function createDataBy(orderColumn){
 }
 
 function createFile(output, fileName){
-    var path = "./../View/Json/" + fileName + ".json";
+    var path = "./../Model/Json/" + fileName + ".json";
     const fs = require('fs');
     const content = JSON.stringify(output);
     fs.writeFile(path, content, 'utf8', function (err) {
