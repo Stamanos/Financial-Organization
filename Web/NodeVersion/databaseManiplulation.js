@@ -64,3 +64,30 @@ function descriptionFilter(description){
         });
 */
 //#endregion
+
+module.exports = {
+    databaseConnection : function(order, databasePath){
+        const sqlite3 = require('sqlite3').verbose();
+        // open database
+        let db = new sqlite3.Database(databasePath, sqlite3.OPEN_READONLY, (err) => {
+            if (err) {
+                return console.error(err.message);
+            }
+            console.log('Connected to the costs SQlite database.');
+        });   
+        db.serialize(() => {
+            db.each(order, (err, row) => {
+                if (err) {
+                    console.error(err.message);
+                }
+            });
+        });
+        // close the database connection
+        db.close((err) => {
+            if (err) {
+                return console.error(err.message);
+            }
+            console.log('Close the database connection.');
+        });
+    }
+}
