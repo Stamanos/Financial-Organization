@@ -1,9 +1,9 @@
 //That is for making selections by the Json files
-$.getJSON( "./../Json/columns.json", function( columns ) {
+$.getJSON( "./Json/columns.json", function( columns ) {
     columns.forEach(columnName => {
         //don't get dublicated filters ToDo:: change it
         if(columnName !== "description" && columnName !== "date" && columnName !== "weather"){     
-            var path = "./../Json/" + columnName + ".json";
+            var path = "./Json/" + columnName + ".json";
             $.getJSON( path, function( obj ) {
                 var list = [];
                 obj.forEach(element => {
@@ -14,18 +14,6 @@ $.getJSON( "./../Json/columns.json", function( columns ) {
         }
     });
 });
-
-function filter_open() {
-    document.getElementById("filtersContainer").style.width = "20%";
-    document.getElementById("main").style.marginLeft = "250px";
-    document.getElementById("chartWrapper").style.width = "80%";
-}
-
-function filter_close() {
-    document.getElementById("filtersContainer").style.width = "0";
-    document.getElementById("main").style.marginLeft= "0";
-    document.getElementById("chartWrapper").style.width = "96%";
-}
 
 function makeSelection(input, optionList){
 
