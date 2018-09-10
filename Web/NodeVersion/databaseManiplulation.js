@@ -48,7 +48,6 @@ function descriptionFilter(description){
     return `SELECT description FROM costs WHERE description LIKE '%${description}%'`;
 }
 
-
 //sqlite3.OPEN_READONLY: open the database for read-only.
 //sqlite3.OPEN_READWRITE : open the database for reading and writting.
 //sqlite3.OPEN_CREATE: open the database, if the database does not exist, create a new database.
