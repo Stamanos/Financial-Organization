@@ -48,18 +48,15 @@
             </select><hr>
 
             <!--_______________________________________MOOD LEVEL____________________________________________-->
-            <label for="mood"><b>Mood Level</b></label></br>
+            <label for="mood"><b>Please select mood level</b></label></br>
             <select id="moodLevelSelection" required>
-              <option value="" selected disabled hidden>Please select mood level</option>
             </select><hr>
           </div>
 
           <!--_______________________________________LOCATION OF COST____________________________________________-->
-          <label for="location"><b>Location</b></label></br>
+          <label for="location"><b>Search for locations already added..</b></label></br>
           <input list="locationSelection" name="locationSelection" type="text" title="Type in a location" required>
-              <datalist id="locationSelection">
-                <option value="" selected disabled hidden>Search for locations already added..</option>
-              </datalist>
+              <datalist id="locationSelection"></datalist>
           <div id="map"></div><hr>
 
             <p>By creating a cost review you agree to our <a href="#" onclick="alert('Fuck Yeah!!!')" style="color:rgb(229, 255, 0);">Terms & Privacy</a>.</p>
