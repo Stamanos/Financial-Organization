@@ -64,10 +64,10 @@ function getEventTarget(e) {
 }
 
 //That is for making selections by the Json files
-$.getJSON( "/Json/columns.json", function( columns ) {
+$.getJSON( "./../Json/columns.json", function( columns ) {
     columns.forEach(col => {
         var columnName = col;
-        var path = "/Json/" + columnName + ".json";
+        var path = "./../Json/" + columnName + ".json";
         $.getJSON( path, function( obj ) {
             var id = columnName + "Selection";
             obj.forEach(element => {
