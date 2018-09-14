@@ -69,7 +69,7 @@ namespace Algorithms
                     return days[(YearCode(yearNumber) + months[monthNumber] + dayNumber) % 7];
                 }
             }
-            catch (System.IndexOutOfRangeException e)// ToDo:comment
+            catch (System.IndexOutOfRangeException e)//swallow System.IndexOutOfRangeException
             {
                 return "Null";
             }
