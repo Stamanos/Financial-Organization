@@ -13,7 +13,7 @@ namespace Algorithms
 
         private static void StartingValues()
         {
-            months.Clear(); //ToDo:: comment
+            months.Clear(); //Anoid to insert the same key
             months.Add(1, 1);
             months.Add(2, 4);
             months.Add(3, 4);
