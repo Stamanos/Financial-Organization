@@ -8,11 +8,12 @@ namespace Algorithms
 {
     public class Date
     {
-        public static string[] days = new string[7];
-        public static Dictionary<int, int> months = new Dictionary<int, int>();
+        private static string[] days = new string[7];
+        private static Dictionary<int, int> months = new Dictionary<int, int>();
 
         private static void StartingValues()
         {
+            months.Clear(); //ToDo:: comment
             months.Add(1, 1);
             months.Add(2, 4);
             months.Add(3, 4);
@@ -37,32 +38,40 @@ namespace Algorithms
 
         public static string Day(string date)
         {
-
-            string[] numbers = date.Split('/');
-            bool IsAmericanDate = false;
+            string[] day = date.Split(' '); //ToDo:: comment
+            string[] numbers = day[0].Split('/');
+            bool IsAmericanDate = true;
             int dayNumber, monthNumber, yearNumber;
 
-            if (IsAmericanDate)//if date is writen by America
-            {
-                dayNumber = Int32.Parse(numbers[1]);
-                monthNumber = Int32.Parse(numbers[0]);
-            }
-            else //if date is writen by Europe
-            {
-                dayNumber = Int32.Parse(numbers[0]);
-                monthNumber = Int32.Parse(numbers[1]);
-            }
-            yearNumber = Int32.Parse(numbers[2]);
 
-            StartingValues();
+            try
+            {
+                if (IsAmericanDate)//if date is writen by America
+                {
+                    dayNumber = Int32.Parse(numbers[1]);
+                    monthNumber = Int32.Parse(numbers[0]);
+                }
+                else //if date is writen by Europe
+                {
+                    dayNumber = Int32.Parse(numbers[0]);
+                    monthNumber = Int32.Parse(numbers[1]);
+                }
+                yearNumber = Int32.Parse(numbers[2]);
 
-            if (((monthNumber == 1) || (monthNumber == 2)) && ((yearNumber % 4) == 0))
-            {
-                return days[YearCode(yearNumber) + months[monthNumber] + dayNumber - 1];
+                StartingValues();
+
+                if (((monthNumber == 1) || (monthNumber == 2)) && ((yearNumber % 4) == 0))
+                {
+                    return days[YearCode(yearNumber) + months[monthNumber] + dayNumber - 1];
+                }
+                else
+                {
+                    return days[(YearCode(yearNumber) + months[monthNumber] + dayNumber) % 7];
+                }
             }
-            else
+            catch (System.IndexOutOfRangeException e)// ToDo:comment
             {
-                return days[(YearCode(yearNumber) + months[monthNumber] + dayNumber) % 7];
+                return "Null";
             }
         }
 
