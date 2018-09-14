@@ -1,0 +1,1 @@
+SELECT dISTINCT type FROM costs ORDER BY type
