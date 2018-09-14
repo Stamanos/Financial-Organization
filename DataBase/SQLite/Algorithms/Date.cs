@@ -38,7 +38,7 @@ namespace Algorithms
 
         public static string Day(string date)
         {
-            string[] day = date.Split(' '); //ToDo:: comment
+            string[] day = date.Split(' '); //Take only the type etc: 05/02/1997
             string[] numbers = day[0].Split('/');
             bool IsAmericanDate = true;
             int dayNumber, monthNumber, yearNumber;
