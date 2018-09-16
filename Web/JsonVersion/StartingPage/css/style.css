@@ -1,16 +1,5 @@
 /*Style of Ids*/
 
-
-#chartContainer{
-    display: block;
-    height: auto;
-    width: fit-content; /*ToDo:: make this a parameter*/
-  }
-  
-  .canvasjs-chart-canvas{
-    height: 100% !important;
-    position: inherit !important;
-  }
 #main {
     transition: margin-left .5s;
     padding: 16px;
