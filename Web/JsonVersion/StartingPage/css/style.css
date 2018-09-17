@@ -1,11 +1,11 @@
 /*Style of Ids*/
 
+/*Style of classes*/
 #main {
     transition: margin-left .5s;
     padding: 16px;
 }
 
-/*Style of classes*/
 
 /*Html basic objects style*/
 select{
