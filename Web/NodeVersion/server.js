@@ -1,6 +1,6 @@
 //#region Make Json files from Database
-// const htmlToJson = require('./htmlFromJson');
-// htmlToJson.createJsonFiles();
+const htmlToJson = require('./Controller/htmlFromJson');
+htmlToJson.createJsonFiles();
 //#endregion
 
 //#region SERVER
