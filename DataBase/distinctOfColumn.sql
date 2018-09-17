@@ -1,1 +1,1 @@
-SELECT dISTINCT type FROM costs ORDER BY type
+SELECT DISTINCT type FROM costs ORDER BY type
