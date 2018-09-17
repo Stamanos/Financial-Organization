@@ -13,7 +13,7 @@ namespace Algorithms
 
         private static void StartingValues()
         {
-            months.Clear(); //ToDo:: comment
+            months.Clear(); //Anoid to insert the same key
             months.Add(1, 1);
             months.Add(2, 4);
             months.Add(3, 4);
@@ -38,7 +38,7 @@ namespace Algorithms
 
         public static string Day(string date)
         {
-            string[] day = date.Split(' '); //ToDo:: comment
+            string[] day = date.Split(' '); //Take only the type etc: 05/02/1997
             string[] numbers = day[0].Split('/');
             bool IsAmericanDate = true;
             int dayNumber, monthNumber, yearNumber;
@@ -69,7 +69,7 @@ namespace Algorithms
                     return days[(YearCode(yearNumber) + months[monthNumber] + dayNumber) % 7];
                 }
             }
-            catch (System.IndexOutOfRangeException e)// ToDo:comment
+            catch (System.IndexOutOfRangeException e)//swallow System.IndexOutOfRangeException
             {
                 return "Null";
             }
