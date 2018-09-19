@@ -2,7 +2,7 @@
 $.getJSON( "./Json/columns.json", function( columns ) {
     columns.forEach(columnName => {
         //don't get dublicated filters ToDo:: change it
-        if(columnName !== "description" && columnName !== "date" && columnName !== "weather"){     
+        if(columnName !== "description" && columnName !== "date" && columnName !== "weather"  && columnName !== "amount"){     
             var path = "./Json/" + columnName + ".json";
             $.getJSON( path, function( obj ) {
                 var list = [];

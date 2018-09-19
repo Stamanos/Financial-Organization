@@ -6,7 +6,7 @@
 
 /*Html basic objects style*/
 select{
-    background-color: #4CAF50;
+    background-color: #08c;
     font-size: 13px;
     width: 100%;
     padding: 15px;
@@ -14,7 +14,7 @@ select{
 }
 
 input{
-    background-color: #4CAF50;
+    background-color: #08c;
     font-size: 15px;
     width: 100%;
     padding: 15px;
