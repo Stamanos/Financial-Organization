@@ -55,11 +55,17 @@ function contentFilters(){
   filter(function(s){return String(s.description).includes(descriptionFilter);}).
   filter(function(s){if(userStatusFilter !== "null") {return s.userStatus == userStatusFilter;} else {return true;}}).
   filter(function(s){if(moodLevelFilter !== "null") {return s.moodLevel == moodLevelFilter;} else {return true;}}).
-  filter(function(s){if(locationFilter !== "null") {return s.location == locationFilter;} else {return true;}}).
-  map(i => {
+  filter(function(s){if(locationFilter !== "null") {return s.location == locationFilter;} else {return true;}});
+  
+  //This is for creating inner Html for costs
+  var list = result.map(i => {
+    return parseFloat(i[" amount "]);
+  });
+  TotalCost(list);
+
+  return result.map(i => {
     return {label: i.description, y: parseFloat(i[" amount "])};
   });
-  return result;
 }
 //#endregion
 
@@ -70,6 +76,18 @@ function chartFilters(){
 function Refresh(){
   showChart();
 }
+
+//#region total-cost-to-inner-html
+function TotalCost(amountList){
+  var sum = amountList.reduce((a,b) => a + b, 0);
+
+  $('#totalCost').empty(); //clean the previous if exists!
+  var myDiv = document.getElementById("totalCost");
+  var h2 = document.createElement("h2");
+  h2.textContent = "Total cost: " + sum.toString();
+  myDiv.appendChild(h2);
+}
+//#endregion
 
 //#region ExcelToJson
 $(function() {
