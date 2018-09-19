@@ -76,14 +76,12 @@ $.getJSON( "./../Json/columns.json", function( columns ) {
                     var c = document.createElement("option");
                     c.setAttribute("value", element);
                     x.appendChild(c);
-                    console.log(element);
                 }
                 else if(x != null){
                     var c = document.createElement("option");
                     c.text = element;
                     c.value = element;
                     x.options.add(c, 1);
-                    console.log(element);
                 }
             });
         });
