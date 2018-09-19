@@ -11,7 +11,7 @@ function showChart() {
          type: chartFilters(),
          dataPoints : contentFilters()
          }
-       ]
+       ],
      });
 
     chartamount.render();
