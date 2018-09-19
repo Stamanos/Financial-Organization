@@ -1,4 +1,3 @@
-
 body,div,
 h1,h2,p,
 ol,ul,li {
@@ -106,4 +105,3 @@ a:hover {
 .nav-collapse li:first-child a { border-top: 0 }
 .nav-collapse li:last-child a { border-bottom: 0 }
 .nav-toggle { display: none }
-
