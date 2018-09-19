@@ -79,7 +79,7 @@ function Refresh(){
 
 //#region total-cost-to-inner-html
 function TotalCost(amountList){
-  var sum = amountList.reduce((a,b) => a + b, 0);
+  var sum = amountList.reduce((a,b) => a + b, 0).toFixed(2);
 
   $('#totalCost').empty(); //clean the previous if exists!
   var myDiv = document.getElementById("totalCost");
