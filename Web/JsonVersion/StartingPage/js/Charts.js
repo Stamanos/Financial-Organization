@@ -58,10 +58,10 @@ function contentFilters(){
   filter(function(s){if(locationFilter !== "null") {return s.location == locationFilter;} else {return true;}});
   
   //This is for creating inner Html for costs
-  var list = result.map(i => {
+  var amountlist = result.map(i => {
     return parseFloat(i[" amount "]);
   });
-  TotalCost(list);
+  TotalCost(amountlist);
 
   return result.map(i => {
     return {label: i.description, y: parseFloat(i[" amount "])};
@@ -76,6 +76,36 @@ function chartFilters(){
 function Refresh(){
   showChart();
 }
+
+//#region Column Filtering
+function columnFilters(){
+  var column = document.getElementById("columnsSelection").value;
+  $.getJSON("./Json/"+ column +".json", function(elements){
+      const chartData = [];
+      elements.forEach(i => {
+          var temp = spendingItems.filter(function(s){
+              return s[`${column}`] == i; //searching for costs that has this characteristic
+          });
+          var amount = temp.map(a => {
+              return parseFloat(a[" amount "]); //collect the list of amounts
+          });
+          chartData.push(amount.reduce((a,b) => a + b, 0).toFixed(2)); //push the sum of it
+          console.log(amount.reduce((a,b) => a + b, 0).toFixed(2));
+      });
+      var chartamount = new CanvasJS.Chart("chartContainer", {
+        title:{
+          text: "amount of money has been spend"              
+        },
+        data: [{
+           type: 'bar',
+           dataPoints : contentFilters()//ToDo: CHANGE THIS SHIT
+           }],
+       });
+  
+      chartamount.render();
+  });
+}
+//#endregion
 
 //#region total-cost-to-inner-html
 function TotalCost(amountList){

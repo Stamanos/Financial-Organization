@@ -41,6 +41,7 @@
         <button onclick="Refresh()">OK</button>
         <button onclick="window.location.href='AddCost/index.html'">Add Cost</button>
         <button onclick="window.location.href='test/test.html'">test!</button>
+        <button onclick="columnFilters()">SuperText</button>
       </br>
         <div id='my_file_output'>
             <input type="file" id="my_file_input"/>
@@ -53,7 +54,7 @@
     <div role="main" class="main">
       <a href="#nav" class="nav-toggle">Menu</a>
         <div id="chartContainer" style="display: block; height: 100%; width: 100%;">
-          <canvas class="canvasjs-chart-canvas" style="position: inherit"></canvas>
+          <canvas id="canvas" class="canvasjs-chart-canvas" style="position: inherit"></canvas>
         </div>
     </div>
     <script>
