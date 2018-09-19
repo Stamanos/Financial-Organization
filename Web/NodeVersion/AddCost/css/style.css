@@ -97,7 +97,7 @@ button:hover {
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    background-color: #08c;
+    background-color: rgba(0, 78, 117, 0.425);
     padding-top: 50px;
 }
 
