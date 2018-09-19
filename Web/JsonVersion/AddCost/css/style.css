@@ -73,7 +73,7 @@ button:hover {
 }
 
 .addcostbtn {
-    background-color: #08a810;
+    background-color: #08c;
     border: 1px solid rgb(229, 255, 0);
 }
 
@@ -97,13 +97,13 @@ button:hover {
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    background-color: #08a8104b;
+    background-color: rgba(0, 78, 117, 0.425);
     padding-top: 50px;
 }
 
 /* Modal Content/Box */
 .modal-content {
-    background-color: #08a810;
+    background-color: #08c;
     margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
     border: 1px solid rgb(229, 255, 0);
     width: 70%; /* Could be more or less, depending on screen size */
