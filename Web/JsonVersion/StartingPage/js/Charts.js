@@ -13,7 +13,6 @@ function showChart() {
          }
        ],
      });
-
     chartamount.render();
   }
 // functions that modify the spendingItems by the given filters
@@ -80,29 +79,23 @@ function Refresh(){
 //#region Column Filtering
 function columnFilters(){
   var column = document.getElementById("columnsSelection").value;
+  const chartData = {};
   $.getJSON("./Json/"+ column +".json", function(elements){
-      const chartData = [];
-      elements.forEach(i => {
-          var temp = spendingItems.filter(function(s){
-              return s[`${column}`] == i; //searching for costs that has this characteristic
-          });
-          var amount = temp.map(a => {
-              return parseFloat(a[" amount "]); //collect the list of amounts
-          });
-          chartData.push(amount.reduce((a,b) => a + b, 0).toFixed(2)); //push the sum of it
-          console.log(amount.reduce((a,b) => a + b, 0).toFixed(2));
+    elements.forEach(element => {
+        var temp = spendingItems.filter(function(s){
+            return s[`${column}`] == element; //searching for costs that has this characteristic
+        });
+        var amount = temp.map(a => {
+            return parseFloat(a[" amount "]); //collect the list of amounts
+        });
+        chartData[element] = amount.reduce((a,b) => a + b, 0).toFixed(2); //push the sum of it to the name of...Element
+        var data = {};
+        for(var key in chartData){
+          data.label = key;
+          data.cost = chartData[key];
+        }
+        console.log(data);
       });
-      var chartamount = new CanvasJS.Chart("chartContainer", {
-        title:{
-          text: "amount of money has been spend"              
-        },
-        data: [{
-           type: 'bar',
-           dataPoints : contentFilters()//ToDo: CHANGE THIS SHIT
-           }],
-       });
-  
-      chartamount.render();
   });
 }
 //#endregion
