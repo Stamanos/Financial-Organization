@@ -182,3 +182,7 @@ $( function() {
     " - €" + $( "#slider-range" ).slider( "values", 1 ) );
 });
 //#endregion
+
+//#region innnerHtml
+//ToDo: create code that generate Selections from Excel file input
+//#endregion
