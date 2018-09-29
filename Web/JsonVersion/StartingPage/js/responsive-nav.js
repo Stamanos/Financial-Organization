@@ -428,8 +428,7 @@
         }
       },
 
-      /**
-       * Prevents the default functionality.
+      /** 
        *
        * @param  {event} event
        */
@@ -442,15 +441,12 @@
           e.stopPropagation();
           return false;
 
-        // This is strictly for old IE
         } else {
           e.returnValue = false;
         }
       },
 
       /**
-       * On touch start we get the location of the touch.
-       *
        * @param  {event} event
        */
       _onTouchStart: function (e) {
