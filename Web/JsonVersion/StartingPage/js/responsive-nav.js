@@ -248,10 +248,6 @@
           }
         }
       },
-
-      /**
-       * Opens the navigation
-       */
       open: function () {
         if (!navOpen) {
           removeClass(nav, "closed");
