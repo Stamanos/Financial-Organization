@@ -1,7 +1,6 @@
 
 /* global Event */
 (function (document, window, index) {
-  // Index is used to keep multiple navs on the same page namespaced
 
   "use strict";
 
@@ -9,9 +8,6 @@
 
     var computed = !!window.getComputedStyle;
     
-    /**
-     * getComputedStyle polyfill for old browsers
-     */
     if (!computed) {
       window.getComputedStyle = function(el) {
         this.el = el;
