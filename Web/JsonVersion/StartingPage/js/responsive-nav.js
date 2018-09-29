@@ -456,17 +456,11 @@
         this.startX = e.touches[0].clientX;
         this.startY = e.touches[0].clientY;
         this.touchHasMoved = false;
-
-        /**
-         * Remove mouseup event completely here to avoid
-         * double triggering the event.
-         */
+ 
         removeEvent(navToggle, "mouseup", this, false);
       },
 
-      /**
-       * Check if the user is scrolling instead of tapping.
-       *
+      /** 
        * @param  {event} event
        */
       _onTouchMove: function (e) {
