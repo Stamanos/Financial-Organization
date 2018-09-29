@@ -287,13 +287,11 @@
 
       resize: function () {
 
-        // Resize watches navigation toggle's display state
         if (window.getComputedStyle(navToggle, null).getPropertyValue("display") !== "none") {
 
           isMobile = true;
           setAttributes(navToggle, {"aria-hidden": "false"});
 
-          // If the navigation is hidden
           if (nav.className.match(/(^|\s)closed(\s|$)/)) {
             setAttributes(nav, {"aria-hidden": "true"});
             nav.style.position = "absolute";
@@ -312,10 +310,9 @@
       },
 
       /**
-       * Takes care of all even handling
        *
        * @param  {event} event
-       * @return {type} returns the type of event that should be used
+       * @return {type} 
        */
       handleEvent: function (e) {
         var evt = e || window.event;
@@ -343,10 +340,6 @@
           break;
         }
       },
-
-      /**
-       * Initializes the widget
-       */
       _init: function () {
         this.index = index++;
 
