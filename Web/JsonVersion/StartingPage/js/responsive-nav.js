@@ -260,10 +260,6 @@
           opts.open();
         }
       },
-
-      /**
-       * Closes the navigation
-       */
       close: function () {
         if (navOpen) {
           addClass(nav, "closed");
@@ -280,7 +276,6 @@
               hasAnimFinished = true;
             }, opts.transition + 10);
 
-          // Animations aren't enabled, we can do these immediately
           } else {
             nav.style.position = "absolute";
           }
@@ -290,10 +285,6 @@
         }
       },
 
-      /**
-       * Resize is called on window resize and orientation change.
-       * It initializes the CSS styles and height calculations.
-       */
       resize: function () {
 
         // Resize watches navigation toggle's display state
