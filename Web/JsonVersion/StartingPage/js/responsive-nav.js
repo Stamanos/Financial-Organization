@@ -353,12 +353,6 @@
         this._createToggle();
         this._transitions();
         this.resize();
-
-        /**
-         * On IE8 the resize event triggers too early for some reason
-         * so it's called here again on init to make sure all the
-         * calculated styles are correct.
-         */
         var self = this;
         setTimeout(function () {
           self.resize();
@@ -373,15 +367,9 @@
         addEvent(navToggle, "keyup", this, false);
         addEvent(navToggle, "click", this, false);
 
-        /**
-         * Init callback here
-         */
         opts.init();
       },
 
-      /**
-       * Creates Styles to the <head>
-       */
       _createStyles: function () {
         if (!styleElement.parentNode) {
           styleElement.type = "text/css";
@@ -389,21 +377,14 @@
         }
       },
 
-      /**
-       * Removes styles from the <head>
-       */
       _removeStyles: function () {
         if (styleElement.parentNode) {
           styleElement.parentNode.removeChild(styleElement);
         }
       },
 
-      /**
-       * Creates Navigation Toggle
-       */
       _createToggle: function () {
 
-        // If there's no toggle, let's create one
         if (!opts.customToggle) {
           var toggle = document.createElement("a");
           toggle.innerHTML = opts.label;
@@ -412,7 +393,6 @@
             "class": "nav-toggle"
           });
 
-          // Determine where to insert the toggle
           if (opts.insert === "after") {
             nav.parentNode.insertBefore(toggle, nav.nextSibling);
           } else {
@@ -421,7 +401,6 @@
 
           navToggle = toggle;
 
-        // There is a toggle already, let's use that one
         } else {
           var toggleEl = opts.customToggle.replace("#", "");
 
@@ -434,10 +413,7 @@
           }
         }
       },
-
-      /**
-       * Closes the navigation when a link inside is clicked.
-       */
+ 
       _closeOnNavClick: function () {
         if (opts.closeOnNavClick) {
           var links = nav.getElementsByTagName("a"),
