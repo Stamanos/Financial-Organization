@@ -239,9 +239,6 @@
         }
       },
 
-      /**
-       * Toggles the navigation open/close
-       */
       toggle: function () {
         if (hasAnimFinished === true) {
           if (!navOpen) {
