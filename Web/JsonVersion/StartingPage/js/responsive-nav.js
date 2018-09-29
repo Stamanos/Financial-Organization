@@ -539,9 +539,6 @@
 
     };
 
-    /**
-     * Return new Responsive Nav
-     */
     return new ResponsiveNav(el, options);
 
   };
