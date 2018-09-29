@@ -35,13 +35,11 @@
      */
     var addEvent = function (el, evt, fn, bubble) {
         if ("addEventListener" in el) {
-          // BBOS6 doesn't support handleEvent, catch and polyfill
           try {
             el.addEventListener(evt, fn, bubble);
           } catch (e) {
             if (typeof fn === "object" && fn.handleEvent) {
               el.addEventListener(evt, function (e) {
-                // Bind fn as this and set first arg as event object
                 fn.handleEvent.call(fn, e);
               }, bubble);
             } else {
@@ -49,7 +47,6 @@
             }
           }
         } else if ("attachEvent" in el) {
-          // check if the callback is an object and contains handleEvent
           if (typeof fn === "object" && fn.handleEvent) {
             el.attachEvent("on" + evt, function () {
               // Bind fn as this
@@ -62,7 +59,6 @@
       },
     
       /**
-       * Remove Event
        *
        * @param  {element}  element
        * @param  {event}    event
@@ -94,18 +90,15 @@
       },
     
       /**
-       * Get the children of any element
        *
        * @param  {element}
-       * @return {array} Returns matching elements in an array
+       * @return {array}
        */
       getChildren = function (e) {
         if (e.children.length < 1) {
           throw new Error("The Nav container has no containing elements");
         }
-        // Store all children in array
         var children = [];
-        // Loop through children and store in array if child != TextNode
         for (var i = 0; i < e.children.length; i++) {
           if (e.children[i].nodeType === 1) {
             children.push(e.children[i]);
@@ -115,7 +108,6 @@
       },
     
       /**
-       * Sets multiple attributes at once
        *
        * @param {element} element
        * @param {attrs}   attrs
