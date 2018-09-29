@@ -481,19 +481,15 @@
           return;
         }
 
-        // If the user isn't scrolling
         if (!this.touchHasMoved) {
 
-          // If the event type is touch
           if (e.type === "touchend") {
             this.toggle();
             return;
 
-          // Event type was click, not touch
           } else {
             var evt = e || window.event;
 
-            // If it isn't a right click, do toggling
             if (!(evt.which === 3 || evt.button === 2)) {
               this.toggle();
             }
@@ -502,8 +498,6 @@
       },
 
       /**
-       * For keyboard accessibility, toggle the navigation on Enter
-       * keypress too.
        *
        * @param  {event} event
        */
@@ -514,9 +508,6 @@
         }
       },
 
-      /**
-       * Adds the needed CSS transitions if animations are enabled
-       */
       _transitions: function () {
         if (opts.animate) {
           var objStyle = nav.style,
@@ -529,10 +520,6 @@
         }
       },
 
-      /**
-       * Calculates the height of the navigation and then creates
-       * styles which are later added to the page <head>
-       */
       _calcHeight: function () {
         var savedHeight = 0;
         for (var i = 0; i < nav.inner.length; i++) {
