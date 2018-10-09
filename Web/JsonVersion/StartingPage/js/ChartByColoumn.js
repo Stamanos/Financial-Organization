@@ -1,8 +1,5 @@
 
-
-
 var filterName = document.getElementById("something");
-
 
 
 //#region Column Filtering
