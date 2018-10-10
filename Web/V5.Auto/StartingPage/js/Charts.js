@@ -183,7 +183,7 @@ $( function() {
 });
 //#endregion
 
-//#region innnerHtml
+//#region selections filters innnerHtml
 function createHTML(){
     var uniqueValues = [];
     for(var key in spendingItems[0]){
