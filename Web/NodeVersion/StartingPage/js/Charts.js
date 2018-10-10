@@ -8,7 +8,7 @@ function showChart() {
       data: [//array of dataSeries              
         { //dataSeries object
           //ToDo:: put the dates as labels
-         type: chartFilters(),
+         type: document.getElementById("typeOfChartSelection").value,
          dataPoints : contentFilters()
          }
        ]
@@ -62,10 +62,6 @@ function contentFilters(){
   return result;
 }
 //#endregion
-
-function chartFilters(){
-  return document.getElementById("typeOfChartSelection").value;
-}
 
 function Refresh(){
   showChart();
