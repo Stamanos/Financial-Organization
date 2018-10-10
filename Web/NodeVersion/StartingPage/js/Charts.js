@@ -5,9 +5,8 @@ function showChart() {
       title:{
         text: "amount of money has been spend"              
       },
-      data: [//array of dataSeries              
-        { //dataSeries object
-          //ToDo:: put the dates as labels
+      data: [             
+        {
          type: document.getElementById("typeOfChartSelection").value,
          dataPoints : contentFilters()
          }
