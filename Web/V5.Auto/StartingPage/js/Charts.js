@@ -7,7 +7,7 @@ function showChart() {
       },
       data: [             
         {
-         type: chartFilters(),
+         type: document.getElementById("typeOfChartSelection").value,
          dataPoints : contentFilters()
          }
        ],
@@ -66,10 +66,6 @@ function contentFilters(){
   });
 }
 //#endregion
-
-function chartFilters(){
-  return document.getElementById("typeOfChartSelection").value;
-}
 
 function Refresh(){
   showChart();
