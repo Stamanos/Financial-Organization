@@ -1,10 +1,4 @@
-/*! responsive-nav.js 1.0.39
- * https://github.com/viljamis/responsive-nav.js
- * http://responsive-nav.com
- *
- * Copyright (c) 2015 @viljamis
- * Available under the MIT license
- */
+
 
 /* global Event */
 (function (document, window, index) {
