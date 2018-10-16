@@ -42,7 +42,6 @@
           } catch (e) {
             if (typeof fn === "object" && fn.handleEvent) {
               el.addEventListener(evt, function (e) {
-                // Bind fn as this and set first arg as event object
                 fn.handleEvent.call(fn, e);
               }, bubble);
             } else {
