@@ -17,7 +17,6 @@
     var computed = !!window.getComputedStyle;
     
     /**
-     * getComputedStyle polyfill for old browsers
      */
     if (!computed) {
       window.getComputedStyle = function(el) {
