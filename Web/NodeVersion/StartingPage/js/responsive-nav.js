@@ -1,8 +1,5 @@
 
-
-/* global Event */
 (function (document, window, index) {
-  // Index is used to keep multiple navs on the same page namespaced
 
   "use strict";
 
