@@ -37,7 +37,6 @@
      */
     var addEvent = function (el, evt, fn, bubble) {
         if ("addEventListener" in el) {
-          // BBOS6 doesn't support handleEvent, catch and polyfill
           try {
             el.addEventListener(evt, fn, bubble);
           } catch (e) {
