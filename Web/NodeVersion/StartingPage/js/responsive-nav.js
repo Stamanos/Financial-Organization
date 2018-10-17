@@ -97,7 +97,6 @@
         if (e.children.length < 1) {
           throw new Error("The Nav container has no containing elements");
         }
-        // Store all children in array
         var children = [];
         // Loop through children and store in array if child != TextNode
         for (var i = 0; i < e.children.length; i++) {
