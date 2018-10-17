@@ -59,8 +59,6 @@
       },
     
       /**
-       * Remove Event
-       *
        * @param  {element}  element
        * @param  {event}    event
        * @param  {Function} fn
