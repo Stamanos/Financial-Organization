@@ -27,7 +27,6 @@
         return this;
       };
     }
-    /* exported addEvent, removeEvent, getChildren, setAttributes, addClass, removeClass, forEach */
     
     /**
      * @param  {element}  element
