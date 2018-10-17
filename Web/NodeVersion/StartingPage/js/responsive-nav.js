@@ -89,10 +89,9 @@
       },
     
       /**
-       * Get the children of any element
        *
        * @param  {element}
-       * @return {array} Returns matching elements in an array
+       * @return {array}
        */
       getChildren = function (e) {
         if (e.children.length < 1) {
