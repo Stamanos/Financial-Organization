@@ -48,10 +48,8 @@
             }
           }
         } else if ("attachEvent" in el) {
-          // check if the callback is an object and contains handleEvent
           if (typeof fn === "object" && fn.handleEvent) {
             el.attachEvent("on" + evt, function () {
-              // Bind fn as this
               fn.handleEvent.call(fn);
             });
           } else {
