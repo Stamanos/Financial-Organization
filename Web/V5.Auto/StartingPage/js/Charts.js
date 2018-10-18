@@ -77,7 +77,9 @@ function columnFilters(){
 
   var dataDictionary = {};
   for(var i = 0; i<spendingItems.length; i++){
-    dataDictionary[`${spendingItems[i][`${column}`]}`] = 0;
+    if(dataDictionary.indexOf(spendingItems[i][`${column}`]) === -1){
+      dataDictionary[`${spendingItems[i][`${column}`]}`] = 0.0;
+    }
     if(spendingItems[i][" amount "] !== "null"){
       dataDictionary[`${spendingItems[i][`${column}`]}`] += parseFloat(spendingItems[i][" amount "]);
     }
