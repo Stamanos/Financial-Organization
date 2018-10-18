@@ -74,24 +74,32 @@ function Refresh(){
 //#region Column Filtering
 function columnFilters(){
   var column = document.getElementById("columnsSelection").value;
+
+  var dataDictionary = {};
+  for(var i = 0; i<spendingItems.length; i++){
+    if(dataDictionary.indexOf(spendingItems[i][`${column}`]) === -1){
+      dataDictionary[`${spendingItems[i][`${column}`]}`] = 0.0;
+    }
+    if(spendingItems[i][" amount "] !== "null"){
+      dataDictionary[`${spendingItems[i][`${column}`]}`] += parseFloat(spendingItems[i][" amount "]);
+    }
+  }
+  console.log(dataDictionary);
+
+
   const chartData = {};
-  $.getJSON("./Json/"+ column +".json", function(elements){
-    elements.forEach(element => {
-        var temp = spendingItems.filter(function(s){
-            return s[`${column}`] == element; //searching for costs that has this characteristic
-        });
-        var amount = temp.map(a => {
-            return parseFloat(a[" amount "]); //collect the list of amounts
-        });
-        chartData[element] = amount.reduce((a,b) => a + b, 0).toFixed(2); //push the sum of it to the name of...Element
-        var data = {};
-        for(var key in chartData){
-          data.label = key;
-          data.cost = chartData[key];
-        }
-        console.log(data);
-      });
-  });
+  var chartamount = new CanvasJS.Chart("chartContainer", {
+    title:{
+      text: `amount of money by ${column}`              
+    },
+    data: [
+      {
+       type: document.getElementById("typeOfChartSelection").value,
+       dataPoints : contentFilters()
+       }
+     ],
+   });
+  chartamount.render();
 }
 //#endregion
 
@@ -182,6 +190,7 @@ $( function() {
 //#region selections filters innnerHtml
 function createHTML(){
     var uniqueValues = [];
+    var columns = [];
     for(var key in spendingItems[0]){
       for(var i = 0; i<spendingItems.length; i++){
         if(uniqueValues.indexOf(spendingItems[i][`${key}`]) === -1){
@@ -192,9 +201,11 @@ function createHTML(){
       if(key !== 'date' && key !== ' amount ' && key !== 'weather' && key !== 'description'){
         makeSelection(key, uniqueValues);
       }
+      columns.push(key);
       uniqueValues = [];
     }
-      
+    console.log(columns);
+    makeSelection("columns", columns);
 }
 
 function makeSelection(input, optionList){
