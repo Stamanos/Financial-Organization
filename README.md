@@ -4,12 +4,14 @@ M.Organ is a web app so far, that heps the user to organize every day expences!
 
 ## Getting Started
 
-i. First of all, you ought to have an excel file with all your costs. 
-ii. To work the site properly must have 3 columns in your file.
-1) amount
-2) description
-3) date
-iii. And the first row full of the word "null"
+1)First of all, you ought to have an excel file with all your costs. 
+2)To work the site properly must have 3 columns in your file.
+```
+i) amount
+ii) description
+iii) date
+```
+3)And the first row full of the word "null"
 
 ### Noob friendly
 
