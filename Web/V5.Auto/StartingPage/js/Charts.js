@@ -1,5 +1,6 @@
 let spendingItems, startDate, endDate, startAmount, endAmount;
 
+//#region Display Charts
 function showChart(chartDataPoints, chartTitle) {
     var chartamount = new CanvasJS.Chart("chartContainer", {
       title:{
@@ -14,6 +15,8 @@ function showChart(chartDataPoints, chartTitle) {
      });
     chartamount.render();
   }
+//#endregion
+
 // functions that modify the spendingItems by the given filters
 //#region Filtering
 function contentFilters(){
