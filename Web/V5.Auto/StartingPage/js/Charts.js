@@ -75,10 +75,12 @@ function Refresh(){
 function columnFilters(){
   var column = document.getElementById("columnsSelection").value;
 
+  var uniqueValues = [];
   var dataDictionary = {};
-  for(var i = 0; i<spendingItems.length; i++){
-    if(dataDictionary.indexOf(spendingItems[i][`${column}`]) === -1){
-      dataDictionary[`${spendingItems[i][`${column}`]}`] = 0.0;
+  for(let i = 0; i<spendingItems.length; i++){
+    if(uniqueValues.indexOf(spendingItems[i][`${column}`]) === -1){ //if is unique!
+      uniqueValues.push(spendingItems[i][`${column}`]);
+      dataDictionary[`${spendingItems[i][`${column}`]}`] = 0.0; //put a starting value 
     }
     if(spendingItems[i][" amount "] !== "null"){
       dataDictionary[`${spendingItems[i][`${column}`]}`] += parseFloat(spendingItems[i][" amount "]);
@@ -86,8 +88,16 @@ function columnFilters(){
   }
   console.log(dataDictionary);
 
+  const chartValues = [];
+  for(let i = 0; i < Object.keys(dataDictionary).length; i++){
+    chartValues.push({
+      label: Object.keys(dataDictionary)[i], 
+      y: Object.values(dataDictionary)[i]
+    });
+  }
 
-  const chartData = {};
+  console.log(chartValues);
+
   var chartamount = new CanvasJS.Chart("chartContainer", {
     title:{
       text: `amount of money by ${column}`              
@@ -95,7 +105,7 @@ function columnFilters(){
     data: [
       {
        type: document.getElementById("typeOfChartSelection").value,
-       dataPoints : contentFilters()
+       dataPoints : chartValues
        }
      ],
    });
