@@ -8,7 +8,7 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js"></script>
     <script type="text/javascript" src=" https://cdnjs.cloudflare.com/ajax/libs/xls/0.7.4-a/xls.js"></script>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script>
     <!--for Calendar-->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
@@ -65,19 +65,21 @@
         <!--END TYPE OF CHART-->
       </br>
         <button onclick="contentFilters()">OK</button>
-        <button onclick="window.location.href='AddCost/index.html'">Add Cost</button>
       </br>
-        <div id='my_file_output'>
-            <input type="file" id="my_file_input"/>
-          </div>
       </ul>
     </br>
       <div id="columnFilters"></div>
-    </br>
-      <button onclick="columnFilters()">SuperTest</button>
+      <button onclick="columnFilters()">Show Column Chart</button>
     </div>
   </br>
+</br>
+</br>
+  <div id='my_file_output'>
+    <input type="file" id="my_file_input"/>
+  </div>
   </br>
+  <button onclick="window.location.href='AddCost/index.html'">Add Cost</button>
+</br>
     <div id="totalCost"></div>
     <div role="main" class="main">
       <a href="#nav" class="nav-toggle">Menu</a>
