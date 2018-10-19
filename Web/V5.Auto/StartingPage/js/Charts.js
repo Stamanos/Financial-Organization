@@ -1,14 +1,14 @@
 let spendingItems, startDate, endDate, startAmount, endAmount;
 
-function showChart() {
+function showChart(chartDataPoints, chartTitle) {
     var chartamount = new CanvasJS.Chart("chartContainer", {
       title:{
-        text: "amount of money has been spend"              
+        text: chartTitle   
       },
       data: [             
         {
          type: document.getElementById("typeOfChartSelection").value,
-         dataPoints : contentFilters()
+         dataPoints : chartDataPoints
          }
        ],
      });
@@ -61,9 +61,11 @@ function contentFilters(){
   });
   TotalCost(amountlist);
 
-  return result.map(i => {
+  var filtersChartValues =  result.map(i => {
     return {label: i.description, y: parseFloat(i[" amount "])};
   });
+
+  showChart(filtersChartValues, "amount of money has been spend");
 }
 //#endregion
 
@@ -90,19 +92,8 @@ function columnFilters(){
       y: Object.values(dataDictionary)[i]
     });
   }
-
-  var chartamount = new CanvasJS.Chart("chartContainer", {
-    title:{
-      text: `amount of money by ${column}`              
-    },
-    data: [
-      {
-       type: document.getElementById("typeOfChartSelection").value,
-       dataPoints : columnChartValues
-       }
-     ],
-   });
-  chartamount.render();
+  
+  showChart(columnChartValues, `amount of money by ${column}`);
 }
 //#endregion
 
