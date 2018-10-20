@@ -77,7 +77,7 @@ function columnFilters(){
   var column = document.getElementById("columnsSelection").value;
 
   var uniqueValues = [];
-  var dataDictionary = {};
+  var dataDictionary = {}; //Dictionary that display chart values
   for(let i = 0; i<spendingItems.length; i++){
     if(uniqueValues.indexOf(spendingItems[i][`${column}`]) === -1){ //if is unique!
       uniqueValues.push(spendingItems[i][`${column}`]);
