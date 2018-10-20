@@ -47,4 +47,5 @@ Manos Stamatakis
 #### Frontend
 Konstantinos Kalaitzidis
 
+# I hope you liked it
 
