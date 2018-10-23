@@ -1,0 +1,29 @@
+/*Style of Ids*/
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+/*Style of classes*/
+
+/*Html basic objects style*/
+select{
+    background-color: #4CAF50;
+    font-size: 13px;
+    width: 100%;
+    padding: 15px;
+    display: inline-block;
+}
+
+input{
+    background-color: #4CAF50;
+    font-size: 15px;
+    width: 100%;
+    padding: 15px;
+    display: inline-block;
+}
+
+::placeholder{
+    color: #050300;
+}
