@@ -17,8 +17,6 @@ function showChart(chartDataPoints, chartTitle) {
   }
 //#endregion
 
-
-
 // functions that modify the spendingItems by the given filters
 //#region Filtering
 function contentFilters(){
@@ -39,7 +37,7 @@ function contentFilters(){
   }).
   
   filter(function(s){if(nameFilter !== "null") {return s.name == nameFilter;} else {return true;}}).
-  filter(function(s){return String(s.ExtraIngridients).includes(descriptionFilter);}).
+  filter(function(s){return String(s.extraIngridients).includes(descriptionFilter);}).
   filter(function(s){if(commentFilter !== "null") {return s.comment == commentFilter;} else {return true;}}).
   filter(function(s){if(linkFilter !== "null") {return s.link == linkFilter;} else {return true;}}).
   filter(function(s){if(typeFilter !== "null") {return s.type == typeFilter;} else {return true;}});
@@ -48,7 +46,6 @@ function contentFilters(){
   var ratinglist = result.map(i => {
     return parseFloat(i["rating"]);
   });
-  console.log(ratinglist);
   TotalCost(ratinglist);
 
   var filtersChartValues =  result.map(i => {
@@ -91,10 +88,16 @@ function columnFilters(){
 function TotalCost(ratingList){
   var sum = ratingList.reduce((a,b) => a + b, 0).toFixed(2);
 
+  if(ratingList.length > 0){
+    var average = sum / ratingList.length;
+  }else{
+    var average = 0;
+  }
+
   $('#totalCost').empty(); //clean the previous if exists!
   var myDiv = document.getElementById("totalCost");
   var h2 = document.createElement("h2");
-  h2.textContent = "Total cost: " + sum.toString();
+  h2.textContent = "Average rating: " + average.toString();
   myDiv.appendChild(h2);
 }
 //#endregion
@@ -133,14 +136,14 @@ $( function() {
   $( "#slider-range" ).slider({
     range: true,
     min: 0,
-    max: 500,
-    values: [ 0, 500 ],
+    max: 7,
+    values: [ 0, 7 ],
     slide: function( event, ui ) {
-      $( "#ratingRange" ).val( "€" + ui.values[ 0 ] + " - €" + ui.values[ 1 ] );
+      $( "#ratingRange" ).val( "*" + ui.values[ 0 ] + " - *" + ui.values[ 1 ] );
     }
   });
-  $( "#ratingRange" ).val( "€" + $( "#slider-range" ).slider( "values", 0 ) +
-    " - €" + $( "#slider-range" ).slider( "values", 1 ) );
+  $( "#ratingRange" ).val( "*" + $( "#slider-range" ).slider( "values", 0 ) +
+    " - *" + $( "#slider-range" ).slider( "values", 1 ) );
 });
 //#endregion
 
