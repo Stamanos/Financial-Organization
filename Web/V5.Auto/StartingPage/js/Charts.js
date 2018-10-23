@@ -1,8 +1,8 @@
-let spendingItems, startDate, endDate, startAmount, endAmount;
+let spendingItems, startDate, endDate, startRating, endRating;
 
 //#region Display Charts
 function showChart(chartDataPoints, chartTitle) {
-    var chartamount = new CanvasJS.Chart("chartContainer", {
+    var chartrating = new CanvasJS.Chart("chartContainer", {
       title:{
         text: chartTitle   
       },
@@ -13,7 +13,7 @@ function showChart(chartDataPoints, chartTitle) {
          }
        ],
      });
-    chartamount.render();
+    chartrating.render();
   }
 //#endregion
 
@@ -23,54 +23,39 @@ function showChart(chartDataPoints, chartTitle) {
 //#region Filtering
 function contentFilters(){
   //declare values
-  startAmount = $( "#slider-range" ).slider( "values", 0 );
-  endAmount = $( "#slider-range" ).slider( "values", 1 );
+  startRating = $( "#slider-range" ).slider( "values", 0 );
+  endRating = $( "#slider-range" ).slider( "values", 1 );
   
-  var typeFilter = document.getElementById("typeSelection").value;
-  var dateFilter = document.getElementById("dateCheckbox").checked;
+  var nameFilter = document.getElementById("nameSelection").value;
   var descriptionFilter = document.getElementById("searchDescriptionInput").value;
-  var userStatusFilter = document.getElementById("userStatusSelection").value;
-  var moodLevelFilter = document.getElementById("moodLevelSelection").value;
-  var locationFilter = document.getElementById("locationSelection").value;
+  var commentFilter = document.getElementById("commentSelection").value;
+  var linkFilter = document.getElementById("linkSelection").value;
+  var typeFilter = document.getElementById("typeSelection").value;
   
   const result =  spendingItems.
-  filter(function(s){//Cost Amount filter
-    var cost = parseFloat(s[" amount "]);
-    return (parseFloat(startAmount) <= cost && cost <= parseFloat(endAmount));
+  filter(function(s){//Cost Rating filter
+    var cost = parseFloat(s["rating"]);
+    return (parseFloat(startRating) <= cost && cost <= parseFloat(endRating));
   }).
-  filter(function(s){if(typeFilter !== "null") {return s.type == typeFilter;} else {return true;}}).
-  filter(function(s){
-    if(dateFilter) {
-      //creating the cost date as date time
-      var costDate_array = String(s.date).split('/');
-      var costDate = new Date("20" + costDate_array[2], costDate_array[0] - 1, costDate_array[1]);
-      //creating the filter date as date time (Start Date)
-      var filterStartDate_array = startDate.format('YYYY-MM-DD').split('-');
-      var filterStartDate = new Date(filterStartDate_array[0], filterStartDate_array[1] - 1, filterStartDate_array[2]);
-      //creating the filter date as date time (End Date)
-      var filterEndDate_array = endDate.format('YYYY-MM-DD').split('-');
-      var filterEndDate = new Date(filterEndDate_array[0], filterEndDate_array[1] - 1, filterEndDate_array[2]);
-      return ((+filterStartDate.getTime() <= +costDate.getTime()) && (+costDate.getTime() <= +filterEndDate.getTime()));
-    }
-    else {
-      return true;
-    }}).
-  filter(function(s){return String(s.description).includes(descriptionFilter);}).
-  filter(function(s){if(userStatusFilter !== "null") {return s.userStatus == userStatusFilter;} else {return true;}}).
-  filter(function(s){if(moodLevelFilter !== "null") {return s.moodLevel == moodLevelFilter;} else {return true;}}).
-  filter(function(s){if(locationFilter !== "null") {return s.location == locationFilter;} else {return true;}});
+  
+  filter(function(s){if(nameFilter !== "null") {return s.name == nameFilter;} else {return true;}}).
+  filter(function(s){return String(s.ExtraIngridients).includes(descriptionFilter);}).
+  filter(function(s){if(commentFilter !== "null") {return s.comment == commentFilter;} else {return true;}}).
+  filter(function(s){if(linkFilter !== "null") {return s.link == linkFilter;} else {return true;}}).
+  filter(function(s){if(typeFilter !== "null") {return s.type == typeFilter;} else {return true;}});
   
   //This is for creating inner Html for costs
-  var amountlist = result.map(i => {
-    return parseFloat(i[" amount "]);
+  var ratinglist = result.map(i => {
+    return parseFloat(i["rating"]);
   });
-  TotalCost(amountlist);
+  console.log(ratinglist);
+  TotalCost(ratinglist);
 
   var filtersChartValues =  result.map(i => {
-    return {label: i.description, y: parseFloat(i[" amount "])};
+    return {label: i.name, y: parseFloat(i["rating"])};
   });
 
-  showChart(filtersChartValues, "amount of money has been spend");
+  showChart(filtersChartValues, "ratings on food have been made");
 }
 //#endregion
 
@@ -85,8 +70,8 @@ function columnFilters(){
       uniqueValues.push(spendingItems[i][`${column}`]);
       dataDictionary[`${spendingItems[i][`${column}`]}`] = 0.0; //put a starting value 
     }
-    if(spendingItems[i][" amount "] !== "null"){
-      dataDictionary[`${spendingItems[i][`${column}`]}`] += parseFloat(spendingItems[i][" amount "]);
+    if(spendingItems[i]["rating"] !== "null"){
+      dataDictionary[`${spendingItems[i][`${column}`]}`] += parseFloat(spendingItems[i]["rating"]);
     }
   }
 
@@ -98,13 +83,13 @@ function columnFilters(){
     });
   }
   
-  showChart(columnChartValues, `amount of money by ${column}`);
+  showChart(columnChartValues, `Foods rating by ${column}`);
 }
 //#endregion
 
 //#region total-cost-to-inner-html
-function TotalCost(amountList){
-  var sum = amountList.reduce((a,b) => a + b, 0).toFixed(2);
+function TotalCost(ratingList){
+  var sum = ratingList.reduce((a,b) => a + b, 0).toFixed(2);
 
   $('#totalCost').empty(); //clean the previous if exists!
   var myDiv = document.getElementById("totalCost");
@@ -143,32 +128,6 @@ function filePicked(oEvent) {
 }
 //#endregion
 
-//#region Calendar
-$(function() {
-  var start = moment().subtract(29, 'days');
-  var end = moment();
-
-  function cb(start, end) {
-      $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-      startDate = start;
-      endDate = end;
-  }
-  $('#reportrange').daterangepicker({
-      startDate: start,
-      endDate: end,
-      ranges: {
-         'Today': [moment(), moment()],
-         'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-         'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-         'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-         'This Month': [moment().startOf('month'), moment().endOf('month')],
-         'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-      }
-  }, cb);
-  cb(start, end);
-});
-//#endregion
-
 //#region Slider
 $( function() {
   $( "#slider-range" ).slider({
@@ -177,10 +136,10 @@ $( function() {
     max: 500,
     values: [ 0, 500 ],
     slide: function( event, ui ) {
-      $( "#amountRange" ).val( "€" + ui.values[ 0 ] + " - €" + ui.values[ 1 ] );
+      $( "#ratingRange" ).val( "€" + ui.values[ 0 ] + " - €" + ui.values[ 1 ] );
     }
   });
-  $( "#amountRange" ).val( "€" + $( "#slider-range" ).slider( "values", 0 ) +
+  $( "#ratingRange" ).val( "€" + $( "#slider-range" ).slider( "values", 0 ) +
     " - €" + $( "#slider-range" ).slider( "values", 1 ) );
 });
 //#endregion
@@ -195,7 +154,7 @@ function createHTML(){
           uniqueValues.push(spendingItems[i][`${key}`]);
         }
       }
-      if(key !== 'date' && key !== ' amount ' && key !== 'weather' && key !== 'description'){
+      if(key !== 'rating'&& key !== 'extraIngridients'){
         makeSelection(key, uniqueValues, "autoGenerated");
       }
       columns.push(key);
