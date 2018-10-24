@@ -32,11 +32,12 @@ function contentFilters(){
   var locationFilter = document.getElementById("locationSelection").value;
   
   const result =  spendingItems.
-  filter(function(s){//Cost Amount filter
-    var cost = parseFloat(s[" amount "]);
-    return (parseFloat(startAmount) <= cost && cost <= parseFloat(endAmount));
-  }).
+  filter(function(s){return (parseFloat(startAmount) <= parseFloat(s["amount"]) && parseFloat(s["amount"]) <= parseFloat(endAmount));}).//Cost Amount filter
   filter(function(s){if(typeFilter !== "null") {return s.type == typeFilter;} else {return true;}}).
+  filter(function(s){return String(s.description).includes(descriptionFilter);}).
+  filter(function(s){if(userStatusFilter !== "null") {return s.userStatus == userStatusFilter;} else {return true;}}).
+  filter(function(s){if(moodLevelFilter !== "null") {return s.moodLevel == moodLevelFilter;} else {return true;}}).
+  filter(function(s){if(locationFilter !== "null") {return s.location == locationFilter;} else {return true;}}).
   filter(function(s){
     if(dateFilter) {
       //creating the cost date as date time
@@ -52,20 +53,14 @@ function contentFilters(){
     }
     else {
       return true;
-    }}).
-  filter(function(s){return String(s.description).includes(descriptionFilter);}).
-  filter(function(s){if(userStatusFilter !== "null") {return s.userStatus == userStatusFilter;} else {return true;}}).
-  filter(function(s){if(moodLevelFilter !== "null") {return s.moodLevel == moodLevelFilter;} else {return true;}}).
-  filter(function(s){if(locationFilter !== "null") {return s.location == locationFilter;} else {return true;}});
+    }});
   
   //This is for creating inner Html for costs
-  var amountlist = result.map(i => {
-    return parseFloat(i[" amount "]);
-  });
-  TotalCost(amountlist);
+  var amountlist = result.map(i => { return parseFloat(i["amount"]); });
+  TotalCost(amountlist); //to display the total cost down below the filters
 
   var filtersChartValues =  result.map(i => {
-    return {label: i.description, y: parseFloat(i[" amount "])};
+    return {label: i.description, y: parseFloat(i["amount"])};
   });
 
   showChart(filtersChartValues, "amount of money has been spend");
@@ -83,8 +78,8 @@ function columnFilters(){
       uniqueValues.push(spendingItems[i][`${column}`]);
       dataDictionary[`${spendingItems[i][`${column}`]}`] = 0.0; //put a starting value 
     }
-    if(spendingItems[i][" amount "] !== "null"){
-      dataDictionary[`${spendingItems[i][`${column}`]}`] += parseFloat(spendingItems[i][" amount "]);
+    if(spendingItems[i]["amount"] !== "null"){
+      dataDictionary[`${spendingItems[i][`${column}`]}`] += parseFloat(spendingItems[i]["amount"]);
     }
   }
 
@@ -104,11 +99,21 @@ function columnFilters(){
 function TotalCost(amountList){
   var sum = amountList.reduce((a,b) => a + b, 0).toFixed(2);
 
+  if(amountList.length > 0){
+    var average = sum/amountList.length;
+  }else{
+    var average = 0;
+  }
+
   $('#totalCost').empty(); //clean the previous if exists!
   var myDiv = document.getElementById("totalCost");
-  var h2 = document.createElement("h2");
-  h2.textContent = "Total cost: " + sum.toString();
-  myDiv.appendChild(h2);
+  var h2Total = document.createElement("h2");
+  h2Total.textContent = "Total cost: " + sum.toString();
+  myDiv.appendChild(h2Total);
+  myDiv.appendChild(document.createElement("br"));
+  var h2Average = document.createElement("h2");
+  h2Average.textContent = "Average: " + average.toString();
+  myDiv.appendChild(h2Average);
 }
 //#endregion
 
@@ -141,47 +146,6 @@ function filePicked(oEvent) {
 }
 //#endregion
 
-//#region Calendar
-$(function() {
-  var start = moment().subtract(29, 'days');
-  var end = moment();
-
-  function cb(start, end) {
-      $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-      startDate = start;
-      endDate = end;
-  }
-  $('#reportrange').daterangepicker({
-      startDate: start,
-      endDate: end,
-      ranges: {
-         'Today': [moment(), moment()],
-         'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-         'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-         'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-         'This Month': [moment().startOf('month'), moment().endOf('month')],
-         'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-      }
-  }, cb);
-  cb(start, end);
-});
-//#endregion
-
-//#region Slider
-$( function() {
-  $( "#slider-range" ).slider({
-    range: true,
-    min: 0,
-    max: 500,
-    values: [ 0, 500 ],
-    slide: function( event, ui ) {
-      $( "#amountRange" ).val( "€" + ui.values[ 0 ] + " - €" + ui.values[ 1 ] );
-    }
-  });
-  $( "#amountRange" ).val( "€" + $( "#slider-range" ).slider( "values", 0 ) +
-    " - €" + $( "#slider-range" ).slider( "values", 1 ) );
-});
-//#endregion
 
 //#region selections filters innnerHtml
 function createHTML(){
@@ -193,7 +157,7 @@ function createHTML(){
           uniqueValues.push(spendingItems[i][`${key}`]);
         }
       }
-      if(key !== 'date' && key !== ' amount ' && key !== 'weather' && key !== 'description'){
+      if(key !== 'date' && key !== 'amount' && key !== 'weather' && key !== 'description'){
         makeSelection(key, uniqueValues, "autoGenerated");
       }
       columns.push(key);
