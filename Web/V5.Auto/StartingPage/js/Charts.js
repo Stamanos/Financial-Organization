@@ -141,47 +141,6 @@ function filePicked(oEvent) {
 }
 //#endregion
 
-//#region Calendar
-$(function() {
-  var start = moment().subtract(29, 'days');
-  var end = moment();
-
-  function cb(start, end) {
-      $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-      startDate = start;
-      endDate = end;
-  }
-  $('#reportrange').daterangepicker({
-      startDate: start,
-      endDate: end,
-      ranges: {
-         'Today': [moment(), moment()],
-         'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-         'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-         'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-         'This Month': [moment().startOf('month'), moment().endOf('month')],
-         'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-      }
-  }, cb);
-  cb(start, end);
-});
-//#endregion
-
-//#region Slider
-$( function() {
-  $( "#slider-range" ).slider({
-    range: true,
-    min: 0,
-    max: 500,
-    values: [ 0, 500 ],
-    slide: function( event, ui ) {
-      $( "#amountRange" ).val( "€" + ui.values[ 0 ] + " - €" + ui.values[ 1 ] );
-    }
-  });
-  $( "#amountRange" ).val( "€" + $( "#slider-range" ).slider( "values", 0 ) +
-    " - €" + $( "#slider-range" ).slider( "values", 1 ) );
-});
-//#endregion
 
 //#region selections filters innnerHtml
 function createHTML(){
