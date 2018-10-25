@@ -1,5 +1,5 @@
 let spendingItems, startDate, endDate, startAmount, endAmount, excelColumns;
-
+import "./contentFilters.js";
 //#region Display Charts
 function showChart(chartDataPoints, chartTitle) {
     var chartamount = new CanvasJS.Chart("chartContainer", {
@@ -23,7 +23,6 @@ function contentFilters(){
 
   var nonStaticResult = spendingItems; //filters that are non static, Everything except "amount", "date", "description"
   excelColumns.forEach(function(column){
-    console.log(column);
     nonStaticResult = nonStaticResult.filter(function(s){
         if(document.getElementById(`${column}Selection`).value !== "null"){
           return s[`${column}`] == document.getElementById(`${column}Selection`).value;
@@ -41,14 +40,11 @@ function contentFilters(){
   filter(function(s){return (parseFloat(startAmount) <= parseFloat(s["amount"]) && parseFloat(s["amount"]) <= parseFloat(endAmount));}).//Cost Amount filter
   filter(function(s){return String(s.description).includes(document.getElementById("searchDescriptionInput").value);}).
   filter(function(s){
-    if(document.getElementById("dateCheckbox").checked) {
-      //creating the cost date as date time
+    if(document.getElementById("dateCheckbox").checked) {//creating the cost date as date time
       var costDate_array = String(s.date).split('/');
-      var costDate = new Date("20" + costDate_array[2], costDate_array[0] - 1, costDate_array[1]);
-      //creating the filter date as date time (Start Date)
+      var costDate = new Date("20" + costDate_array[2], costDate_array[0] - 1, costDate_array[1]);//creating the filter date as date time (Start Date)
       var filterStartDate_array = startDate.format('YYYY-MM-DD').split('-');
-      var filterStartDate = new Date(filterStartDate_array[0], filterStartDate_array[1] - 1, filterStartDate_array[2]);
-      //creating the filter date as date time (End Date)
+      var filterStartDate = new Date(filterStartDate_array[0], filterStartDate_array[1] - 1, filterStartDate_array[2]);//creating the filter date as date time (End Date)
       var filterEndDate_array = endDate.format('YYYY-MM-DD').split('-');
       var filterEndDate = new Date(filterEndDate_array[0], filterEndDate_array[1] - 1, filterEndDate_array[2]);
       return ((+filterStartDate.getTime() <= +costDate.getTime()) && (+costDate.getTime() <= +filterEndDate.getTime()));
@@ -147,7 +143,6 @@ function filePicked(oEvent) {
   reader.readAsBinaryString(oFile);
 }
 //#endregion
-
 
 //#region selections filters innnerHtml
 function createHTML(){
