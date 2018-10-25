@@ -10,9 +10,6 @@ I try to write "Clean Code", but it's not as I would like to be.
 Surely you will understand it if you read it because it is full of many good informative comments
 
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/ManosTheMaster/Financial-Organization)
- 
-## Screenshots
-Include logo/demo screenshot etc.
 
 ## Tech/framework used
 Ex. Every Browser you prefer
@@ -21,7 +18,7 @@ Ex. Every Browser you prefer
 - [VScode](https://code.visualstudio.com/)
 
 ## Features
-Nothing new and impresive yet, we hope to develope Data analytics that user can receive advice about how to save money for example!
+Nothing new and impresive yet, we hope to develop Data analytics that user can receive advice about how to save money for example!
 
 ## Tests
 Just Follow 3 rules!
