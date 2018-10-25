@@ -1,4 +1,4 @@
-let spendingItems, startDate, endDate, startAmount, endAmount;
+let spendingItems, startDate, endDate, startAmount, endAmount, excelColumns;
 
 //#region Display Charts
 function showChart(chartDataPoints, chartTitle) {
@@ -21,23 +21,24 @@ function showChart(chartDataPoints, chartTitle) {
 //#region Filtering
 function contentFilters(){
 
+  var nonStaticResult = spendingItems; //filters that are non static, Everything except "amount", "date", "description"
+  excelColumns.forEach(function(column){
+    console.log(column);
+    nonStaticResult = nonStaticResult.filter(function(s){
+        if(document.getElementById(`${column}Selection`).value !== "null"){
+          return s[`${column}`] == document.getElementById(`${column}Selection`).value;
+        }else{
+          return true;
+        }
+    });
+  });
+
   //declare values
   startAmount = $( "#slider-range" ).slider( "values", 0 );
   endAmount = $( "#slider-range" ).slider( "values", 1 );
   
-  // var descriptionFilter = document.getElementById("searchDescriptionInput").value;
-  // var dateFilter = document.getElementById("dateCheckbox").checked;
-  // var typeFilter = document.getElementById("typeSelection").value;
-  // var userStatusFilter = document.getElementById("userStatusSelection").value;
-  // var moodLevelFilter = document.getElementById("moodLevelSelection").value;
-  // var locationFilter = document.getElementById("locationSelection").value;
-  
-  const result =  spendingItems.
+  const result =  nonStaticResult.
   filter(function(s){return (parseFloat(startAmount) <= parseFloat(s["amount"]) && parseFloat(s["amount"]) <= parseFloat(endAmount));}).//Cost Amount filter
-  filter(function(s){if(document.getElementById("typeSelection").value !== "null") {return s.type == document.getElementById("typeSelection").value;} else {return true;}}).
-  filter(function(s){if(document.getElementById("userStatusSelection").value !== "null") {return s.userStatus == document.getElementById("userStatusSelection").value;} else {return true;}}).
-  filter(function(s){if(document.getElementById("moodLevelSelection").value !== "null") {return s.moodLevel == document.getElementById("moodLevelSelection").value;} else {return true;}}).
-  filter(function(s){if(document.getElementById("locationSelection").value !== "null") {return s.location == document.getElementById("locationSelection").value;} else {return true;}}).
   filter(function(s){return String(s.description).includes(document.getElementById("searchDescriptionInput").value);}).
   filter(function(s){
     if(document.getElementById("dateCheckbox").checked) {
@@ -70,8 +71,8 @@ function contentFilters(){
 
 //#region Column Filtering
 function columnFilters(){
-  var column = document.getElementById("columnsSelection").value;
 
+  var column = document.getElementById("columnsSelection").value;
   var uniqueValues = [];
   var dataDictionary = {}; //Dictionary that display chart values
   for(let i = 0; i<spendingItems.length; i++){
@@ -151,7 +152,7 @@ function filePicked(oEvent) {
 //#region selections filters innnerHtml
 function createHTML(){
     var uniqueValues = [];
-    const excelColumns = [];
+    excelColumns = [];
     for(var key in spendingItems[0]){
       for(var i = 0; i<spendingItems.length; i++){
         if(uniqueValues.indexOf(spendingItems[i][`${key}`]) === -1){
