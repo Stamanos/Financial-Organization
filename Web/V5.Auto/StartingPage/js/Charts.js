@@ -136,8 +136,7 @@ function filePicked(oEvent) {
     cfb.SheetNames.forEach(function(sheetName) {
       spendingItems = XLS.utils.sheet_to_json(cfb.Sheets[sheetName]);   
       console.log(spendingItems);
-      createHTML()
-      foo.createHTML();
+      createHTML();
     });
   };
   // Tell JS To Start Reading The File.. You could delay this if desired
