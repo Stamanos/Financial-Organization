@@ -58,10 +58,16 @@ function contentFilters(){
   var amountlist = result.map(i => { return parseFloat(i["amount"]); });
   TotalCost(amountlist); //to display the total cost down below the filters
 
+  //This Is Temporary, But is Calculating the cost by month
+  var temp = result.map(i => { 
+    return {date: i.date, amount: parseFloat(i["amount"])}
+  });
+  FiterByMonth(temp);
+
+  //Pasing values to create chart
   var filtersChartValues =  result.map(i => {
     return {label: i.description, y: parseFloat(i["amount"])};
   });
-
   showChart(filtersChartValues, "amount of money has been spend");
 }
 //#endregion
@@ -186,6 +192,18 @@ function makeSelection(input, optionList, divId){
 
 //#region FilteringByDate
 
+function FiterByMonth(amountList){
+  var fooData = {};
+  amountList.forEach(function(element){
+    var dateArray = element.date.split('/');
+    if(fooData[`${dateArray[0]}`] === undefined){ //if is the first amount of the month
+      fooData[`${dateArray[0]}`] = element.amount;
+    }else{
+      fooData[`${dateArray[0]}`] += element.amount;
+    }
+  });
+  console.log(fooData);
 
+}
 
 //#endregion
