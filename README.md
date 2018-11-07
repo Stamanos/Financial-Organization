@@ -1,8 +1,27 @@
-# M.Organ
+## M.Organ
+This project helps you organize your costs makes your life easier when provides you a complete picture of your expenses.
 
-M.Organ is a web app so far, that heps the user to organize every day expences!
+## Motivation
+I always had the need to analyze what I'm doing to help myself evolve later in my life. I just wanted to express my experience somehow with numbers.
+This program does this by "tracking" the flow of money I spend. I know the position and the level of mood I was in a particular time period, simply by noting my cost.
 
-## Getting Started
+## Code style
+I try to write "Clean Code", but it's not as I would like to be.
+Surely you will understand it if you read it because it is full of many good informative comments
+
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/ManosTheMaster/Financial-Organization)
+
+## Tech/framework used
+Ex. Every Browser you prefer
+
+<b>Built with</b>
+- [VScode](https://code.visualstudio.com/)
+
+## Features
+Nothing new and impresive yet, we hope to develop Data analytics that user can receive advice about how to save money for example!
+
+## Tests
+Just Follow 3 rules!
 
 1)First of all, you ought to have an excel file with all your costs. 
 
@@ -23,7 +42,7 @@ Do not have any empty rows and columns handling around without a reason of exist
 like Gus Kala does!
 ```
 
-### How M.Organ works
+## How M.Organ works
 
 1) Make a Json object of your excel file and group all the data with all possible combinations
 
@@ -41,11 +60,14 @@ Watch and play
 
 ## Developers
 
-#### Backend 
-Manos Stamatakis
+<b>Backend</b>
+- [Manos Stamatakis](https://manosthemaster.github.io/)
 
-#### Frontend
-Konstantinos Kalaitzidis
+<b>Frontend</b>
+- [Konstantinos Kalaitzidis](https://github.com/konkalaitzidis/)
 
-# I hope you liked it
 
+## License
+Entitu Licence
+
+MIT © [ManosTheMaster]()
