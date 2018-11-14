@@ -1,5 +1,5 @@
 //#region Slider
-$( function() {
+export function amountSlider() {
     $( "#slider-range" ).slider({
       range: true,
       min: 0,
@@ -11,5 +11,5 @@ $( function() {
     });
     $( "#amountRange" ).val( "€" + $( "#slider-range" ).slider( "values", 0 ) +
       " - €" + $( "#slider-range" ).slider( "values", 1 ) );
-  });
+  };
   //#endregion

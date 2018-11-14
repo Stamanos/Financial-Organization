@@ -1,5 +1,6 @@
 //#region Calendar
-$(function() {
+
+export function daterangepicker() {
     var start = moment().subtract(29, 'days');
     var end = moment();
   
@@ -21,5 +22,5 @@ $(function() {
         }
     }, cb);
     cb(start, end);
-  });
+  };
   //#endregion

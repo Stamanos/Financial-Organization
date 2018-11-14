@@ -1,6 +1,19 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import daterangepicker, { Calendar } from './Calendar';
+import amountSlider, { Slider } from './Slider';
+import createHTML, { SelectionFilters } from './InnerHtml/SelectionFilters';
+import totalCost, { TotalCost } from './InnerHtml/TotalCost';
+import columnFilters, { ColumnFilters } from './Filters/ColumnFilters';
+import contentFilters, { ContentFilters } from './Filters/ContentFilters';
+import showChart, { DisplayCharts } from './DisplayCharts';
+import excelToJson, { ExcelConverter } from './ExcelConverter';
+import filterByDate, { DateFilter } from './Filters/DateFilter';
+
+//let spendingItems, startDate, endDate, startAmount, endAmount, excelColumns;
+
+
 
 class App extends Component {
   render() {
