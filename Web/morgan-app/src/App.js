@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
 import Calendar, { daterangepicker } from './Calendar';
 import Slider, { amountSlider } from './Slider';
 import SelectionFilters, { createHTML } from './InnerHtml/SelectionFilters';
