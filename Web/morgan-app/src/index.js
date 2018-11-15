@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './css/style.css';
 //import daterangepicker from './calendar';
 //import amountSlider from './slider';
 //import createHTML from './InnerHtml/selectionFilters';
@@ -13,3 +14,4 @@ import ReactDOM from 'react-dom';
 const element = <h1>Hello world</h1>;
 console.log(element);
 ReactDOM.render(element, document.getElementById('root'));
+

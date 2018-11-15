@@ -1,4 +1,7 @@
 // functions that modify the spendingItems by the given filters
+let spendingItems, startDate, endDate, startAmount, endAmount, excelColumns;
+
+import showChart from './displayCharts';
 
 export function contentFilters(){
 
