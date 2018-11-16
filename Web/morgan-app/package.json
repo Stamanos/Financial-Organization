@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "convert-excel-to-json": "^1.5.2",
+    "excel-as-json": "^2.0.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-scripts": "2.1.1",

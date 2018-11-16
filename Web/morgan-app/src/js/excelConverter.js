@@ -23,4 +23,5 @@ export function excelToJson() {
     };
     // Tell JS To Start Reading The File.. You could delay this if desired
     reader.readAsBinaryString(oFile);
+    return spendingItems;
   }
