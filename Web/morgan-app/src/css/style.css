@@ -1,0 +1,132 @@
+/*Style of classes*/
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+/*Html basic objects style*/
+select{
+    background-color: #08c;
+    font-size: 13px;
+    width: 100%;
+    padding: 15px;
+    display: inline-block;
+}
+
+input{
+    background-color: #08c;
+    font-size: 15px;
+    width: 100%;
+    padding: 15px;
+    display: inline-block;
+}
+
+::placeholder{
+    color: #050300;
+}
+
+body,div,
+h1,h2,p,
+ol,ul,li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+h1 {
+  font-size: 3em;
+  line-height: 1;
+  color: #222;
+  margin-bottom: .5em;
+  float: left;
+  width: 100%;
+}
+
+h2 {
+  float: left;
+  width: 100%;
+  font-size: 1.5em;
+  color: #222;
+  margin: 1em 0 .5em;
+}
+
+a {
+  color: #f4f4f4;
+  text-decoration: none;
+}
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+.main {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+  padding: 3em 4em;
+  position: fixed;
+  overflow: hidden;
+  overflow-y: scroll;
+  border-top-left-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0, .6);
+  top: .8em;
+  right: 0;
+  bottom: 0;
+  width: 76%;
+  background: #fff;
+}
+
+.main::-webkit-scrollbar {
+  -webkit-appearance: none;
+  background-color: rgba(0,0,0, .15);
+  width: 8px;
+  height: 8px;
+}
+
+.main::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  background-color: rgba(0,0,0, .4);
+}
+
+.nav-collapse {
+  position: absolute;
+  width: 24%;
+  top: 2em;
+  left: 0;
+}
+
+.nav-collapse ul {
+  display: block;
+  width: 100%;
+  list-style: none;
+}
+
+.nav-collapse li {
+  width: 100%;
+  display: block;
+}
+
+.nav-collapse a {
+  color: #aaa;
+  font-weight: bold;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: background .3s ease;
+  -moz-transition: background .3s ease;
+  transition: background .3s ease;
+  text-shadow: 0 -1px rgba(0,0,0, .5);
+  border-bottom: 1px solid rgba(0,0,0, .2);
+  border-top: 1px solid rgba(255,255,255, .1);
+  display: block;
+  padding: .6em 2em;
+  width: 100%;
+}
+
+.nav-collapse a:hover { background: rgba(255,255,255, .1) }
+.nav-collapse .active a { color: #fff; background: rgba(0,0,0, .3) }
+.nav-collapse li:first-child a { border-top: 0 }
+.nav-collapse li:last-child a { border-bottom: 0 }
+.nav-toggle { display: none }

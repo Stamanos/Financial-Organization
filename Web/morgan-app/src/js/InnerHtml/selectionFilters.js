@@ -1,4 +1,7 @@
+import {excelToJson} from './../excelConverter.js';
+
 export function createHTML(){
+    spendingItems = excelToJson();
     var uniqueValues = [];
     excelColumns = [];
     for(var key in spendingItems[0]){
@@ -14,6 +17,7 @@ export function createHTML(){
       uniqueValues = [];
     }
     makeSelection("columns", excelColumns, "columnFilters");
+    return excelColumns;
 }
 
 function makeSelection(input, optionList, divId){

@@ -1,7 +1,12 @@
 // functions that modify the spendingItems by the given filters
+let startDate, endDate, startAmount, endAmount;
+
+import {excelToJson} from './../excelConverter.js';
+import {createHTML} from './../InnerHtml/selectionFilters.js';
 
 export function contentFilters(){
-
+    spendingItems = excelToJson();
+    excelColumns = createHTML();
     var nonStaticResult = spendingItems; //filters that are non static, Everything except "amount", "date", "description"
     excelColumns.forEach(function(column){
       nonStaticResult = nonStaticResult.filter(function(s){
@@ -45,7 +50,7 @@ export function contentFilters(){
     });
     FiterByMonth(temp);
   
-    //Pasing values to create chart
+    //Passing values to create chart
     var filtersChartValues =  result.map(i => {
       return {label: i.description, y: parseFloat(i["amount"])};
     });

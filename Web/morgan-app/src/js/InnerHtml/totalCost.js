@@ -1,3 +1,4 @@
+
 export function totalCost(amountList){
     var sum = amountList.reduce((a,b) => a + b, 0).toFixed(2); //sum
   
