@@ -8,20 +8,17 @@ import 'bootstrap/dist/css/bootstrap.css';
 import spendingItems from './Json/costs.json';  //Json file
 
 //Javascript functions
-import {contentFilters} from './js/Filters/contentFilters.js';
-import {columnFilters} from './js/Filters/columnFilters.js';
-import {dayOfYear} from './js/Filters/dateFilter.js';
-import {createHTML} from './js/InnerHtml/selectionFilters.js';
-import {totalCost} from './js/InnerHtml/totalCost.js';
-import {daterangepicker} from './js/calendar.js';
-import {showChart} from './js/displayCharts.js';
-import {amountSlider} from './js/slider.js';
+import Counter from './components/counter';
+import Filters from './components/Filters/contentFilters';
+// import theNameOfTheFunction from './js/Filters/columnFilters';
+// import theNameOfTheFunction from './js/Filters/dateFilter';
+// import theNameOfTheFunction from './js/InnerHtml/selectionFilters';
+// import theNameOfTheFunction from './js/InnerHtml/totalCost';
+// import theNameOfTheFunction from './js/calendar';
+// import theNameOfTheFunction from './js/displayCharts';
+// import theNameOfTheFunction from './js/slider';
 
-ReactDOM.render(<Counter />, document.getElementById("root"));
-// 1) On window load -> Call createHtml() from selectionsFilters.js
-// 2) Press OK -> 
-// 3) 
-
+ReactDOM.render(<Filters />, document.getElementById("root"));
 
 
 console.log(spendingItems);
