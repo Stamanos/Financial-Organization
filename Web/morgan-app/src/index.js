@@ -5,10 +5,9 @@ import ReactDOM from 'react-dom';
 import './css/style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-import spendingItems from './Json/costs.json';  //Json file
+import spendingItems from './components/Json/costs.json';  //Json file
 
 //Javascript functions
-import Counter from './components/counter';
 import Filters from './components/Filters/contentFilters';
 // import theNameOfTheFunction from './js/Filters/columnFilters';
 // import theNameOfTheFunction from './js/Filters/dateFilter';
@@ -20,8 +19,15 @@ import Filters from './components/Filters/contentFilters';
 
 ReactDOM.render(<Filters />, document.getElementById("root"));
 
+console.log(onlyUnique("type"));
 
-console.log(spendingItems);
+function onlyUnique(column) { 
+    return Array.from(new Set(filterBy(column)));
+}
 
-
+function filterBy(column){
+    return spendingItems.map(i => {
+        return i[`${column}`];
+    });
+}
 

@@ -1,26 +1,57 @@
 import React, { Component } from 'react';
+import Select from 'react-select';
+import spendingItems from '../Json/costs.json';  //Json file
+
+const input = ["type", "location", "amount"];
+const options = createOption(input);
+
+//#region MakeOptionList
+function createOption(column){
+    var uniqueValues = onlyUnique(column);
+    const optionList = [];
+    for(var i = 0; i < uniqueValues.length; i++){
+        optionList.push({
+            value: uniqueValues[i],
+            label: uniqueValues[i]
+        })
+    }
+    return optionList;
+}
+
+function onlyUnique(column) {
+    return Array.from(new Set(filterBy(column)));
+}
+
+function filterBy(column){
+    return spendingItems.map(i => {
+        return i[`${column}`];
+    })
+}
+//#endregion
 
 class Filters extends Component {
-    state = { 
-        columns: ['amount', 'type', 'date', 'description', 'userStatus', 'moodLevel', 'location'],
-        amount: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-        type: [],
-        date: [],
-        description: [],
-        userStatus: [],
-        moodLevel: [],
-        location: []
-     }
+
+    state = {
+        selectedOption: null
+    }
+    handleChange  = (selectedOption) => {
+        this.setState({ selectedOption });
+        console.log(`Option selected:`, selectedOption);
+    }
+
     render() { 
+        const { selectedOption } = this.state;
+
         return (
             <React.Fragment>
-                <label>{this.state.columns[1]}</label>
-                <select idName={this.state.columns[1] + "Selection"}>
-                    <option>{this.state.amount}</option>
-                </select>
+                <label>{input[1]}</label>
+                <Select
+                    value = {selectedOption}
+                    onChange = {this.handleChange}
+                    options = {createOption(input[1])}
+                /> 
             </React.Fragment>
         );
     }
 }
- 
 export default Filters;
