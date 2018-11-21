@@ -1,30 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+//style
 import './css/style.css';
-// The importings below are working properly
-// import {columnFilters} from './js/Filters/columnFilters.js';
-// import {contentFilters} from './js/Filters/contentFilters.js';
-// import {dayOfYear} from './js/Filters/dateFilter.js';
-// import {createHTML} from './js/InnerHtml/selectionFilters.js';
-//import {totalCost} from './js/InnerHtml/totalCost.js';
-// import {daterangepicker} from './js/calendar.js';
-// import {showChart} from './js/displayCharts.js';
-// import {excelToJson} from './js/excelConverter.js';
-// import {amountSlider} from './js/slider.js';
+import 'bootstrap/dist/css/bootstrap.css';
 
-// 1) On window load -> Call createHtml() from selectionsFilters.js
-// 2) Press OK -> 
-// 3) 
+import spendingItems from './components/Json/costs.json';  //Json file
 
-const excelToJson = require('convert-excel-to-json');
- 
-const result = excelToJson({
-    sourceFile: './costs.xlsx'
-});
-console.log(result);
+//Javascript functions
+import Filters from './components/Filters/contentFilters';
+// import theNameOfTheFunction from './js/Filters/columnFilters';
+// import theNameOfTheFunction from './js/Filters/dateFilter';
+// import theNameOfTheFunction from './js/InnerHtml/selectionFilters';
+// import theNameOfTheFunction from './js/InnerHtml/totalCost';
+// import theNameOfTheFunction from './js/calendar';
+// import theNameOfTheFunction from './js/displayCharts';
+// import theNameOfTheFunction from './js/slider';
 
-const element = <h1>Hello world</h1>;
-console.log(element);
-ReactDOM.render(element, document.getElementById('root'));
+ReactDOM.render(<Filters />, document.getElementById("root"));
 
+console.log(onlyUnique("type"));
+
+function onlyUnique(column) { 
+    return Array.from(new Set(filterBy(column)));
+}
+
+function filterBy(column){
+    return spendingItems.map(i => {
+        return i[`${column}`];
+    });
+}
 
