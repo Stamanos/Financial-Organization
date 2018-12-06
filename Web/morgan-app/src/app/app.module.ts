@@ -28,10 +28,10 @@ import { NotificationsComponent } from './navbar/notifications/notifications.com
 import { MessagesComponent } from './navbar/messages/messages.component';
 import { ProfileComponent } from './navbar/profile/profile.component';
 import { SearchForComponent } from './navbar/search-for/search-for.component';
-import { RegisterComponent } from './register/register.component';
-import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
-import { Error404Component } from './pages/error404/error404.component';
-import { BlankComponent } from './pages/blank/blank.component';
+import { RegisterComponent } from './login-pages/register/register.component';
+import { ForgotPasswordComponent } from './login-pages/forgot-password/forgot-password.component';
+import { Error404Component } from './secondary-pages/error404/error404.component';
+import { BlankComponent } from './secondary-pages/blank/blank.component';
 
 @NgModule({
   declarations: [
