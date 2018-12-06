@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MorganIconCardsComponent } from './morgan-icon-cards.component';
+import { MorganIconCardsComponent } from './icon-cards.component';
 
 describe('MorganIconCardsComponent', () => {
   let component: MorganIconCardsComponent;

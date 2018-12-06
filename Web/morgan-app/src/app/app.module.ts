@@ -8,16 +8,13 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip/ngx-bootstrap-tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal/ngx-bootstrap-modal';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeroesComponent } from './heroes/heroes.component';
-import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { MorganDetailsComponent } from './morgan-details/morgan-details.component';
 import { MorganNavbarComponent } from './morgan-navbar/morgan-navbar.component';
 import { MorganSidebarComponent } from './morgan-sidebar/morgan-sidebar.component';
-import { MorganIconCardsComponent } from './morgan-icon-cards/morgan-icon-cards.component';
-import { MorganChartAreaComponent } from './morgan-chart-area/morgan-chart-area.component';
-import { MorganDataTableComponent } from './morgan-data-table/morgan-data-table.component';
+import { MorganIconCardsComponent } from './body/icon-cards/icon-cards.component';
+import { MorganChartAreaComponent } from './body/chart-area/chart-area.component';
+import { MorganDataTableComponent } from './body/data-table/data-table.component';
 import { MorganLoginComponent } from './morgan-login/morgan-login.component';
-import { MorganForgotPasswordComponent } from './morgan-forgot-password/morgan-forgot-password.component';
 import { MorganBodyComponent } from './morgan-body/morgan-body.component';
 import { DashboardComponent } from './sidebar/dashboard/dashboard.component';
 import { PagesComponent } from './sidebar/pages/pages.component';
@@ -36,8 +33,6 @@ import { BlankComponent } from './secondary-pages/blank/blank.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HeroesComponent,
-    HeroDetailComponent,
     MorganFiltersComponent,
     MorganDetailsComponent,
     MorganNavbarComponent,
@@ -46,7 +41,6 @@ import { BlankComponent } from './secondary-pages/blank/blank.component';
     MorganChartAreaComponent,
     MorganDataTableComponent,
     MorganLoginComponent,
-    MorganForgotPasswordComponent,
     MorganBodyComponent,
     PagesComponent,
     ChartsComponent,

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MorganDataTableComponent } from './morgan-data-table.component';
+import { MorganIconCardsComponent } from './icon-cards.component';
 
-describe('MorganDataTableComponent', () => {
-  let component: MorganDataTableComponent;
-  let fixture: ComponentFixture<MorganDataTableComponent>;
+describe('MorganIconCardsComponent', () => {
+  let component: MorganIconCardsComponent;
+  let fixture: ComponentFixture<MorganIconCardsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MorganDataTableComponent ]
+      declarations: [ MorganIconCardsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MorganDataTableComponent);
+    fixture = TestBed.createComponent(MorganIconCardsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
