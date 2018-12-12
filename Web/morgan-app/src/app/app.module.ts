@@ -3,9 +3,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { CommonModule } from '@angular/common';
 
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown/ngx-bootstrap-dropdown';
-import { TooltipModule } from 'ngx-bootstrap/tooltip/ngx-bootstrap-tooltip';
-import { ModalModule } from 'ngx-bootstrap/modal/ngx-bootstrap-modal';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { ModalModule } from 'ngx-bootstrap/modal';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MorganDetailsComponent } from './morgan-details/morgan-details.component';

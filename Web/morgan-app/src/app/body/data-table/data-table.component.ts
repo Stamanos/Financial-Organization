@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { COSTS } from '../../mock-costs';
 
 @Component({
   selector: 'app-data-table',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MorganDataTableComponent implements OnInit {
 
+  costs = COSTS;
   constructor() { }
 
   ngOnInit() {

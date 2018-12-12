@@ -5,6 +5,5 @@ export class Cost{
     description: string;
     userStatus: string;
     moodLevel: number;
-    weather: string;
     location: string;
 }
