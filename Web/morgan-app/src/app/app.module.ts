@@ -11,16 +11,16 @@ import { AppComponent } from './app.component';
 import { MorganDetailsComponent } from './morgan-details/morgan-details.component';
 import { MorganNavbarComponent } from './morgan-navbar/morgan-navbar.component';
 import { MorganSidebarComponent } from './morgan-sidebar/morgan-sidebar.component';
-import { MorganIconCardsComponent } from './body/icon-cards/icon-cards.component';
-import { MorganChartAreaComponent } from './body/chart-area/chart-area.component';
-import { MorganDataTableComponent } from './body/data-table/data-table.component';
+import { IconCardsComponent } from './body/icon-cards/icon-cards.component';
+import { ChartAreaComponent } from './body/chart-area/chart-area.component';
+import { DataTableComponent } from './body/data-table/data-table.component';
 import { MorganLoginComponent } from './morgan-login/morgan-login.component';
 import { MorganBodyComponent } from './morgan-body/morgan-body.component';
 import { DashboardComponent } from './sidebar/dashboard/dashboard.component';
 import { PagesComponent } from './sidebar/pages/pages.component';
 import { ChartsComponent } from './sidebar/charts/charts.component';
 import { TablesComponent } from './sidebar/tables/tables.component';
-import { MorganFiltersComponent } from './sidebar/filters/filters.component';
+import { FiltersComponent } from './sidebar/filters/filters.component';
 import { NotificationsComponent } from './navbar/notifications/notifications.component';
 import { MessagesComponent } from './navbar/messages/messages.component';
 import { ProfileComponent } from './navbar/profile/profile.component';
@@ -33,13 +33,13 @@ import { BlankComponent } from './secondary-pages/blank/blank.component';
 @NgModule({
   declarations: [
     AppComponent,
-    MorganFiltersComponent,
+    FiltersComponent,
     MorganDetailsComponent,
     MorganNavbarComponent,
     MorganSidebarComponent,
-    MorganIconCardsComponent,
-    MorganChartAreaComponent,
-    MorganDataTableComponent,
+    IconCardsComponent,
+    ChartAreaComponent,
+    DataTableComponent,
     MorganLoginComponent,
     MorganBodyComponent,
     PagesComponent,

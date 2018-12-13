@@ -6,7 +6,7 @@ import { COSTS } from '../../mock-costs';
   templateUrl: './data-table.component.html',
   styleUrls: ['./data-table.component.css']
 })
-export class MorganDataTableComponent implements OnInit {
+export class DataTableComponent implements OnInit {
 
   costs = COSTS;
   constructor() { }

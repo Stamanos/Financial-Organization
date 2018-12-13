@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './filters.component.html',
   styleUrls: ['./filters.component.css']
 })
-export class MorganFiltersComponent implements OnInit {
+export class FiltersComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {

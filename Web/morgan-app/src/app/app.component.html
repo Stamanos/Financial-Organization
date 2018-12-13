@@ -5,7 +5,8 @@
     <app-morgan-sidebar></app-morgan-sidebar>
     <div id="content-wrapper">
         <!--MAIN BODY-->
-        <app-morgan-body></app-morgan-body>
+        <router-outlet></router-outlet>
+        <!-- <app-morgan-body></app-morgan-body> -->
         <!-- <app-charts></app-charts> -->
         <!-- <app-filters></app-filters> -->
         <!-- <app-pages></app-pages> -->
@@ -14,6 +15,5 @@
 </div>
 <!-- Scroll to Top Button-->
 <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
+    <i class="fas fa-angle-up"></i>
 </a>
-<router-outlet></router-outlet>
