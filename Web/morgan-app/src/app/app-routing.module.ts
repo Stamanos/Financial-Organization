@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'tables', component: TablesComponent },
   { path: 'filters', component: FiltersComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
-  { path: 'regiter', component: RegisterComponent },
+  { path: 'register', component: RegisterComponent },
   { path: 'login', component: MorganLoginComponent },
   { path: 'main-body', component: MorganBodyComponent }
 ];
