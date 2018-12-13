@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './chart-area.component.html',
   styleUrls: ['./chart-area.component.css']
 })
-export class MorganChartAreaComponent implements OnInit {
+export class ChartAreaComponent implements OnInit {
 
   constructor() { }
 

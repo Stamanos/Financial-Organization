@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './icon-cards.component.html',
   styleUrls: ['./icon-cards.component.css']
 })
-export class MorganIconCardsComponent implements OnInit {
+export class IconCardsComponent implements OnInit {
 
   constructor() { }
 
