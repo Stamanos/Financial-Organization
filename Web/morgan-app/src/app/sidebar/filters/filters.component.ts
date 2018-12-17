@@ -9,6 +9,11 @@ export class FiltersComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
+  }
+
+  takeFile(event){
+    console.log(event);
   }
 
 }

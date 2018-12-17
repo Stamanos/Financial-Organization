@@ -54,11 +54,7 @@
 <div id="columnFilters"></div>
 <button onclick="columnFilters()">Show Column Chart</button>
   <form class="md-form">
-      <div class="file-field">
-          <div class="btn btn-primary btn-sm float-left">
-              <input type="file" id="my-file-input">
-          </div>
-      </div>
+    <input type="file" id="my-file-input" (click)="takeFile($event)">
   </form>
 </div>
 <!-- /.container-fluid -->
