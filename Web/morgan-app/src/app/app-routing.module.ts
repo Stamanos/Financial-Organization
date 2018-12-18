@@ -7,6 +7,7 @@ import { DashboardComponent } from './sidebar/dashboard/dashboard.component';
 import { FiltersComponent } from './sidebar/filters/filters.component';
 import { PagesComponent } from './sidebar/pages/pages.component';
 import { TablesComponent } from './sidebar/tables/tables.component';
+import { DetailsComponent } from './body/details/details.component';
 //Login pages
 import { ForgotPasswordComponent } from './login-pages/forgot-password/forgot-password.component';
 import { RegisterComponent } from './login-pages/register/register.component';
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'pages', component: PagesComponent },
   { path: 'tables', component: TablesComponent },
+  { path: 'details/:id', component: DetailsComponent },
   { path: 'filters', component: FiltersComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'register', component: RegisterComponent },

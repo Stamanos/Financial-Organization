@@ -5,55 +5,20 @@
     <li class="breadcrumb-item">
       <a href="#">Dashboard</a>
     </li>
-    <li class="breadcrumb-item active">Tables</li>
+    <li class="breadcrumb-item active">Table of Users</li>
   </ol>
-
-  <!-- DataTables Example -->
-  <div class="card mb-3">
-    <div class="card-header">
-      <i class="fas fa-table"></i>
-      Data Table Example</div>
-    <div class="card-body">
-      <div class="table-responsive">
-          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-              <thead>
-                <tr>
-                  <th>Amount</th>
-                  <th>Type</th>
-                  <th>Date</th>
-                  <th>Description</th>
-                  <th>UserStatus</th>
-                  <th>MoodLevel</th>
-                  <th>Location</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let cost of costs">
-                  <td>{{cost.amount}}</td>
-                  <td>{{cost.type}}</td>
-                  <td>{{cost.date}}</td>
-                  <td>{{cost.description}}</td>
-                  <td>{{cost.userStatus}}</td>
-                  <td>{{cost.moodLevel}}</td>
-                  <td>{{cost.location}}</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>Amount</th>
-                  <th>Type</th>
-                  <th>Date</th>
-                  <th>Description</th>
-                  <th>UserStatus</th>
-                  <th>MoodLevel</th>
-                  <th>Location</th>
-                </tr>
-              </tfoot>
-            </table>
-      </div>
-    </div>
-    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+  <div class="card-header">
+    <i class="fas fa-table"></i>Users
   </div>
-
+  <ul>
+    <li *ngFor="let user of users$">
+      <a routerLink="/details/{{user.id}}">{{ user.name }}</a>
+      <ul>
+        <li>{{ user.email }}</li>
+        <a href="https://{{ user.website }}"></a><li>{{ user.website }}</li>
+      </ul>
+    </li>
+  </ul>
+  <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
 </div>
 <!-- /.container-fluid -->
