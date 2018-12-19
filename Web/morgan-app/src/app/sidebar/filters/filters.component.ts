@@ -11,17 +11,7 @@ import {MatSelectModule} from '@angular/material/select';
 export class FiltersComponent implements OnInit {
   constructor() { }
 
-  countries:{
-    name: string,
-    id: string
-  };
-
   ngOnInit() {
-    
-  }
-
-  takeFile(event){
-    console.log(event);
   }
 
 }
