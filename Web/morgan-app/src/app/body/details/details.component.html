@@ -1,0 +1,47 @@
+<div class="container-fluid">
+
+    <!-- Breadcrumbs-->
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="#">Dashboard</a>
+      </li>
+      <li class="breadcrumb-item active">Users</li>
+    </ol>
+  
+    <div class="card mb-3">
+      <div class="card-header">
+        <i class="fas fa-table"></i>
+        User: {{ user$.name }}</div>
+      <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Name</th>
+                  <th>Username</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Website</th>
+                  <th>Company catch phrase</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{user$.id}}</td>
+                  <td>{{user$.name}}</td>
+                  <td>{{user$.username}}</td>
+                  <td>{{user$.email}}</td>
+                  <td>{{user$.phone}}</td>
+                  <td>{{user$.website}}</td>
+                  <td>{{user$.company.catchPhrase}}</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+      </div>
+      <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+    </div>
+  
+  </div>
+  <!-- /.container-fluid -->

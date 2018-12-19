@@ -2,6 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatCheckboxModule, MatSelectModule, MatSliderModule} from '@angular/material';
+
 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
@@ -29,6 +34,7 @@ import { RegisterComponent } from './login-pages/register/register.component';
 import { ForgotPasswordComponent } from './login-pages/forgot-password/forgot-password.component';
 import { Error404Component } from './secondary-pages/error404/error404.component';
 import { BlankComponent } from './secondary-pages/blank/blank.component';
+import { DetailsComponent } from './body/details/details.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +60,7 @@ import { BlankComponent } from './secondary-pages/blank/blank.component';
     ForgotPasswordComponent,
     Error404Component,
     BlankComponent,
+    DetailsComponent,
   ],
   imports: [
     CommonModule,
@@ -61,11 +68,26 @@ import { BlankComponent } from './secondary-pages/blank/blank.component';
     AppRoutingModule,
     FormsModule,
     BrowserModule,
+    HttpClientModule,
+    MatSliderModule,
+    BrowserAnimationsModule,
+    NoopAnimationsModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatSelectModule,
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
     ModalModule.forRoot()
+  ],
+  exports:[
+    MatSliderModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+export class PizzaPartyAppModule { }
+export class MyOwnCustomMaterialModule { }

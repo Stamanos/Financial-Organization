@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { COSTS } from '../../mock-costs';
+import { DataService } from '../../data.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-tables',
@@ -8,10 +9,14 @@ import { COSTS } from '../../mock-costs';
 })
 export class TablesComponent implements OnInit {
 
-  costs = COSTS;
-  constructor() { }
+  users$: Object;
+
+  constructor(private data: DataService) { }
 
   ngOnInit() {
+    this.data.getUsers().subscribe(
+      data => this.users$ = data
+    )
   }
 
 }
