@@ -3,10 +3,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { MatSliderModule } from '@angular/material/slider';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule, MatSelectModule, MatSliderModule} from '@angular/material';
 
 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
@@ -75,13 +74,16 @@ import { DetailsComponent } from './body/details/details.component';
     NoopAnimationsModule,
     MatButtonModule,
     MatCheckboxModule,
+    MatSelectModule,
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
     ModalModule.forRoot()
   ],
   exports:[
+    MatSliderModule,
     MatButtonModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MatSliderModule} from '@angular/material/slider';
+import {MatSelectModule} from '@angular/material/select';
 
 
 @Component({
@@ -9,6 +10,11 @@ import {MatSliderModule} from '@angular/material/slider';
 })
 export class FiltersComponent implements OnInit {
   constructor() { }
+
+  countries:{
+    name: string,
+    id: string
+  };
 
   ngOnInit() {
     
