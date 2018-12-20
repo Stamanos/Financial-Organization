@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../data.service';
+import { COSTS } from '../../mock-costs';
 import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 
@@ -10,16 +10,18 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DetailsComponent implements OnInit {
 
-  user$: Object;
+  cost: Object;
 
-  constructor(private data: DataService, private route: ActivatedRoute) { 
-    this.route.params.subscribe( params => this.user$ = params.id );
+  constructor(private route: ActivatedRoute) {
   }
 
   ngOnInit() {
-    this.data.getUser(this.user$).subscribe(
-      data => this.user$ = data
-    )
+    let parameterId= this.route.snapshot.paramMap.get('id');
+    this.cost = COSTS.filter(function(c){
+      return c.id == parameterId;
+    });
+    this.cost = this.cost[0];
+    console.log(this.cost);
   }
 
 }

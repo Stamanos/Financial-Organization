@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as CanvasJS from './../../canvasjs.min';
+import { COSTS } from '../../mock-costs';
 
 @Component({
   selector: 'app-chart-area',
@@ -16,26 +17,42 @@ export class ChartAreaComponent implements OnInit {
       animationEnabled: true,
       exportEnabled: true,
       title:{
-        text: "Monthly Expense"
+        text: "Expenses based on Type"
       },
       data: [{
         type: "pie",
         showInLegend: true,
         toolTipContent: "<b>{name}</b>: ${y} (#percent%)",
         indexLabel: "{name} - #percent%",
-        dataPoints: [
-          { y: 450, name: "Food" },
-          { y: 120, name: "Insurance" },
-          { y: 300, name: "Traveling" },
-          { y: 800, name: "Housing" },
-          { y: 150, name: "Education" },
-          { y: 150, name: "Shopping"},
-          { y: 250, name: "Others" }
-        ]
+        dataPoints: this.costsByType(COSTS)
       }]
     });
       
     chart.render();
+  }
+
+  costsByType(spendingItems){
+    var column = "type";
+    var uniqueValues = [];
+    var dataDictionary = {}; //Dictionary that display chart values
+    for(let i = 0; i<spendingItems.length; i++){
+      if(uniqueValues.indexOf(spendingItems[i][`${column}`]) === -1){ //if is unique!
+        uniqueValues.push(spendingItems[i][`${column}`]);
+        dataDictionary[`${spendingItems[i][`${column}`]}`] = 0.0; //put a starting value 
+      }
+      if(spendingItems[i]["amount"] !== "null"){
+        dataDictionary[`${spendingItems[i][`${column}`]}`] += parseFloat(spendingItems[i]["amount"]);
+      }
+    }
+
+    const columnChartValues = [];
+    for(let i = 0; i < Object.keys(dataDictionary).length; i++){ //make json obj to display data by chart graphics!
+      columnChartValues.push({
+        y: Object.values(dataDictionary)[i],
+        name: Object.keys(dataDictionary)[i]
+      });
+    }
+    return columnChartValues.filter(e => e.name !== "null")
   }
 
 }

@@ -5,36 +5,36 @@
       <li class="breadcrumb-item">
         <a href="#">Dashboard</a>
       </li>
-      <li class="breadcrumb-item active">Users</li>
+      <li class="breadcrumb-item active">Expenses</li>
     </ol>
   
     <div class="card mb-3">
       <div class="card-header">
         <i class="fas fa-table"></i>
-        User: {{ user$.name }}</div>
+        Costs: {{ cost.description }}</div>
       <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
               <thead>
                 <tr>
-                  <th>Id</th>
-                  <th>Name</th>
-                  <th>Username</th>
-                  <th>Email</th>
-                  <th>Phone</th>
-                  <th>Website</th>
-                  <th>Company catch phrase</th>
+                  <th>Amount</th>
+                  <th>Type</th>
+                  <th>Date</th>
+                  <th>Description</th>
+                  <th>User Status</th>
+                  <th>Mood Level</th>
+                  <th>Location</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>{{user$.id}}</td>
-                  <td>{{user$.name}}</td>
-                  <td>{{user$.username}}</td>
-                  <td>{{user$.email}}</td>
-                  <td>{{user$.phone}}</td>
-                  <td>{{user$.website}}</td>
-                  <td>{{user$.company.catchPhrase}}</td>
+                  <td>{{cost.amount}}</td>
+                  <td>{{cost.type}}</td>
+                  <td>{{cost.date}}</td>
+                  <td>{{cost.description}}</td>
+                  <td>{{cost.userStatus}}</td>
+                  <td>{{cost.moodLevel}}</td>
+                  <td>{{cost.location}}</td>
                 </tr>
               </tbody>
             </table>
