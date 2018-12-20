@@ -5,24 +5,14 @@
     <li class="breadcrumb-item">
       <a href="#">Dashboard</a>
     </li>
-    <li class="breadcrumb-item active">Table of Users</li>
+    <li class="breadcrumb-item active">Table of Expenses</li>
   </ol>
-  <!-- Table of Users-->
   <div class="card-header">
-    <i class="fas fa-table"></i>Users
-  </div>
-  <ul>
-    <li *ngFor="let user of users$">
-      <a routerLink="/details/{{user.id}}">{{ user.name }}</a>
-    </li>
-  </ul>
-  <!-- Table of Costs-->
-  <div class="card-header">
-    <i class="fas fa-table"></i>Costs
+    <i class="fas fa-table"></i>Descriptions of costs
   </div>
   <ul>
     <li *ngFor="let cost of costs">
-      <a routerLink="/details/{{costs.id}}">{{ cost.description }}</a>
+      <a routerLink="/details/{{cost.id}}">{{ cost.description }}</a>
     </li>
   </ul>
   <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
