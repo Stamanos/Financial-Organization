@@ -11,8 +11,10 @@ import { COSTS } from '../../mock-costs';
 export class ChartAreaComponent implements OnInit {
 
   constructor(private chartdata: ChartDataService) { }
-
+  
   ngOnInit() {
+    let types = this.chartdata.typesOfCost(COSTS);
+
     let chart = new CanvasJS.Chart("chartContainer", {
       theme: "light2",
       animationEnabled: true,
@@ -25,7 +27,7 @@ export class ChartAreaComponent implements OnInit {
         showInLegend: true,
         toolTipContent: "<b>{name}</b>: ${y} (#percent%)",
         indexLabel: "{name} - #percent%",
-        dataPoints: this.chartdata.costsByType(COSTS)
+        dataPoints: this.chartdata.costsByType(COSTS, 'type')
       }]
     });
       

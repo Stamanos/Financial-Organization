@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule, MatSelectModule, MatSliderModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule, MatSelectModule, MatSliderModule, MatTableModule, MatPaginatorModule, MatSortModule} from '@angular/material';
 
 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
@@ -35,6 +35,7 @@ import { ForgotPasswordComponent } from './login-pages/forgot-password/forgot-pa
 import { Error404Component } from './secondary-pages/error404/error404.component';
 import { BlankComponent } from './secondary-pages/blank/blank.component';
 import { DetailsComponent } from './body/details/details.component';
+import { CostTableComponent } from './body/cost-table/cost-table.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { DetailsComponent } from './body/details/details.component';
     Error404Component,
     BlankComponent,
     DetailsComponent,
+    CostTableComponent,
   ],
   imports: [
     CommonModule,
@@ -77,7 +79,10 @@ import { DetailsComponent } from './body/details/details.component';
     MatSelectModule,
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   exports:[
     MatSliderModule,
