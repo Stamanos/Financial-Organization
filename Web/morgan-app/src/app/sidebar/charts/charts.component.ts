@@ -18,14 +18,14 @@ export class ChartsComponent implements OnInit {
       animationEnabled: true,
       exportEnabled: true,
       title:{
-        text: "Monthly Expense"
+        text: "Expense by Type"
       },
       data: [{
         type: "pie",
         showInLegend: true,
         toolTipContent: "<b>{name}</b>",
         indexLabel: "{name}",
-        dataPoints: this.chartdata.costsByType(COSTS)
+        dataPoints: this.chartdata.costsByType(COSTS, 'type')
       }]
     });
 
@@ -34,14 +34,14 @@ export class ChartsComponent implements OnInit {
       animationEnabled: true,
       exportEnabled: true,
       title:{
-        text: "Monthly Expense"
+        text: "Expense by Location"
       },
       data: [{
         type: "area",
         showInLegend: true,
         toolTipContent: "<b>{name}</b>",
         indexLabel: "{name}",
-        dataPoints: this.chartdata.costsByType(COSTS)
+        dataPoints: this.chartdata.costsByType(COSTS, 'location')
       }]
     });
 
@@ -50,14 +50,14 @@ export class ChartsComponent implements OnInit {
       animationEnabled: true,
       exportEnabled: true,
       title:{
-        text: "Monthly Expense"
+        text: "Expense by User Status"
       },
       data: [{
         type: "bar",
         showInLegend: true,
         toolTipContent: "<b>{name}</b>",
         indexLabel: "{name}",
-        dataPoints: this.chartdata.costsByType(COSTS)
+        dataPoints: this.chartdata.costsByType(COSTS, 'userStatus')
       }]
     });
       

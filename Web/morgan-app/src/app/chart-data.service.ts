@@ -7,8 +7,7 @@ export class ChartDataService {
 
   constructor() { }
 
-  costsByType(spendingItems){
-    var column = "type";
+  costsByType(spendingItems, column){
     var uniqueValues = [];
     var dataDictionary = {}; //Dictionary that display chart values
     for(let i = 0; i<spendingItems.length; i++){
@@ -29,6 +28,14 @@ export class ChartDataService {
       });
     }
     return columnChartValues.filter(e => e.name !== "null") //delete the "null" element
+  }
+
+  typesOfCost(spendingItems){
+    var excelColumns = [];
+    for(var key in spendingItems[0]){
+      excelColumns.push(key);
+    }
+    return excelColumns;
   }
 
 }
