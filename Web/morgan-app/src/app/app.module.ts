@@ -18,7 +18,6 @@ import { MorganNavbarComponent } from './morgan-navbar/morgan-navbar.component';
 import { MorganSidebarComponent } from './morgan-sidebar/morgan-sidebar.component';
 import { IconCardsComponent } from './body/icon-cards/icon-cards.component';
 import { ChartAreaComponent } from './body/chart-area/chart-area.component';
-import { DataTableComponent } from './body/data-table/data-table.component';
 import { MorganLoginComponent } from './morgan-login/morgan-login.component';
 import { MorganBodyComponent } from './morgan-body/morgan-body.component';
 import { DashboardComponent } from './sidebar/dashboard/dashboard.component';
@@ -46,7 +45,6 @@ import { CostTableComponent } from './body/cost-table/cost-table.component';
     MorganSidebarComponent,
     IconCardsComponent,
     ChartAreaComponent,
-    DataTableComponent,
     MorganLoginComponent,
     MorganBodyComponent,
     PagesComponent,
