@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import {MatSliderModule} from '@angular/material/slider';
+import {MatSelectModule} from '@angular/material/select';
+
 
 @Component({
-  selector: 'app-morgan-filters',
-  templateUrl: './morgan-filters.component.html',
-  styleUrls: ['./morgan-filters.component.css']
+  selector: 'app-filters',
+  templateUrl: './filters.component.html',
+  styleUrls: ['./filters.component.css']
 })
-export class MorganFiltersComponent implements OnInit {
+export class FiltersComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {

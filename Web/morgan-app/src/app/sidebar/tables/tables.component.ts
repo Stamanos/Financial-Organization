@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { COSTS } from '../../mock-costs';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-tables',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TablesComponent implements OnInit {
 
+  costs = COSTS;
+
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }

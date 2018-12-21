@@ -1,10 +1,10 @@
 export class Cost{
-    amount : number;
+    amount : string;
     type: string;
     date: any; //ToDo:: change to date
     description: string;
     userStatus: string;
-    moodLevel: number;
-    weather: string;
+    moodLevel: string;
     location: string;
+    id: string;
 }
