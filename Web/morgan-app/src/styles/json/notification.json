@@ -1,0 +1,26 @@
+[
+    {
+        "bg": "primary",
+        "font-awesome": "comments",
+        "message": "26 New Messages!",
+        "href": "#"
+    },
+    {
+        "bg": "warning",
+        "font-awesome": "list",
+        "message": "11 New Tasks!",
+        "href": "#"
+    },
+    {
+        "bg": "success",
+        "font-awesome": "shopping-cart",
+        "message": "123 New Orders!",
+        "href": "#"
+    },
+    {
+        "bg": "danger",
+        "font-awesome": "life-ring",
+        "message": "13 New Tickets!",
+        "href": "#"
+    }
+]

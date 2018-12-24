@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NOTIFICATIONS } from './../../mock-notifications';
 
 @Component({
   selector: 'app-icon-cards',
@@ -9,6 +10,7 @@ export class IconCardsComponent implements OnInit {
 
   constructor() { }
 
+  notifications = NOTIFICATIONS;
   ngOnInit() {
   }
 
