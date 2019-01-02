@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {MatSliderModule} from '@angular/material/slider';
-import {MatSelectModule} from '@angular/material/select';
-
+import { COSTS } from '../../mock-costs';
+import { ChartDataService } from '../../chart-data.service';
+import { Cost } from 'src/app/cost';
 
 @Component({
   selector: 'app-filters',
@@ -9,9 +9,16 @@ import {MatSelectModule} from '@angular/material/select';
   styleUrls: ['./filters.component.css']
 })
 export class FiltersComponent implements OnInit {
-  constructor() { }
+
+  costs = COSTS;
+
+  constructor(private chartdata: ChartDataService) { }
 
   ngOnInit() {
+    for(let i in COSTS[0]){
+      console.log(i);
+      console.log(this.chartdata.costsByType(COSTS, i));
+    }
   }
 
 }
