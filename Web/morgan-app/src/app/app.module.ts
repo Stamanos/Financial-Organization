@@ -7,7 +7,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule, MatSelectModule, MatSliderModule, 
   MatTableModule, MatPaginatorModule, MatSortModule, MatDatepickerModule, 
-  MatNativeDateModule} from '@angular/material';
+  MatNativeDateModule, MatMomentDateModule} from '@angular/material';
 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
@@ -62,6 +62,7 @@ import { CostTableComponent } from './body/cost-table/cost-table.component';
     BlankComponent,
     DetailsComponent,
     CostTableComponent,
+    MatMomentDateModule
   ],
   imports: [
     CommonModule,
