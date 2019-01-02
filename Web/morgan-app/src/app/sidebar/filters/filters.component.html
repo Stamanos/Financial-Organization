@@ -12,13 +12,11 @@
   <!-- Page Content -->
   <h1>Filters</h1>
 <!--CALENDAR-->
-<div style="background-color: #08c;" id="reportrange">
-    <label style="color:rgb(255, 255, 255);" for="date">Date</label>
-    <i class="fa fa-calendar"></i>&nbsp;
-    <span style="color:rgb(255, 255, 255);"></span> 
-    <i class="fa fa-caret-down"></i>
-</div>
-<input type="checkbox" id="dateCheckbox" name="date"><a style="color:rgb(0, 0, 0);">Enable</a><p></p>
+<mat-form-field>
+  <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
+</mat-form-field>
 <!--END OF CALENDAR-->
 
 <!--AMOUNT RANGE--> 

@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {MatSliderModule} from '@angular/material/slider';
-import {MatSelectModule} from '@angular/material/select';
-
 
 @Component({
   selector: 'app-filters',
@@ -9,6 +6,8 @@ import {MatSelectModule} from '@angular/material/select';
   styleUrls: ['./filters.component.css']
 })
 export class FiltersComponent implements OnInit {
+  startDate = new Date(2017, 0, 1);
+
   constructor() { }
 
   ngOnInit() {
