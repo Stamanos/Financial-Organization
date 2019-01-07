@@ -1,3 +1,6 @@
+![](https://media0.giphy.com/media/o0vwzuFwCGAFO/giphy.gif)
+# morgan
+
 ## M.Organ
 This project helps you organize your costs makes your life easier when provides you a complete picture of your expenses.
 
@@ -61,10 +64,10 @@ Watch and play
 ## Developers
 
 <b>Backend</b>
-- [Manos Stamatakis](https://manosthemaster.github.io/)
+- [Dimitris Filippou](https://jimfilippou.space)
 
 <b>Frontend</b>
-- [Konstantinos Kalaitzidis](https://github.com/konkalaitzidis/)
+- [Manos Stamatakis](https://manosthemaster.github.io/)
 
 
 ## License
