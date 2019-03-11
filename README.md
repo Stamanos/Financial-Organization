@@ -38,7 +38,7 @@ iii) date
 3)And the first row full of the word "null"
 
 ### Noob friendly
-
+(You can always read the documentation that is inside the Documentstion folder)
 Do not have any empty rows and columns handling around without a reason of existance
 
 ```
