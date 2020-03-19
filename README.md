@@ -1,6 +1,6 @@
 ![](https://media0.giphy.com/media/o0vwzuFwCGAFO/giphy.gif)
 # morgan
-
+# First of all, the stable version is in the WEBStableVersion folder
 ## M.Organ
 This project helps you organize your costs makes your life easier when provides you a complete picture of your expenses.
 
@@ -38,7 +38,7 @@ iii) date
 3)And the first row full of the word "null"
 
 ### Noob friendly
-(You can always read the documentation that is inside the Documentstion folder)
+(You can always read the documentation that is inside the Documentation folder)
 Do not have any empty rows and columns handling around without a reason of existance
 
 ```
