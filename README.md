@@ -1,6 +1,5 @@
 ![](https://media0.giphy.com/media/o0vwzuFwCGAFO/giphy.gif)
 # morgan
-# First of all, the stable version is in the WEBStableVersion folder
 ## M.Organ
 This project helps you organize your costs makes your life easier when provides you a complete picture of your expenses.
 
@@ -61,12 +60,9 @@ Upload
 Watch and play
 ```
 
-## Developers
+## Developer
 
-<b>Backend</b>
-- [Dimitris Filippou](https://jimfilippou.space)
-
-<b>Frontend</b>
+<b>Frontend / Backend</b>
 - [Manos Stamatakis](https://manosthemaster.github.io/)
 
 
